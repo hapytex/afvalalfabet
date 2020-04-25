@@ -366,24 +366,14 @@ muismat (pc),restafval
 multiplex,houtafval
 munitie,politie verwittigen
 muziekinstrument (metaal),oude metalen
-,
-N,
-Wat?,Waar naartoe ?
-,
 nagellak(remover),KGA
 negatief (foto),KGA
 neonlamp,KGA
 nietjesmachine,oude metalen
 noten (doppen van),restafval
-"nummerplaat (niet-officieel,",oude metalen
-"reproductie, vooraan wagen)",
-"nummerplaat (officieel,",terugsturen naar D.I.V.
-achteraan wagen),Wetstraat 155 1040 Brussel
+"nummerplaat (niet-officieel, reproductie, vooraan wagen)",oude metalen
+"nummerplaat (officieel, achteraan de wagen)","terugsturen naar D.I.V. Wetstraat 155 1040 Brussel"
 "nylon (draad, kous)",restafval
-,
-O,
-Wat?,Waar naartoe ?
-,
 olie,KGA
 omheining (metaal),oude metalen
 omwikkelfolie,folies
@@ -398,13 +388,8 @@ ontvlekker,KGA
 ontwikkelvloeistof,KGA
 oogschaduw,KGA
 opalineglas,restglas
-oplaadbare batterij (wanneer,KGA (of Bebat-recipiënten in
-uitgeput),handelszaken)
+oplaadbare batterij (wanneer uitgeput),KGA (of Bebat-recipiënten in handelszaken)
 oven,AEEA
-,
-P,
-Wat?,Waar naartoe ?
-,
 paletten,houtafval
 pallethoezen,folies
 pan of pot (metaal),oude metalen
@@ -412,18 +397,15 @@ papier,papier en karton
 papier (geplastificeerd),restafval
 papieren zakdoeken (gebruikt),restafval
 paraffine,KGA
-paraplu/parasol (te groot voor,oude metalen
-restfractiezak),
+paraplu/parasol (te groot voor restfractiezak),oude metalen
 parfum,KGA
-"PE-fles ( polyethyleen, meestal",PMD
-gekleurd ),
+"PE-fles ( polyethyleen, meestal gekleurd)",PMD
 perforator,oude metalen
-"pesticide (zie insecticide,",KGA
-onkruidverdelger enz. ),
-PET-fles ( meestal,PMD
-doorschijnend ),
+"pesticide (zie insecticide, onkruidverdelger, enz.)",KGA
+PET-fles (meestal doorschijend),PMD
 plexiglas,harde plastics
-pickles  pillen,restafvalapotheker
+pickles,restafval
+pillen,restafvalapotheker
 pit (van fruit),restafval
 plakband,restafval
 plant (zonder kluit),composteerbaar of tuinafval
@@ -432,8 +414,7 @@ pluim,restafval
 polijstmiddel,KGA
 polshorloge,restafval
 pop,restafval
-poppenhuis (te groot voor,grofvuil
-restfractiezak),
+poppenhuis (te groot voor restfractiezak),grofvuil
 "porselein (servies, beeldje...)",onbrandbaar bouwafval
 potlood,restafval
 printercartridge/-cassette,KGA
@@ -443,11 +424,6 @@ puin,bouwafval
 PVC-buis,harde plastics
 PVC-fles,PMD
 pyrex,restglas
-,
-,
-R,
-Wat?,Waar naartoe ?
-,
 raamglas,vlak glas
 rattenvergif,KGA
 reclamedrukwerk,papier en karton
@@ -464,10 +440,6 @@ röntgenfoto,KGA
 roofing,roofing
 rookdetector of –melder,KGA
 rubber (geen banden),restafval
-,
-S,
-Wat?,Waar naartoe ?
-,
 salon,grofvuil
 saus,restafval
 schaafkrullen,houtafval
@@ -495,8 +467,7 @@ skateboard,grofvuil
 skeeler,restafval
 ski,grofvuil
 slaapzak,textiel
-slachtafval,contacteer Rendac
-,Denderleeuw (053/64.02.34)
+slachtafval,contacteer Rendac Denderleeuw (053/64.02.34)
 slagerspapier na verwijdering binnenfolie,papier en karton
 slagroomspuitbus,KGA leeg: PMD
 sla-olie,PMD
@@ -512,18 +483,12 @@ speelgoed (metaal),oude metalen
 speelgoed (kunststof),restafval of harde plastics (grote stukken)
 spiegel,restglas
 spiritus,KGA
-spuit(je) zonder injectienaald,
-(kunststof),restafval
-"spuitbus cosmetica (deodorant,",
-"haarlak, ...)","KGA, leeg: PMD"
-spuitbus (andere dan,
-cosmetica of voeding),KGA
-steel (hout) van tuin- kuis of,
-ander gereedschap,houtafval
-steel (kunststof) van tuin- kuis-,harde plastics
-of ander gereedschap,
-steel (metaal) van tuin- kuis- of,oude metalen
-ander gereedschap,
+spuit(je) zonder injectienaald (kunststof),restafval
+"spuitbus cosmetica (deodorant, haarlak, ...)","KGA, leeg: PMD"
+spuitbus (andere dan cosmetica of voeding),KGA
+steel (hout) van tuin- kuis of, ander gereedschap,houtafval
+steel (kunststof) van tuin- kuis of ander gereedschap,harde plastics
+steel (metaal) van tuin- kuis- of ander gereedschap,oude metalen
 steenpuin/steen,steenpuin
 stempelkussen,KGA
 stemvork,oude metalen
@@ -541,10 +506,6 @@ stronk,boomstronken en -wortels
 strooizout,KGA
 struik,composteerbaar of tuinafval
 stylo,KGA
-,
-T,
-Wat?,Waar naartoe ?
-,
 tabak,restafval
 tafellaken (papier),restafval
 tafellaken (textiel),textiel
@@ -563,14 +524,12 @@ textiel algemeen,textiel
 theelichthoudertje (aluminium),PMD
 theelichtje,restafval
 theezakje,restafval
-"thermometer ( klassieke,",KGA
-kwikhoudend ),
+"thermometer ( klassieke, kwikhoudend)",KGA
 thermos,restafval
 tijdschrift,papier en karton
 tippex en tippexverdunner,KGA
 tl-lamp,KGA
-toiletpot (zonder metalen,
-delen),onbrandbaar bouwafval
+toiletpot (zonder metalen delen),onbrandbaar bouwafval
 toiletreiniger,KGA
 toner (printer),KGA
 touw,restafval
@@ -578,20 +537,11 @@ trapladder ( ijzer ),oude metalen
 treinkaartje (met magneetstrip),restafval
 triplexplaat,houtafval
 tuinafval,composteerbaar of tuinafval
-tuingereedschap (niet,
-elektrisch),grofvuil
+tuingereedschap (niet elektrisch),grofvuil
 tuinmeubelen (kunststof),harde plastics
 tuinslang,grofvuil
 "turfzak (kunstof, leeg)",folies
-,
-U,
-Wat?,Waar naartoe ?
-,
 UV-lamp (zonnebank),KGA
-,
-V,
-Wat?,Waar naartoe ?
-,
 vaas (glas),restglas
 vaas (steenachtig),onbrandbaar bouwafval
 veegborstel (hout),houtafval
@@ -614,14 +564,11 @@ verfstripper,AEEA
 vernis,KGA
 verpakking keukenrol,folies
 verpakkingsfolie,folies
-verplegingsafval (thuisverpleging -,restafval
-niet-risicohoudend),
+verplegingsafval (thuisverpleging - niet-risicohoudend),restafval
 vershoudfolie,restafval
 vertrouwelijk papier,papier en karton
-vervallen eetwaren (niet,restafval
-vloeibaar),
-vervuild papier (vb. van,restafval
-vleeswaren),
+vervallen eetwaren (niet vloeibaar),restafval
+vervuild papier (vb. van vleeswaren),restafval
 verwarmingskussen (elektrisch),AEEA
 verzamelverpakking (folies),folies
 vet (smeervet),KGA
@@ -636,16 +583,14 @@ vinyl vloerbedekking,grofvuil
 vinylplaat,grofvuil
 vis,restafval
 visgraat,restafval
-vlak glas (niet gewapend -,vlak glas
-niet met metaal in - nietgelaagd),
+vlak glas (niet gewapend - niet met metaal in - nietgelaagd),vlak glas
 vlees,restafval
 vliegengordijn,restafval of grofvuil
 vliegenvanger (spuitbus),KGA
 vloerreiniger (elektrisch),AEEA
 vlooienband/spray/druppel,KGA
 vochtig doekje,restafval
-"vod (gebruikt, vuil met",KGA
-chemicaliën),
+"vod (gebruikt, vuil met chemicaliën)",KGA
 vod (proper),restafval
 voedingsspuitbus,PMD
 voegpasta,KGA
@@ -662,9 +607,6 @@ vuurvaste schotel (aardewerk),onbrandbaar bouwafval
 vuurvaste schotel (glas),restglas
 vuurwapen,politie verwittigen
 vuurwerk,KGA
-,
-W,
-Wat?,Waar naartoe ?
 warmwaterkruik,restafval
 wasbenzine,KGA
 wasco,restafval
@@ -677,7 +619,6 @@ wattenstaafje,restafval
 wax,KGA
 wc (zonder metalen delen),onbrandbaar bouwafval
 wc-borstel,restafval
-,
 wc-ontstopper,KGA
 wc-reiniger,KGA
 wc-rolletje,papier en karton
@@ -685,40 +626,23 @@ wegenkaart,papier en karton
 wegwerpbord,restafval
 wegwerpfototoestel,restafval
 wenskaart,papier en karton
-wespennest (onschadelijk,
-gemaakt),restafval
+wespennest (onschadelijk gemaakt),restafval
 white-spirit,KGA
-wieg (indien voornamelijk uit,
-hout),houtafval
+wieg (indien voornamelijk uit hout),houtafval
 wijnfles (wegwerp),glas
 wijnsteenzuur,KGA
 wok,AEEA
 wol,restafval
-,
-X,
-Wat?,Waar naartoe ?
 X-straalfoto,KGA
 xyleen,KGA
-,
-,
-Y,
-,
-Wat?,Waar naartoe ?
 yoghurtbeker,restafval
 yoghurtfles (kunststof),restafval
 yoghurtkarton (brik),PMD
 yoghurtpot (kunststof),restafval
 ytongblok,kalkafval
-,
-Z,
-,
-Wat?,Waar naartoe ?
-,
 zaag,oude metalen
-zaagmeel (van vervuild of,
-behandeld hout),restafval
-zaagmeel (van onbehandeld en,
-onvervuild hout),restafval
+zaagmeel (van vervuild of behandeld hout),restafval
+zaagmeel (van onbehandeld en onvervuild hout),restafval
 zakdoek (textiel),restafval
 zakje van warenhuis,folies
 zak (papier),papier en karton
