@@ -258,7 +258,7 @@ hout (zonder verf of vernislaag),houtafval
 hout (met verf of vernislaag),houtafval
 houtbeschermingsmiddel,KGA
 houtkrullen (behandeld en hard hout),houtafval
-"houtkrullen (van onbehandeld, zacht hout )",houtalval
+"houtkrullen (van onbehandeld, zacht hout)",houtalval
 houtskool,restafval
 huisbrandolie,KGA
 ijskreemdoos,restafval
@@ -399,7 +399,7 @@ papieren zakdoeken (gebruikt),restafval
 paraffine,KGA
 paraplu/parasol (te groot voor restfractiezak),oude metalen
 parfum,KGA
-"PE-fles ( polyethyleen, meestal gekleurd)",PMD
+"PE-fles (polyethyleen, meestal gekleurd)",PMD
 perforator,oude metalen
 "pesticide (zie insecticide, onkruidverdelger, enz.)",KGA
 PET-fles (meestal doorschijend),PMD
@@ -496,7 +496,7 @@ sterk water,KGA
 sticker,restafval
 stift (vilt- alcohol),KGA
 stoel (hout),houtafval
-stoel (kunststof ),harde plastics
+stoel (kunststof),harde plastics
 stoel (metalen poten),grofvuil
 stoel (metaal),oude metalen
 stofzuigerzak,restafval
@@ -524,7 +524,7 @@ textiel algemeen,textiel
 theelichthoudertje (aluminium),PMD
 theelichtje,restafval
 theezakje,restafval
-"thermometer ( klassieke, kwikhoudend)",KGA
+"thermometer (klassieke, kwikhoudend)",KGA
 thermos,restafval
 tijdschrift,papier en karton
 tippex en tippexverdunner,KGA
@@ -533,7 +533,7 @@ toiletpot (zonder metalen delen),onbrandbaar bouwafval
 toiletreiniger,KGA
 toner (printer),KGA
 touw,restafval
-trapladder ( ijzer ),oude metalen
+trapladder (ijzer),oude metalen
 treinkaartje (met magneetstrip),restafval
 triplexplaat,houtafval
 tuinafval,composteerbaar of tuinafval
