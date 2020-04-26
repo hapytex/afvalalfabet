@@ -7,5 +7,8 @@ Data is mainly taken from the [*afvalalfabet*](https://www.google.com/url?q=http
 You can look at the [**`data.csv`** file](data.csv) for a list of
 items, and how to get rid of these.
 
+The [**`tips.csv`** file](tips.csv) contains a set of *tips and tricks* to avoid
+waste.
+
 If there are still items not on the list, or you want to make a correction, you
 can open a *pull request*.
