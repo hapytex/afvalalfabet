@@ -24,20 +24,20 @@ slug (WasteRecord n s _) = T.map f (T.toLower (n <> s))
 toWasteRecord :: (Text, Text, Text) -> WasteRecord
 toWasteRecord (na, sp, lcs) = WasteRecord (strip na) (strip sp) (Prelude.map strip (T.splitOn "/" lcs))
 
-newletter :: LaTeXC l => Char -> l
-newletter c = comm1 "lettergroup" (raw sc) <> comm1 "dictchar" (raw dc)
+newLetter :: LaTeXC l => Char -> l
+newLetter c = comm1 "dictchar" (raw dc) <> comm1 "lettergroup" (raw sc)
     where c' = C.toUpper c
           sc = T.singleton c'
           dc = T.cons c' (T.cons ' ' (T.singleton (C.toLower c)))
 
 wasteToLaTeX :: LaTeXC l => WasteRecord -> l
-wasteToLaTeX w@(WasteRecord n s l) = optFixComm "entry" 1 [raw (slug w), raw n, raw (protectText (subs <> T.intercalate ", " l))]
+wasteToLaTeX w@(WasteRecord n s l) = optFixComm "entry" 1 [raw (slug w), raw n, subs <> raw (protectText (T.intercalate ", " l))]
   where subs | T.null s = ""
-             | otherwise = T.cons '(' (s <> ") ")
+             | otherwise = textit (raw (protectText (T.cons '(' (s <> ") "))))
 
 wasteToLaTeX' :: LaTeXC l => (WasteRecord, WasteRecord) -> l
 wasteToLaTeX' (WasteRecord a _ _, w@(WasteRecord b _ _)) = f (wasteToLaTeX w)
-    where f | T.take 1 (T.toUpper a) /= T.take 1 (T.toUpper b), (c:_) <- T.unpack b = (newletter c <>)
+    where f | T.take 1 (T.toUpper a) /= T.take 1 (T.toUpper b), (c:_) <- T.unpack b = (newLetter c <>)
             | otherwise = id
 
 main :: IO ()
@@ -54,6 +54,7 @@ _document :: Monad m => V.Vector (WasteRecord, WasteRecord) -> LaTeXT_ m
 _document entries = do
     documentclass [] "dictionary"
     title "Afval-alfabet"
+    author ""
     document $ do
           maketitle
           V.mapM_ wasteToLaTeX' entries

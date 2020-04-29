@@ -1,7 +1,7 @@
 \ProvidesPackage{dictionary}
 \RequirePackage[top=2cm, headsep=0.4cm, bottom=1.5cm, left=1.5cm, right=1.5cm, twocolumn, landscape]{geometry}
 \RequirePackage{fancyhdr}
-\RequirePackage[utf8]{inputenc}
+%\RequirePackage[utf8]{inputenc}
 %\DeclareUnicodeCharacter{00A0}{~} % finds hidden non-breakable space
 %\RequirePackage[T1]{fontenc}
 \RequirePackage{tgpagella}
@@ -37,11 +37,11 @@
 \setlength {\heavyrulewidth }{0.1 em}
 
 % place frequent star
-% \newcommand{\freqstar}{%
-% \raisebox{-.2ex}{%
-%   \textcolor{darkgreen}{\ding{167}}%
-% }%
-% }%
+\newcommand{\freqstar}{%
+\raisebox{-.2ex}{%
+  \textcolor{darkgreen}{\ding{167}}%
+}%
+}%
 
 % float control
 \renewcommand{\topfraction}{0.9}    % max fraction of floats at top
