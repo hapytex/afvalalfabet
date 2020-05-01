@@ -48,7 +48,7 @@ Ballon,,restafval
 Balpen,,KGA
 Barbecue-stel,niet-elektrisch,oude metalen
 Barometer,met kwik,KGA
-Batterij,,KGA (of Bebat-recipiënten in handelszaken)
+Batterij,,KGA/Bebat-recipiënten in handelszaken
 Beddengoed,,textiel
 Beenderen,,restafval
 Behangpapier,,restafval
@@ -97,7 +97,7 @@ Broodrooster,,AEEA
 Broodzak,,restafval
 Bruinen-zonder-zon,,KGA
 Buis,pvc,harde plastics
-Buislamp,niet breken,KGA (TL-lampen)
+Buislamp,"TL-lampen, niet breken",KGA
 Cadeaupapier,,papier en karton
 Capsules,,apotheker
 Carbolineum,,KGA
@@ -235,10 +235,10 @@ Gyprocplaat,,kalkafval
 Haagscheersel,,composteren/tuinafval
 Haar,,restafval
 Haardblokjes,,KGA
-Haarlak,,KGA/leeg PMD
-Haarschuim,,KGA/leeg PMD
+Haarlak,,KGA/leeg: PMD
+Haarschuim,,KGA/leeg: PMD
 Haarverf,,KGA
-Haarverzorgingsproduct,,KGA/leeg PMD
+Haarverzorgingsproduct,,KGA/leeg: PMD
 Halogeenlamp,,KGA
 Halssnoer,,restafval
 Halter,gewicht fitness - metaal,oude metalen
@@ -372,7 +372,7 @@ Neonlamp,,KGA
 Nietjesmachine,,oude metalen
 Noten,doppen van,restafval
 Nummerplaat,"niet-officieel, reproductie, vooraan wagen",oude metalen
-Nummerplaat,"officieel, achteraan de wagen",terugsturen naar D.I.V. Wetstraat 155 1040 Brussel
+Nummerplaat,"officieel, achteraan de wagen",DIV
 Nylon,"draad, kous",restafval
 Olie,,KGA
 Omheining,metaal,oude metalen
@@ -388,7 +388,7 @@ Ontvlekker,,KGA
 Ontwikkelvloeistof,,KGA
 Oogschaduw,,KGA
 Opalineglas,,restglas
-Oplaadbare batterij,wanneer uitgeput,KGA (of Bebat-recipiënten in handelszaken)
+Oplaadbare batterij,wanneer uitgeput,KGA/Bebat-recipiënten in handelszaken
 Oven,,AEEA
 Paletten,,houtafval
 Pallethoezen,,folies
@@ -469,7 +469,7 @@ Ski,,grofvuil
 Slaapzak,,textiel
 Slachtafval,,contacteer Rendac Denderleeuw (053 64.02.34)
 Slagerspapier na verwijdering binnenfolie,,papier en karton
-Slagroomspuitbus,,KGA leeg: PMD
+Slagroomspuitbus,,KGA/leeg: PMD
 Sla-olie,,PMD
 Snijbloemen,,composteren/tuinafval
 Snoeiafval,,composteren/snoeihout
@@ -484,7 +484,7 @@ Speelgoed,kunststof,restafval/harde plastics (grote stukken)
 Spiegel,,restglas
 Spiritus,,KGA
 Spuit(je) zonder injectienaald,kunststof,restafval
-Spuitbus cosmetica,"deodorant, haarlak, ...","KGA, leeg: PMD"
+Spuitbus cosmetica,"deodorant, haarlak, ...",KGA/leeg: PMD
 Spuitbus,andere dan cosmetica of voeding,KGA
 Steel,hout van tuin- kuis of ander gereedschap,houtafval
 Steel,kunststof van tuin- kuis of ander gereedschap,harde plastics
