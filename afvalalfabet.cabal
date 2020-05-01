@@ -23,4 +23,5 @@ executable afvalalfabet
     , cassava >=0.5
     , HaTeX >=3.20
     , text >=1.0
+    , vcard >=0.1
     , vector >=0.12
