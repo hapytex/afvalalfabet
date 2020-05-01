@@ -143,7 +143,7 @@ Diesel,,KGA
 Diskette,computer,KGA
 Dissolvant,,KGA
 Donsdeken,,textiel
-Dood huisdier,,laten ophalen door erkende ophaler/naar dierencrematorium/-begraafplaats brengen
+Dood huisdier,,laten ophalen door een erkende ophaler/dierencrematorium/dierenbegraafplaats
 Dop,kunststof op plastiek fles,PMD
 Dop,los,restafval
 Dop,metaal,PMD
@@ -258,7 +258,7 @@ Hout,zonder verf of vernislaag,houtafval
 Hout,met verf of vernislaag,houtafval
 Houtbeschermingsmiddel,,KGA
 Houtkrullen,behandeld en hard hout,houtafval
-Houtkrullen,"van onbehandeld, zacht hout",houtalval
+Houtkrullen,"van onbehandeld, zacht hout",houtafval
 Houtskool,,restafval
 Huisbrandolie,,KGA
 Ijskreemdoos,,restafval
@@ -335,7 +335,7 @@ Lederwaren,,textiel
 Leien,natuur,steenpuin
 Lepel,,oude metalen
 Lijm,,KGA
-Linoleum,,grofvuil containerpark
+Linoleum,,grofvuil/containerpark
 Lippenstift,,KGA
 Lood,,oude metalen
 Loodglas,,restglas
@@ -405,7 +405,7 @@ Pesticide,"zie insecticide, onkruidverdelger, enz.",KGA
 PET-fles,meestal doorschijend,PMD
 Plexiglas,,harde plastics
 Pickles,,restafval
-Pillen,,restafvalapotheker
+Pillen,,restafval/apotheker
 Pit,van fruit,restafval
 Plakband,,restafval
 Plant,zonder kluit,composteren/tuinafval
@@ -513,7 +513,7 @@ Takken,,snoeihout
 Tampon,,restafval
 Tandbeugel,,oude metalen
 Tandenborstel,,restafval
-Tandpasta tandzijde,flos,KGA restafval
+Tandpasta tandzijde,flos,KGA/restafval
 Tapes,,KGA
 Tapijt,,grofvuil
 Tegel,steen,onbrandbaar bouwafval
