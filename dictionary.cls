@@ -18,10 +18,10 @@
 \setglossarystyle{dicgls}
 
 \newcommand{\todef}{}
-\DeclareDocumentCommand{\dey}{ O{} m m O{} }{\newglossaryentry{#1}{name={#2},description={\index{#2|textbf}\renewcommand{\todef}{\emph{#2}}#3},see={#4}}}
-\DeclareDocumentCommand{\rey}{ m }{\textit{\gls{#1}}}
-\DeclareDocumentCommand{\aey}{ O{} m m }{\index{#2|see{#3}}}
-\DeclareDocumentCommand{\bey}{ m m }{\index{Abbreviations!#1|see{#2}}}
+% \DeclareDocumentCommand{\dey}{ O{} m m O{} }{\newglossaryentry{#1}{name={#2},description={\index{#2|textbf}\renewcommand{\todef}{\emph{#2}}#3},see={#4}}}
+% \DeclareDocumentCommand{\rey}{ m }{\textit{\gls{#1}}}
+% \DeclareDocumentCommand{\aey}{ O{} m m }{\index{#2|see{#3}}}
+% \DeclareDocumentCommand{\bey}{ m m }{\index{Abbreviations!#1|see{#2}}}
 
 \AtBeginDocument{\maketitle}
 \AtEndDocument{\clearpage\lettergroup{?}\dictchar{Index}\printindex}

@@ -5,6 +5,7 @@ module Main where
 import qualified Data.ByteString.Lazy as BL
 import Data.Char as C
 import Data.Csv
+import Data.List(sort)
 import Data.String(fromString)
 import Data.Text as T
 import qualified Data.Text.IO as TI
@@ -13,7 +14,7 @@ import qualified Data.Vector as V
 import Text.LaTeX.Base
 import Text.LaTeX.Base.Class
 
-data WasteRecord = WasteRecord { name :: Text, specs :: Text, location :: [Text] } deriving Show
+data WasteRecord = WasteRecord { name :: Text, specs :: Text, location :: [Text] } deriving (Eq, Ord, Show)
 
 slug :: WasteRecord -> Text
 slug (WasteRecord n s _) = T.map f (T.toLower (n <> s))
@@ -31,7 +32,7 @@ newLetter c = comm1 "dictchar" (raw dc) <> comm1 "lettergroup" (raw sc)
           dc = T.cons c' (T.cons ' ' (T.singleton (C.toLower c)))
 
 wasteToLaTeX :: LaTeXC l => WasteRecord -> l
-wasteToLaTeX w@(WasteRecord n s l) = optFixComm "entry" 1 [raw (slug w), raw n, subs <> raw (protectText (T.intercalate ", " l))]
+wasteToLaTeX w@(WasteRecord n s l) = optFixComm "entry" 1 [raw (slug w), raw n, subs <> raw (protectText (T.intercalate ", " l))] <> mconcat (Prelude.map (comm1 "index" . raw) l)
   where subs | T.null s = ""
              | otherwise = textit (raw (protectText (T.cons '(' (s <> ") "))))
 
@@ -46,15 +47,14 @@ main = do
     case decode HasHeader csvData :: Either String (V.Vector (Text, Text, Text)) of
         Left err -> putStrLn err
         Right v -> execLaTeXT (_document wr') >>= TI.putStrLn . render -- (V.toList (V.map toWasteRecord v))
-            where wr = V.map toWasteRecord v 
+            where wr = (V.fromList . sort . V.toList . V.map toWasteRecord) v
                   wr' = V.zip (V.cons (WasteRecord "" "" []) wr) wr
                   
 
 _document :: Monad m => V.Vector (WasteRecord, WasteRecord) -> LaTeXT_ m
 _document entries = do
     documentclass [] "dictionary"
+    usepackage [raw "dutch"] "babel"
     title "Afval-alfabet"
     author ""
-    document $ do
-          maketitle
-          V.mapM_ wasteToLaTeX' entries
+    document (V.mapM_ wasteToLaTeX' entries >> section' "Locaties")

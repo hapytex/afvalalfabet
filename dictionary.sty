@@ -1,9 +1,9 @@
 \ProvidesPackage{dictionary}
-\RequirePackage[top=2cm, headsep=0.4cm, bottom=1.5cm, left=1.5cm, right=1.5cm, twocolumn, landscape]{geometry}
+\RequirePackage[a4paper, top=2cm, headsep=0.4cm, bottom=1.5cm, left=1.5cm, right=1.5cm, twocolumn, landscape]{geometry}
 \RequirePackage{fancyhdr}
-%\RequirePackage[utf8]{inputenc}
+\RequirePackage[utf8]{inputenc}
 %\DeclareUnicodeCharacter{00A0}{~} % finds hidden non-breakable space
-%\RequirePackage[T1]{fontenc}
+\RequirePackage[T1]{fontenc}
 \RequirePackage{tgpagella}
 \RequirePackage[scaled]{helvet}
 \RequirePackage{enumitem}
@@ -35,6 +35,7 @@
 \DeclareFloatFont{footnotesize}{\footnotesize}% "scriptsize" is defined by floatrow, "tiny" not
 \floatsetup[table]{font=footnotesize}
 \setlength {\heavyrulewidth }{0.1 em}
+\setlength{\columnwidth}{2cm}
 
 % place frequent star
 \newcommand{\freqstar}{%
@@ -98,17 +99,22 @@
 \or oucrimsonred\or cottoncandy\or orchid\or vividcerise\or patriarch\else darkgreen!30\fi}
 
 %COMMANDS
-\newcommand\entry[3][]{\hangpara{2em}{1}{\fontfamily{phv}\selectfont{\textbf{{#2}}}}\
-{#3}\ifx\relax#1\relax\markboth{#2}{#2}\else\markboth{#1}{#1}\fi
-\par}\nopagebreak[4]
-\newcommand*{\dictchar}[1]{\parbox[c][3cm][c]{2cm}{\Huge\textbf{#1}}\par}
+\newcommand\entry[3][]{
+\hangpara{2em}{1}{
+  \fontfamily{phv}\selectfont{\textbf{{#2}}}
+}\
+#3\markboth{#2}{#2}%\ifx\relax#1\relax\markboth{#2}{#2}\else\markboth{#1}{#1}\fi
+\par}
+%}
+\nopagebreak[4]
+% \newcommand*{\dictchar}[1]{\parbox[c][3cm][c]{2cm}{\Huge\textbf{#1}}\par}
 
-% \newcommand*{\dictchar}[1]{
-% \centerline{\parbox[c][3cm][c]{2cm}{%
-% \fontsize{24}{24}
-% \selectfont
-% {#1}}}\par
-% }
+\newcommand*{\dictchar}[1]{
+\centerline{\parbox[c][3cm][c]{2cm}{%
+\fontsize{24}{24}
+\selectfont
+{#1}}}\par
+}
 
 \newcommand{\devision}[1]{\hspace*{-2em}{{{{\foreignlanguage{icelandic}{\color{royalazure}{\fontfamily{phv}\selectfont{\textbf{#1}}}}}}}}}
 
