@@ -21,7 +21,7 @@ titleFirst :: Text -> Text
 titleFirst t = T.toUpper t1 <> t2
     where (t1, t2) = T.splitAt 1 t
 
-data Tip = Tip Text deriving (Eq, Ord, Show)
+newtype Tip = Tip Text deriving (Eq, Ord, Show)
 
 data WasteRecord = WasteRecord { name :: Text, specs :: Text, location :: [Text], tips :: [Tip] } deriving (Eq, Ord, Show)
 
