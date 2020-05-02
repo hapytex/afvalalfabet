@@ -15,7 +15,7 @@ waste.
 If there are still items not on the list, or you want to make a correction, you
 can open a *pull request*.
 
-The travis build makes a [**`rendered version of the dictionary`**](https://hapytex.github.io/afvalalfabet/afvalalfabet.pdf).
+The [*travis build*](travis-ci.com/github/hapytex/afvalalfabet) makes a [*rendered version of the dictionary*](https://hapytex.github.io/afvalalfabet/afvalalfabet.pdf).
 
 ---
 
