@@ -2,9 +2,9 @@ Wat?,specificaties,Waar naartoe?
 Aansteker,,KGA
 Aardappelschillen,,composteren/restafval
 Aardappelzak,kunststof,restafval
-Aardappelzak,papier,papier en karton (zuiver aanleveren)
+Aardappelzak,"papier, zuiver aanleveren",papier en karton
 Aardbeienbakje,kunststof,restafval
-Aarde,,"bouwafval (droog, geen klei)"
+Aarde,"droog, geen klei",bouwafval
 Aardewerk,,te storten
 Accu,,KGA
 Aceton,,KGA
@@ -17,7 +17,7 @@ Afvalolie,,KGA
 Afwasmiddel,,KGA
 Alcohol,,KGA
 Alcoholstift,,KGA
-Alkaline batterij,,KGA (of bebat-recipiënten)
+Alkaline batterij,,KGA/Bebat-recipiënten in handelszaken
 "Aluminium blikje, schaaltje of bakje",,PMD
 Aluminium voorwerp,"geen folie, blikje of schaaltje/bakje",oude metalen
 Aluminiumfolie,,restafval
@@ -34,7 +34,8 @@ As,vb. uit kachel,restafval
 Asbesthoudende materialen,"andere dan eternit of cementgebonden",laten ophalen door een erkende ophaler (lijst zie www.ovam.be)
 Asfalt,,roofing
 Audiocassette/tape,,KGA
-Autoband,zonder velg,bij nieuwe aankoop: garagist/bandenbedrijf/containerpark
+Autoband,zonder velg,containerpark
+Autoband,bij nieuwe aankoop,garagist/bandenbedrijf
 Autobatterij,,KGA
 Autoruit,,vlak glas
 Autoshampoo,,KGA
@@ -75,7 +76,8 @@ Boekentas,textiel of leder,textiel
 Boenwas,,KGA
 Boiler,gas,oude metalen
 Boiler,elektrisch,AEEA
-Bokaal,glas,glas (metalen deksel bij PMD)
+Bokaal,glas,glas
+Bokaal,metalen deksel,PMD
 Bolletjesfolie,,folies
 Boomschors,,composteren/tuinafval
 Boomstronk,,boomstronken en -wortels
@@ -235,10 +237,13 @@ Gyprocplaat,,kalkafval
 Haagscheersel,,composteren/tuinafval
 Haar,,restafval
 Haardblokjes,,KGA
-Haarlak,,KGA/leeg: PMD
-Haarschuim,,KGA/leeg: PMD
+Haarlak,,KGA
+Haarlak,leeg,PMD
+Haarschuim,,KGA
+Haarschuim,leeg,PMD
 Haarverf,,KGA
-Haarverzorgingsproduct,,KGA/leeg: PMD
+Haarverzorgingsproduct,,KGA
+Haarverzorgingsproduct,leeg,PMD
 Halogeenlamp,,KGA
 Halssnoer,,restafval
 Halter,gewicht fitness - metaal,oude metalen
@@ -264,14 +269,14 @@ Huisbrandolie,,KGA
 Ijskreemdoos,,restafval
 Ijzer,,oude metalen
 Incontinentiemateriaal,,restafval
-Injectienaald,,KGA (in naaldcontainer verkrijgbaar bij de apotheek)
+Injectienaald,in naaldcontainer verkrijgbaar bij de apotheek,KGA
 Inkt,,KGA
 Inktvulling,leeg,restafval
 Inktpatroon,printer; leeg,KGA
 Inlegkruisje,,restafval
 Insectenspray,,KGA
 Insecticide,,KGA
-Insulinespuit,,KGA (in naaldcontainer verkrijgbaar bij de apotheek)
+Insulinespuit,in naaldcontainer verkrijgbaar bij de apotheek,KGA
 Isolatiemateriaal,,restafval
 Isomo,"vervuild, gekleurd of chips",restafval
 Isomo-schaaltjes,,restafval
@@ -296,7 +301,7 @@ Ketting,,oude metalen
 Keukenrol,bevuild met etensresten,restafval
 Kleding,,textiel
 Kleefpapier,,restafval
-Knoopcellen,,KGA (of Bebat- recipiënten in handelszaken)
+Knoopcellen,,KGA/Bebat-recipiënten in handelszaken
 Koekjesdozen,karton,papier en karton
 Koekjesdozen,metaal,PMD
 Koelvloeistof,,KGA
@@ -469,7 +474,8 @@ Ski,,grofvuil
 Slaapzak,,textiel
 Slachtafval,,contacteer Rendac Denderleeuw (053 64.02.34)
 Slagerspapier na verwijdering binnenfolie,,papier en karton
-Slagroomspuitbus,,KGA/leeg: PMD
+Slagroomspuitbus,,KGA
+Slagroomspuitbus,leeg,PMD
 Sla-olie,,PMD
 Snijbloemen,,composteren/tuinafval
 Snoeiafval,,composteren/snoeihout
@@ -480,11 +486,13 @@ Spaanderplaat,,houtafval
 Spaarlamp,,KGA
 Speelgoed,hout,houtafval
 Speelgoed,metaal,oude metalen
-Speelgoed,kunststof,restafval/harde plastics (grote stukken)
+Speelgoed,kunststof,restafval
+Speelgoed,"kunststof, grote stukken",harde plastics
 Spiegel,,restglas
 Spiritus,,KGA
 Spuit(je) zonder injectienaald,kunststof,restafval
-Spuitbus cosmetica,"deodorant, haarlak, ...",KGA/leeg: PMD
+Spuitbus cosmetica,"deodorant, haarlak, ...",KGA
+Spuitbus cosmetica,leeg,PMD
 Spuitbus,andere dan cosmetica of voeding,KGA
 Steel,hout van tuin- kuis of ander gereedschap,houtafval
 Steel,kunststof van tuin- kuis of ander gereedschap,harde plastics

@@ -48,4 +48,6 @@ samples/**
 *.log
 *.out
 *.pdf
+*.adx
+*.and
 *.tex
