@@ -1,6 +1,6 @@
-# Afvalalfabet
+# Afvalwoordenboek
 
-[![Build Status](https://travis-ci.com/hapytex/afvalalfabet.svg?branch=master)](https://travis-ci.com/hapytex/afvalalfabet)
+[![Build Status](https://travis-ci.com/hapytex/afvalwoordenboek.svg?branch=master)](https://travis-ci.com/hapytex/afvalwoordenboek)
 
 A dictionary how to handle (and recycle) waste in Belgium, in Dutch.
 
@@ -15,7 +15,7 @@ waste.
 If there are still items not on the list, or you want to make a correction, you
 can open a *pull request*.
 
-The [*travis build*](travis-ci.com/github/hapytex/afvalalfabet) makes a [*rendered version of the dictionary*](https://hapytex.github.io/afvalalfabet/afvalalfabet.pdf).
+The [*travis build*](travis-ci.com/github/hapytex/afvalwoordenboek) makes a [*rendered version of the dictionary*](https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek.pdf).
 
 ---
 
@@ -32,5 +32,5 @@ tricks*" hoe afval voorkomen.
 
 Men kan een *pull request* maken om items toe te voegen of te corrigeren.
 
-De [*travis build*](travis-ci.com/github/hapytex/afvalalfabet) maakt een
-[pdf-versie van de data](https://hapytex.github.io/afvalalfabet/afvalalfabet.pdf).
+De [*travis build*](travis-ci.com/github/hapytex/afvalwoordenboek) maakt een
+[pdf-versie van de data](https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek.pdf).

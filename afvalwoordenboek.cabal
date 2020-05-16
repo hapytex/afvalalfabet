@@ -1,8 +1,8 @@
-name:                afvalalfabet
+name:                afvalwoordenboek
 version:             0.1.0.0
 -- synopsis:
 -- description:
-homepage:            https://github.com/KommuSoft/afvalalfabet#readme
+homepage:            https://github.com/HaPyTeX/afvalwoordenboek#readme
 license:             BSD3
 license-file:        LICENSE
 author:              Willem Van Onsem
@@ -13,7 +13,7 @@ build-type:          Simple
 cabal-version:       >=1.10
 extra-source-files:  README.md
 
-executable afvalalfabet
+executable afvalwoordenboek
   hs-source-dirs:      src
   main-is:             Main.hs
   default-language:    Haskell2010

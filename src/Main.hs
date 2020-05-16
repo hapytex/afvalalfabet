@@ -51,6 +51,9 @@ newLetter c = comm1 "dictchar" (raw dc) <> comm1 "lettergroup" (raw sc)
           sc = T.singleton c'
           dc = T.cons c' (T.cons ' ' (T.singleton (C.toLower c)))
 
+locationToLaTeX :: LaTeXC l => WasteLocation -> l
+locationToLaTeX (WasteLocation l a _ _) =  comm2 "newglossaryentry" (raw l) (raw a)
+
 wasteToLaTeX :: LaTeXC l => WasteRecord -> l
 wasteToLaTeX w@(WasteRecord n s l _) = optFixComm "entry" 1 [raw (slug w), raw n, subs <> raw (protectText (T.intercalate ", " l)) <> mconcat (Prelude.map (optFixComm "index" 1 . (raw "locations" :) . pure . raw) l)]
   where subs | T.null s = ""
@@ -83,17 +86,20 @@ main = do
     wr <- readWasteRecords
     let _wr = (V.fromList . sortOn orderRecord . V.toList) wr
         wr' = V.zip (V.cons (WasteRecord "" "" [] []) _wr) _wr
-    execLaTeXT (_document wr') >>= TI.putStrLn . render -- (V.toList (V.map toWasteRecord v))
+    execLaTeXT (_document wl wr') >>= TI.putStrLn . render -- (V.toList (V.map toWasteRecord v))
                   
 
-_document :: Monad m => V.Vector (WasteRecord, WasteRecord) -> LaTeXT_ m
-_document entries = do
+_document :: Monad m => V.Vector WasteLocation -> V.Vector (WasteRecord, WasteRecord) -> LaTeXT_ m
+_document locations entries = do
     documentclass [] "dictionary"
     usepackage [raw "dutch"] "babel"
     usepackage [] "index"
+    usepackage [] "glossaries"
     usepackage [] "xcolor"
     comm0 "makeindex"
+    comm0 "makeglossaries"
+    mapM_ locationToLaTeX locations
     comm4 "newindex" (raw "locations") (raw "adx") (raw "and") (raw "Locaties")
-    title "Afval-alfabet"
+    title "Afvalwoordenboek"
     author ""
     document (V.mapM_ wasteToLaTeX' entries >> newpage >> comm0 "printindex" >> optFixComm "printindex" 1 [raw "locations"])

@@ -1,2 +1,2 @@
-out/afvalalfabet.pdf : dictionary.sty data/data.csv make.sh src/Main.hs
+out/afvalwoordenboek.pdf : dictionary.sty data/data.csv make.sh src/Main.hs
 	bash make.sh
