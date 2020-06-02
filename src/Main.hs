@@ -25,7 +25,7 @@ newtype Tip = Tip Text deriving (Eq, Ord, Show)
 
 data WasteRecord = WasteRecord { name :: Text, specs :: Text, location :: [Text], tips :: [Tip] } deriving (Eq, Ord, Show)
 
-data WasteLocation = WasteLocation { label :: Text, locName :: Text, locColor :: Text , contact :: Text}
+data WasteLocation = WasteLocation { label :: Text, locName :: Text, locColor :: Text , contact :: Text} deriving (Eq, Ord, Show)
 
 slug :: WasteRecord -> Text
 slug (WasteRecord n s _ _) = T.map f (T.toLower (n <> s))
@@ -52,10 +52,12 @@ newLetter c = comm1 "dictchar" (raw dc) <> comm1 "lettergroup" (raw sc)
           dc = T.cons c' (T.cons ' ' (T.singleton (C.toLower c)))
 
 locationToLaTeX :: LaTeXC l => WasteLocation -> l
-locationToLaTeX (WasteLocation l a _ _) =  comm2 "newglossaryentry" (raw l) (raw a)
+locationToLaTeX (WasteLocation l a _ _) =  comm2 "newglossaryentry" (raw l) (raw "name={" <> comm2 "colorbox" (raw "blue!20") (comm0 "strut" <> raw (protectText l)) <> comm1 "hspace*" "0.25cm" <> raw "}, description={" <> text <> raw "}")
+    where text | T.null a = raw (protectText l)
+               | otherwise = raw (protectText a)
 
 wasteToLaTeX :: LaTeXC l => WasteRecord -> l
-wasteToLaTeX w@(WasteRecord n s l _) = optFixComm "entry" 1 [raw (slug w), raw n, subs <> raw (protectText (T.intercalate ", " l)) <> mconcat (Prelude.map (optFixComm "index" 1 . (raw "locations" :) . pure . raw) l)]
+wasteToLaTeX w@(WasteRecord n s l _) = optFixComm "entry" 1 [raw (slug w), raw n, subs <> mconcat (Prelude.map (comm1 "gls" . raw) l) <> mconcat (Prelude.map (optFixComm "index" 1 . (raw "locations" :) . pure . raw) l)]
   where subs | T.null s = ""
              | otherwise = textit (raw (protectText (T.cons '(' (s <> ") "))))
 
@@ -64,21 +66,21 @@ wasteToLaTeX' (WasteRecord a _ _ _, w@(WasteRecord b _ _ _)) = f (wasteToLaTeX w
     where f | T.take 1 (T.toUpper a) /= T.take 1 (T.toUpper b), (c:_) <- T.unpack b = (newLetter c <>)
             | otherwise = id
 
+readCsvFile :: (FromRecord a, Show a) => FilePath -> IO (V.Vector a)
+readCsvFile path = do
+    csvData <- BL.readFile path
+    case decode HasHeader csvData of
+        Left err -> fail ("Failed to parse csv file " <> path <> ": " <> err)
+        Right v -> pure v
+
+parseCsvFile :: (FromRecord a, Show a) => (a -> b) -> FilePath -> IO (V.Vector b)
+parseCsvFile f = fmap (V.map f) . readCsvFile
 
 readLocations :: IO (V.Vector WasteLocation)
-readLocations = do
-    csvData <- BL.readFile "data/where.csv"
-    pure $ case decode HasHeader csvData of
-        Left err -> fail ("Failed to parse the location file: " <> err)
-        Right v -> V.map toWasteLocation v
+readLocations = parseCsvFile toWasteLocation "data/where.csv"
 
 readWasteRecords :: IO (V.Vector WasteRecord)
-readWasteRecords = do
-    csvData <- BL.readFile "data/data.csv"
-    pure $ case decode HasHeader csvData of
-        Left err -> fail ("Failed to parse the entries file: " <> err)
-        Right v -> V.map toWasteRecord v
-
+readWasteRecords = parseCsvFile toWasteRecord "data/data.csv"
 
 main :: IO ()
 main = do
@@ -96,10 +98,11 @@ _document locations entries = do
     usepackage [] "index"
     usepackage [] "glossaries"
     usepackage [] "xcolor"
+    usepackage [] "fancybox"
     comm0 "makeindex"
     comm0 "makeglossaries"
-    mapM_ locationToLaTeX locations
     comm4 "newindex" (raw "locations") (raw "adx") (raw "and") (raw "Locaties")
+    mapM_ locationToLaTeX locations
     title "Afvalwoordenboek"
-    author ""
+    author "Willem Van Onsem"
     document (V.mapM_ wasteToLaTeX' entries >> newpage >> comm0 "printindex" >> optFixComm "printindex" 1 [raw "locations"])
