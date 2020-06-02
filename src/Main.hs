@@ -25,7 +25,7 @@ newtype Tip = Tip Text deriving (Eq, Ord, Show)
 
 data WasteRecord = WasteRecord { name :: Text, specs :: Text, location :: [Text], tips :: [Tip] } deriving (Eq, Ord, Show)
 
-data WasteLocation = WasteLocation { label :: Text, locName :: Text, locColor :: Text , contact :: Text} deriving (Eq, Ord, Show)
+data WasteLocation = WasteLocation { label :: Text, locName :: Text, locBgColor :: Text, logFgColor :: Text, contact :: Text} deriving (Eq, Ord, Show)
 
 slug :: WasteRecord -> Text
 slug (WasteRecord n s _ _) = T.map f (T.toLower (n <> s))
@@ -33,8 +33,8 @@ slug (WasteRecord n s _ _) = T.map f (T.toLower (n <> s))
               | 'a' <= c && c <= 'z' = c
               | otherwise = '-'
 
-toWasteLocation :: (Text, Text, Text, Text) -> WasteLocation
-toWasteLocation (l, n, c, t) = WasteLocation l n c t
+toWasteLocation :: (Text, Text, Text, Text, Text) -> WasteLocation
+toWasteLocation (l, n, cbg, cfg, t) = WasteLocation l n cbg cfg t
 
 toWasteRecord :: (Text, Text, Text) -> WasteRecord
 toWasteRecord (na, sp, lcs) = WasteRecord (titleFirst (strip na)) (strip sp) (Prelude.map strip (T.splitOn "/" lcs)) []
@@ -51,9 +51,17 @@ newLetter c = comm1 "dictchar" (raw dc) <> comm1 "lettergroup" (raw sc)
           sc = T.singleton c'
           dc = T.cons c' (T.cons ' ' (T.singleton (C.toLower c)))
 
+defcolor :: LaTeXC l => Text -> Text -> Text -> (l -> l, l)
+defcolor _ "fg" "" = (id, "black")
+defcolor _ "bg" "" = (id, "white")
+defcolor n t cl = ((comm3 "definecolor" colname "HTML" (raw (T.toUpper (T.drop 1 cl))) <>), colname)
+    where colname = raw (T.filter (' ' /=) (n <> "-" <> t))
+
 locationToLaTeX :: LaTeXC l => WasteLocation -> l
-locationToLaTeX (WasteLocation l a _ _) =  comm2 "newglossaryentry" (raw l) (raw "name={" <> comm2 "colorbox" (raw "blue!20") (comm0 "strut" <> raw (protectText l)) <> comm1 "hspace*" "0.25cm" <> raw "}, description={" <> text <> raw "}")
-    where text | T.null a = raw (protectText l)
+locationToLaTeX (WasteLocation l a bg fg _) = cfg (cbg (comm2 "newglossaryentry" (raw l) (raw "name={" <> comm2 "colorbox" nbg (comm0 "strut" <> comm2 "textcolor" nfg (raw (protectText l))) <> comm1 "hspace*" "0.25cm" <> raw "}, description={" <> text <> raw "}")))
+    where (cfg, nfg) = defcolor l "fg" fg
+          (cbg, nbg) = defcolor l "bg" bg
+          text | T.null a = raw (protectText l)
                | otherwise = raw (protectText a)
 
 wasteToLaTeX :: LaTeXC l => WasteRecord -> l
