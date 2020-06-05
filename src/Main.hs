@@ -6,8 +6,8 @@ import Data.Map(Map)
 import qualified Data.ByteString.Lazy as BL
 import Data.Char as C
 import Data.Csv
-import Data.List(sortOn)
--- import Data.String(fromString)
+import Data.Function(on)
+import Data.List(sort)
 import Data.Text as T
 import qualified Data.Text.IO as TI
 import qualified Data.Vector as V
@@ -23,7 +23,14 @@ titleFirst t = T.toUpper t1 <> t2
 
 newtype Tip = Tip Text deriving (Eq, Ord, Show)
 
-data WasteRecord = WasteRecord { name :: Text, specs :: Text, location :: [Text], tips :: [Tip] } deriving (Eq, Ord, Show)
+data WasteRecord = WasteRecord { name :: Text, specs :: Text, location :: [Text], tips :: [Tip] } deriving (Eq, Show)
+
+instance Ord WasteRecord where
+    compare wa wb = on compare (T.toCaseFold . name) wa wb <> on go (T.toCaseFold . specs) wa wb
+        where go sa sb | T.null sa && T.null sb = EQ
+                       | T.null sa = GT
+                       | T.null sb = LT
+                       | otherwise = compare sa sb
 
 data WasteLocation = WasteLocation { label :: Text, locName :: Text, locBgColor :: Text, logFgColor :: Text, contact :: Text} deriving (Eq, Ord, Show)
 
@@ -38,9 +45,6 @@ toWasteLocation (l, n, cbg, cfg, t) = WasteLocation l n cbg cfg t
 
 toWasteRecord :: (Text, Text, Text) -> WasteRecord
 toWasteRecord (na, sp, lcs) = WasteRecord (titleFirst (strip na)) (strip sp) (Prelude.map strip (T.splitOn "/" lcs)) []
-
-orderRecord :: WasteRecord -> (Text, Text)
-orderRecord (WasteRecord t s _ _ ) = (T.toCaseFold t, T.toCaseFold s)
 
 addTip :: WasteRecord -> Tip -> WasteRecord
 addTip w@WasteRecord{tips=ts} t = w {tips=t:ts}
@@ -94,7 +98,7 @@ main :: IO ()
 main = do
     wl <- readLocations
     wr <- readWasteRecords
-    let _wr = (V.fromList . sortOn orderRecord . V.toList) wr
+    let _wr = (V.fromList . sort . V.toList) wr
         wr' = V.zip (V.cons (WasteRecord "" "" [] []) _wr) _wr
     execLaTeXT (_document wl wr') >>= TI.putStrLn . render -- (V.toList (V.map toWasteRecord v))
                   

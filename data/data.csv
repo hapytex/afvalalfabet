@@ -227,7 +227,7 @@ Glas,vensters/vlak glas,vlak glas
 Glasvezel,,restafval
 Glasvezelbehang,,restafval
 Glaswol,,restafval
-Glazen bokalen,,glasbol
+Glazen bokalen,,Glasbol
 Gloeilamp,liefst in doosje ter bescherming tegen scherven,restafval
 Goot,PVC,harde plastics
 Gootsteenontstopper,,KGA
@@ -471,8 +471,12 @@ Schuurpapier,,restafval
 Serreglas,onzuiver,restglas
 Serreglas,zuiver,vlak glas
 Servet,"papier, gebruikt",restafval
-"Servies, bord, tas",kunststof,restafval
-"Servies, bord, tas",,onbrandbaar bouwafval
+Servies,kunststof,restafval
+Bord,kunststof,restafval
+Tas,kunststof,restafval
+Servies,,onbrandbaar bouwafval
+Bord,,onbrandbaar bouwafval
+Tas,,onbrandbaar bouwafval
 Shampoo,,KGA
 Sigaret,,restafval
 Sigarettenpeuk,,restafval
@@ -487,6 +491,7 @@ Slagerspapier na verwijdering binnenfolie,,Papier en karton
 Slagroomspuitbus,,KGA
 Slagroomspuitbus,leeg,PMD
 Sla-olie,,PMD
+Smartphone,,AEEA
 Snijbloemen,,composteren/tuinafval
 Snoeiafval,,composteren/snoeihout
 Snoep,,restafval
