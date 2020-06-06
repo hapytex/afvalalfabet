@@ -2,12 +2,13 @@
 
 module Main where
 
-import Data.Map(Map)
+import Data.Bool(bool)
 import qualified Data.ByteString.Lazy as BL
 import Data.Char as C
 import Data.Csv
 import Data.Function(on)
 import Data.List(sort)
+import Data.Map(Map)
 import Data.Text as T
 import qualified Data.Text.IO as TI
 import qualified Data.Vector as V
@@ -58,16 +59,17 @@ newLetter c = comm1 "dictchar" (raw dc) <> comm1 "lettergroup" (raw sc)
           sc = T.singleton c'
           dc = T.cons c' (T.cons ' ' (T.singleton (C.toLower c)))
 
-defcolor :: LaTeXC l => Text -> Text -> Text -> (l -> l, l)
-defcolor _ "fg" "" = (id, "black")
-defcolor _ "bg" "" = (id, "white")
-defcolor n t cl = ((comm3 "definecolor" colname "HTML" (raw (T.toUpper (T.drop 1 cl))) <>), colname)
+defcolor :: LaTeXC l => Bool -> Text -> Text -> Text -> (l -> l, l)
+defcolor d _ "fg" "" = (id, bool "black" "white" d)
+defcolor d _ "bg" "" = (id, bool "white" "black" d)
+defcolor _ n t cl = ((comm3 "definecolor" colname "HTML" (raw (T.toUpper (T.drop 1 cl))) <>), colname)
     where colname = raw (T.filter (' ' /=) (n <> "-" <> t))
 
-locationToLaTeX :: LaTeXC l => WasteLocation -> l
-locationToLaTeX (WasteLocation l a bg fg _) = cfg (cbg (comm2 "newglossaryentry" (raw l) (raw "name={" <> comm2 "colorbox" nbg (comm0 "strut" <> comm2 "textcolor" nfg (raw (protectText l))) <> comm1 "hspace*" "0.25cm" <> raw "}, description={" <> text <> raw "}")))
-    where (cfg, nfg) = defcolor l "fg" fg
-          (cbg, nbg) = defcolor l "bg" bg
+locationToLaTeX :: LaTeXC l => RenderOptions -> WasteLocation -> l
+locationToLaTeX ro (WasteLocation l a bg fg _) = cfg (cbg (comm2 "newglossaryentry" (raw l) (raw "name={" <> comm2 "colorbox" nbg (comm0 "strut" <> comm2 "textcolor" nfg (raw (protectText l))) <> comm1 "hspace*" "0.25cm" <> raw "}, description={" <> text <> raw "}")))
+    where d = dark ro
+          (cfg, nfg) = defcolor d l "fg" fg
+          (cbg, nbg) = defcolor d l "bg" bg
           text | T.null a = raw (protectText l)
                | otherwise = raw (protectText a)
 
@@ -134,7 +136,7 @@ _document ro locations entries = do
     comm0 "makeindex"
     comm0 "makeglossaries"
     comm4 "newindex" (raw "locations") (raw "adx") (raw "and") (raw "Locaties")
-    mapM_ locationToLaTeX locations
+    mapM_ (locationToLaTeX ro) locations
     title "Afvalwoordenboek"
     author "Willem Van Onsem"
     document (V.mapM_ wasteToLaTeX' entries >> newpage >> comm0 "printindex" >> optFixComm "printindex" 1 [raw "locations"])
