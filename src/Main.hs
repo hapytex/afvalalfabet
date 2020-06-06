@@ -12,6 +12,9 @@ import Data.Text as T
 import qualified Data.Text.IO as TI
 import qualified Data.Vector as V
 
+import System.Console.GetOpt
+import System.Environment
+
 import Text.LaTeX.Base
 import Text.LaTeX.Base.Class
 
@@ -94,23 +97,40 @@ readLocations = parseCsvFile toWasteLocation "data/where.csv"
 readWasteRecords :: IO (V.Vector WasteRecord)
 readWasteRecords = parseCsvFile toWasteRecord "data/data.csv"
 
+newtype RenderOptions = RenderOptions { dark :: Bool }
+
+headerCommands :: Monad m => RenderOptions -> LaTeXT_ m
+headerCommands r
+    | dark r = comm1 "pagecolor" "black" >> comm1 "color" "white"
+    | otherwise = pure ()
+
+options :: [OptDescr (RenderOptions -> RenderOptions)]
+options = [
+    Option ['d'] ["dark"] (NoArg (\o -> o{dark=True})) "Use a dark theme"
+  ]
+
 main :: IO ()
 main = do
+    argv <- getArgs
+    ro <- case getOpt Permute options argv of
+        (o, n, []) -> pure (Prelude.foldr ($) (RenderOptions False) o)
+        _ -> fail "Invalid program parameters"
     wl <- readLocations
     wr <- readWasteRecords
     let _wr = (V.fromList . sort . V.toList) wr
         wr' = V.zip (V.cons (WasteRecord "" "" [] []) _wr) _wr
-    execLaTeXT (_document wl wr') >>= TI.putStrLn . render -- (V.toList (V.map toWasteRecord v))
+    execLaTeXT (_document ro wl wr') >>= TI.putStrLn . render -- (V.toList (V.map toWasteRecord v))
                   
 
-_document :: Monad m => V.Vector WasteLocation -> V.Vector (WasteRecord, WasteRecord) -> LaTeXT_ m
-_document locations entries = do
+_document :: Monad m => RenderOptions -> V.Vector WasteLocation -> V.Vector (WasteRecord, WasteRecord) -> LaTeXT_ m
+_document ro locations entries = do
     documentclass [] "dictionary"
     usepackage [raw "dutch"] "babel"
     usepackage [] "index"
     usepackage [] "glossaries"
     usepackage [] "xcolor"
     usepackage [] "fancybox"
+    headerCommands ro
     comm0 "makeindex"
     comm0 "makeglossaries"
     comm4 "newindex" (raw "locations") (raw "adx") (raw "and") (raw "Locaties")

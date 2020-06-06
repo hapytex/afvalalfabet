@@ -15,7 +15,7 @@ waste.
 If there are still items not on the list, or you want to make a correction, you
 can open a *pull request*.
 
-The [*travis build*](travis-ci.com/github/hapytex/afvalwoordenboek) makes a [*rendered version of the dictionary*](https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek.pdf).
+The [*travis build*](travis-ci.com/github/hapytex/afvalwoordenboek) makes a [*rendered version of the dictionary*](https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_light.pdf) [*(dark)*](https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_dark.pdf).
 
 ---
 
@@ -32,5 +32,4 @@ tricks*" hoe afval voorkomen.
 
 Men kan een *pull request* maken om items toe te voegen of te corrigeren.
 
-De [*travis build*](travis-ci.com/github/hapytex/afvalwoordenboek) maakt een
-[pdf-versie van de data](https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek.pdf).
+De [*travis build*](travis-ci.com/github/hapytex/afvalwoordenboek) maakt een [pdf-versie van de data](https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_light.pdf) [*(donker)*](https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_dark.pdf).
