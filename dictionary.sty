@@ -1,6 +1,6 @@
 \ProvidesPackage{dictionary}
 \RequirePackage[a4paper, top=2cm, headsep=0.4cm, bottom=1.5cm, left=1.5cm, right=1.5cm, twocolumn, landscape]{geometry}
-\RequirePackage{fancyhdr}
+% \RequirePackage{fancyhdr}
 \RequirePackage[utf8]{inputenc}
 %\DeclareUnicodeCharacter{00A0}{~} % finds hidden non-breakable space
 \RequirePackage[T1]{fontenc}
@@ -13,7 +13,6 @@
 \RequirePackage{tikz}
 \usetikzlibrary{calc}
 \RequirePackage{tipa}
-\RequirePackage{fix2col}
 \RequirePackage{dingbat}
 \RequirePackage{manfnt}
 \RequirePackage{latexsym}
@@ -21,21 +20,49 @@
 %\RequirePackage{savetrees}
 \RequirePackage{color}
 \RequirePackage{titlesec}
+\RequirePackage[topmarks, extramarks]{titleps}
+% \RequirePackage{fixltx2e}
+% \RequirePackage{fix2col}
+\RequirePackage{bophook}
+\RequirePackage{fixmarks}
 \RequirePackage{fourier-orns} %used for ornaments
 \RequirePackage{amsmath} %used for non-breakabledash
 \RequirePackage{hyphenat} % no hyphen in abbreviations
 \RequirePackage[labelformat=empty]{caption}
 
+\newcommand{\entrytitle}{}
+\newcounter{entry}
+\setlength{\parskip}{0cm}
+\setlength{\parindent}{0cm}
+\titlespacing{\paragraph}{0cm}{0cm}{0cm}
+%\renewcommand{\baselinestretch}{0cm}
+
+\def{\oldentry}{}
+\def{\firstentry}{}
+\newmarkset{entry}
+\newextramark{entry}{\entrytitle}
+\newtitlemark{\entrytitle}
+\newextramark*{entry}{entry}
+
 % tables
 % declention and conjugation tables
 \RequirePackage{caption}
-\RequirePackage{booktabs}
+% \RequirePackage{booktabs}
 \captionsetup{labelformat=empty}
 \RequirePackage{floatrow}
 \DeclareFloatFont{footnotesize}{\footnotesize}% "scriptsize" is defined by floatrow, "tiny" not
 \floatsetup[table]{font=footnotesize}
 \setlength {\heavyrulewidth }{0.1 em}
 \setlength{\columnwidth}{2cm}
+
+\newpagestyle{dict}{%
+  \sethead
+    {\firstentry{}} % \topextramarks{entry}\entrytitle}% left
+    {\thepage}% centre
+    {\botextramarks{entry}\entrytitle}% right
+  \setheadrule{.4pt}% Regular header rule
+}
+\pagestyle{dict}
 
 % place frequent star
 \newcommand{\freqstar}{%
@@ -99,21 +126,35 @@
 \or oucrimsonred\or cottoncandy\or orchid\or vividcerise\or patriarch\else darkgreen!30\fi}
 
 %COMMANDS
-\newcommand\entry[3][]{
-\hangpara{2em}{1}{
-  \fontfamily{phv}\selectfont{\textbf{{#2}}}
-}\
-#3\markboth{#2}{#2}%\ifx\relax#1\relax\markboth{#2}{#2}\else\markboth{#1}{#1}\fi
-\par}
+\def\firstentry{}
+\newcommand{\setfirstentry}[1]{
+  \ifnum\the\value{entry}=0\edef\firstentry{\oldentry}\fi
+  \ifdefempty{\firstentry}{\edef\firstentry{#1}}{}
+  \edef\oldentry{#1}
+}
+\AtBeginPage{\resetfirstentry}
+\newcommand{\resetfirstentry}[0]{
+  \setcounter{entry}{0}
+}
+
+\newcommand{\entry}[3][]{
+\preextramark{entry}
+% \hangpara{2em}{1}{
+\paragraph{#2}
+\renewcommand{\entrytitle}{#2}
+\setfirstentry{#2}
+\stepcounter{entry}
+%}
+ #3
+\extramark{entry} %\markboth{#2}{#2}%\ifx\relax#1\relax\markboth{#2}{#2}\else\markboth{#1}{#1}\fi
+\\
+}
 %}
 \nopagebreak[4]
 % \newcommand*{\dictchar}[1]{\parbox[c][3cm][c]{2cm}{\Huge\textbf{#1}}\par}
 
 \newcommand*{\dictchar}[1]{
-\centerline{\parbox[c][3cm][c]{2cm}{%
-\fontsize{24}{24}
-\selectfont
-{#1}}}\par
+\centerline{\parbox[c][3cm][c]{2cm}{\fontsize{24}{24}\selectfont{#1}}}\par
 }
 
 % \newcommand{\devision}[1]{\hspace*{-2em}{{{{\foreignlanguage{icelandic}{\color{royalazure}{\fontfamily{phv}\selectfont{\textbf{#1}}}}}}}}}
@@ -123,7 +164,7 @@
 \let\Hy@linktoc\Hy@linktoc@none
 \makeatother
 %FANCY PAGE STYLES
-\pagestyle{fancy}
+% \pagestyle{fancy}
 
 % THUMB INDEXES
 % new counter to hold the current number of the letter to determine the vertical position
@@ -176,35 +217,36 @@ thumb/.style={
  }
  % create a new command to set a new lettergroup with thumb indexes
  \newcommand{\lettergroup}[1]{%
- \fancyhead[LO]{\fontfamily{phv}\selectfont{\textbf{\rightmark}}\eventhumb{#1}}%
- \fancyhead[RE]{\fontfamily{phv}\selectfont{\textbf{\leftmark}}\oddthumb{#1}}%
+ % \fancyhead[LO]{\fontfamily{phv}\selectfont{\textbf{\rightmark}}\eventhumb{#1}}%
+ % \fancyhead[RE]{\fontfamily{phv}\selectfont{\textbf{\leftmark}}\oddthumb{#1}}%
  % step the counter of the letters
  \stepcounter{letternum}%
  }
 
  % BASIC PAGE STYLE
- \fancypagestyle{basicstyle}{%
- \fancyhf{}
+ % \fancypagestyle{basicstyle}{%
+ % \fancyhf{}
  \renewcommand{\headrulewidth}{0.4pt}
  \renewcommand{\footrulewidth}{0pt}
  % \fancyhead[LE,RO]{\textbf{\chaptitle}}
- \fancyhead[LO,RE]{\textbf{\thepage}}}
+ % \fancyhead[LO,RE]{\textbf{\thepage}}
+ % }
 
  % INDEX PAGE STYLE
- \fancypagestyle{indexstyle}{%
- \fancyhf{}% Clear header/footer
- \renewcommand{\headrulewidth}{0.4pt}% 0.4pt header rule
- \renewcommand{\footrulewidth}{0pt}% No footer rule
- \fancyhead[C]{\thepage}% Page in footer, centred
- }
+ % \fancypagestyle{indexstyle}{%
+ % \fancyhf{}% Clear header/footer
+ % \renewcommand{\headrulewidth}{0.4pt}% 0.4pt header rule
+ % \renewcommand{\footrulewidth}{0pt}% No footer rule
+ % \fancyhead[C]{\thepage}% Page in footer, centred
+ % }
 
  % DICTIONARY PAGE STYLE
- \fancypagestyle{dictstyle}{%
- \renewcommand{\headrulewidth}{0.4pt}
- \fancyhf{}
- \fancyhead[LE,LO]{{\fontfamily{phv}\selectfont{\textbf{\rightmark}}}}
- \fancyhead[CO,CE]{\thepage}
- \fancyhead[RE,RO]{{\fontfamily{phv}\selectfont{\textbf{\leftmark}}}}}
+ %\fancypagestyle{dictstyle}{%
+ %\renewcommand{\headrulewidth}{0.4pt}
+ %\fancyhf{}
+ %\fancyhead[LE,LO]{{\fontfamily{phv}\selectfont{\textbf{\rightmark}}}}
+ %\fancyhead[CO,CE]{\thepage}
+ %\fancyhead[RE,RO]{{\fontfamily{phv}\selectfont{\textbf{\leftmark}}}}}
 
  \setlength{\columnsep}{20pt}
  \setlength{\columnseprule}{0.1pt}
@@ -224,7 +266,7 @@ thumb/.style={
 
  % LOCALIZATION
 
- \newcommand{\HRule}{\rule{\linewidth}{0.1mm}} % rule line
+ % \newcommand{\HRule}{\rule{\linewidth}{0.1mm}} % rule line
 
  \newcommand*{\chaptitle}{}
  \renewcommand*{\chaptermark}[1]{%

@@ -38,11 +38,17 @@ instance Ord WasteRecord where
 
 data WasteLocation = WasteLocation { label :: Text, locName :: Text, locBgColor :: Text, logFgColor :: Text, contact :: Text} deriving (Eq, Ord, Show)
 
-slug :: WasteRecord -> Text
-slug (WasteRecord n s _ _) = T.map f (T.toLower (n <> s))
+slug :: Text -> Text
+slug = T.map f . T.toLower
     where f c | '0' <= c && c <= '9' = c
               | 'a' <= c && c <= 'z' = c
               | otherwise = '-'
+
+slug' :: WasteRecord -> Text
+slug' (WasteRecord n s _ _) = slug (n <> s)
+
+slug'' :: WasteLocation -> Text
+slug'' = slug . Main.label
 
 toWasteLocation :: (Text, Text, Text, Text, Text) -> WasteLocation
 toWasteLocation (l, n, cbg, cfg, t) = WasteLocation l n cbg cfg t
@@ -66,17 +72,20 @@ defcolor _ n t cl = ((comm3 "definecolor" colname "HTML" (raw (T.toUpper (T.drop
     where colname = raw (T.filter (' ' /=) (n <> "-" <> t))
 
 locationToLaTeX :: LaTeXC l => RenderOptions -> WasteLocation -> l
-locationToLaTeX ro (WasteLocation l a bg fg _) = cfg (cbg (comm2 "newglossaryentry" (raw l) (raw "name={" <> comm2 "colorbox" nbg (comm0 "strut" <> comm2 "textcolor" nfg (raw (protectText l))) <> comm1 "hspace*" "0.25cm" <> raw "}, description={" <> text <> raw "}")))
+locationToLaTeX ro (WasteLocation l a bg fg _) = cfg (cbg (comm2 "newglossaryentry" (raw l) (raw "name={" <> comm1 "hspace*" "0.25cm" <> comm2 "colorbox" nbg (comm0 "strut" <> comm2 "textcolor" nfg (raw (protectText l))) <> raw "}, description={" <> text <> raw "}")))
     where d = dark ro
           (cfg, nfg) = defcolor d l "fg" fg
           (cbg, nbg) = defcolor d l "bg" bg
           text | T.null a = raw (protectText l)
                | otherwise = raw (protectText a)
 
+locationToLaTeX2 :: LaTeXC l => RenderOptions -> WasteLocation -> l
+locationToLaTeX2 ro wl = comm1 "label" (raw ("loc:" <> (slug'' wl))) <> section (raw (locName wl))
+
 wasteToLaTeX :: LaTeXC l => WasteRecord -> l
-wasteToLaTeX w@(WasteRecord n s l _) = optFixComm "entry" 1 [raw (slug w), raw n, subs <> mconcat (Prelude.map (comm1 "gls" . raw) l) <> mconcat (Prelude.map (optFixComm "index" 1 . (raw "locations" :) . pure . raw) l)]
+wasteToLaTeX w@(WasteRecord n s l _) = optFixComm "entry" 1 [raw (slug' w), raw n, subs <> mconcat (Prelude.map (comm1 "gls" . raw) l) <> mconcat (Prelude.map (optFixComm "index" 1 . (raw "locations" :) . pure . raw) l)]
   where subs | T.null s = ""
-             | otherwise = textit (raw (protectText (T.cons '(' (s <> ") "))))
+             | otherwise = comm1 "hspace*" "0.25cm" <> textit (raw (protectText (T.cons '(' (s <> ") "))))
 
 wasteToLaTeX' :: LaTeXC l => (WasteRecord, WasteRecord) -> l
 wasteToLaTeX' (WasteRecord a _ _ _, w@(WasteRecord b _ _ _)) = f (wasteToLaTeX w)
@@ -131,7 +140,7 @@ _document ro locations entries = do
     usepackage [] "index"
     usepackage [] "glossaries"
     usepackage [] "xcolor"
-    usepackage [] "fancybox"
+    usepackage [] "titleps"
     headerCommands ro
     comm0 "makeindex"
     comm0 "makeglossaries"
@@ -139,4 +148,4 @@ _document ro locations entries = do
     mapM_ (locationToLaTeX ro) locations
     title "Afvalwoordenboek"
     author "Willem Van Onsem"
-    document (V.mapM_ wasteToLaTeX' entries >> newpage >> comm0 "printindex" >> optFixComm "printindex" 1 [raw "locations"])
+    document (mapM_ wasteToLaTeX' entries >> newpage >> mapM_ (locationToLaTeX2 ro) locations >> optFixComm "printindex" 1 [raw "locations"])

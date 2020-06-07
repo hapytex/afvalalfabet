@@ -6,7 +6,7 @@ stack run -- --dark | tee out/afvalwoordenboek_dark.tex
 ln *.sty *.cls out
 cd out
 
-for t in light dark; do
+for t in dark light; do
   for i in `seq 5`; do
     pdflatex --interaction=nonstopmode "afvalwoordenboek_$t.tex"
     for f in *.adx; do
