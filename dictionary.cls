@@ -1,6 +1,8 @@
 \ProvidesClass{dictionary}
-\LoadClass{extbook}
-\RequirePackage{makeidx,amsmath,amsthm,amssymb,amsfonts,glossaries,dictionary,xparse,hyperref}
+\LoadClassWithOptions{article}
+% \RequirePackage{makeidx,amsmath,amsthm,amssymb,amsfonts,glossaries,dictionary,xparse,hyperref}
+\RequirePackage{dictionary, makeidx, glossaries}
+\RequirePackage[a5paper, top=2cm, headsep=0.4cm, bottom=1.5cm, left=1.5cm, right=1.5cm, landscape]{geometry}
 \makeindex
 \makeglossaries
 
@@ -17,11 +19,5 @@
 }
 \setglossarystyle{dicgls}
 
-\newcommand{\todef}{}
-% \DeclareDocumentCommand{\dey}{ O{} m m O{} }{\newglossaryentry{#1}{name={#2},description={\index{#2|textbf}\renewcommand{\todef}{\emph{#2}}#3},see={#4}}}
-% \DeclareDocumentCommand{\rey}{ m }{\textit{\gls{#1}}}
-% \DeclareDocumentCommand{\aey}{ O{} m m }{\index{#2|see{#3}}}
-% \DeclareDocumentCommand{\bey}{ m m }{\index{Abbreviations!#1|see{#2}}}
-
-\AtBeginDocument{\maketitle}
-\AtEndDocument{\clearpage\lettergroup{?}\dictchar{Index}\printindex}
+\AtBeginDocument{\begin{titlepage}\maketitle\end{titlepage}\begin{twocolumn}\pagestyle{dict}}
+\AtEndDocument{\end{twocolumn}}

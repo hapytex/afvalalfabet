@@ -3,7 +3,7 @@
 mkdir -p out
 stack run | tee out/afvalwoordenboek_light.tex
 stack run -- --dark | tee out/afvalwoordenboek_dark.tex
-ln *.sty *.cls out
+ln -f *.sty *.cls out
 cd out
 
 for t in dark light; do

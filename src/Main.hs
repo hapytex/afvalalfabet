@@ -135,7 +135,7 @@ main = do
 
 _document :: Monad m => RenderOptions -> V.Vector WasteLocation -> V.Vector (WasteRecord, WasteRecord) -> LaTeXT_ m
 _document ro locations entries = do
-    documentclass [] "dictionary"
+    documentclass ["titlepage"] "dictionary"
     usepackage [raw "dutch"] "babel"
     usepackage [] "index"
     usepackage [] "glossaries"

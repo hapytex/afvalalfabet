@@ -1,33 +1,34 @@
 \ProvidesPackage{dictionary}
-\RequirePackage[a4paper, top=2cm, headsep=0.4cm, bottom=1.5cm, left=1.5cm, right=1.5cm, twocolumn, landscape]{geometry}
 % \RequirePackage{fancyhdr}
 \RequirePackage[utf8]{inputenc}
 %\DeclareUnicodeCharacter{00A0}{~} % finds hidden non-breakable space
 \RequirePackage[T1]{fontenc}
-\RequirePackage{tgpagella}
-\RequirePackage[scaled]{helvet}
-\RequirePackage{enumitem}
-\RequirePackage{hanging}
-\RequirePackage{makeidx}
-\RequirePackage{stmaryrd}
+\RequirePackage{xparse}
+\RequirePackage{glossaries}
+%\RequirePackage{tgpagella}
+%\RequirePackage[scaled]{helvet}
+%\RequirePackage{enumitem}
+%\RequirePackage{hanging}
+%\RequirePackage{makeidx}
+%\RequirePackage{stmaryrd}
 \RequirePackage{tikz}
 \usetikzlibrary{calc}
-\RequirePackage{tipa}
-\RequirePackage{dingbat}
-\RequirePackage{manfnt}
-\RequirePackage{latexsym}
-\RequirePackage{graphicx}
+%\RequirePackage{tipa}
+%\RequirePackage{dingbat}
+%\RequirePackage{manfnt}
+%\RequirePackage{latexsym}
+%\RequirePackage{graphicx}
 %\RequirePackage{savetrees}
-\RequirePackage{color}
+%\RequirePackage{color}
 \RequirePackage{titlesec}
 \RequirePackage[topmarks, extramarks]{titleps}
 % \RequirePackage{fixltx2e}
 % \RequirePackage{fix2col}
 \RequirePackage{bophook}
-\RequirePackage{fixmarks}
-\RequirePackage{fourier-orns} %used for ornaments
-\RequirePackage{amsmath} %used for non-breakabledash
-\RequirePackage{hyphenat} % no hyphen in abbreviations
+% \RequirePackage{fixmarks}
+% \RequirePackage{fourier-orns} %used for ornaments
+% \RequirePackage{amsmath} %used for non-breakabledash
+% \RequirePackage{hyphenat} % no hyphen in abbreviations
 \RequirePackage[labelformat=empty]{caption}
 
 \newcommand{\entrytitle}{}
@@ -35,7 +36,7 @@
 \setlength{\parskip}{0cm}
 \setlength{\parindent}{0cm}
 \titlespacing{\paragraph}{0cm}{0cm}{0cm}
-%\renewcommand{\baselinestretch}{0cm}
+\renewcommand{\baselinestretch}{0}
 
 \def{\oldentry}{}
 \def{\firstentry}{}
@@ -46,14 +47,14 @@
 
 % tables
 % declention and conjugation tables
-\RequirePackage{caption}
+% \RequirePackage{caption}
 % \RequirePackage{booktabs}
 \captionsetup{labelformat=empty}
-\RequirePackage{floatrow}
-\DeclareFloatFont{footnotesize}{\footnotesize}% "scriptsize" is defined by floatrow, "tiny" not
-\floatsetup[table]{font=footnotesize}
-\setlength {\heavyrulewidth }{0.1 em}
-\setlength{\columnwidth}{2cm}
+% \RequirePackage{floatrow}
+% \DeclareFloatFont{footnotesize}{\footnotesize}% "scriptsize" is defined by floatrow, "tiny" not
+% \floatsetup[table]{font=footnotesize}
+%\setlength {\heavyrulewidth }{0.1 em}
+%\setlength{\columnwidth}{2cm}
 
 \newpagestyle{dict}{%
   \sethead
@@ -62,7 +63,6 @@
     {\botextramarks{entry}\entrytitle}% right
   \setheadrule{.4pt}% Regular header rule
 }
-\pagestyle{dict}
 
 % place frequent star
 \newcommand{\freqstar}{%
@@ -128,9 +128,11 @@
 %COMMANDS
 \def\firstentry{}
 \newcommand{\setfirstentry}[1]{
+  \renewcommand{\entrytitle}{#1}
   \ifnum\the\value{entry}=0\edef\firstentry{\oldentry}\fi
   \ifdefempty{\firstentry}{\edef\firstentry{#1}}{}
   \edef\oldentry{#1}
+  \stepcounter{entry}
 }
 \AtBeginPage{\resetfirstentry}
 \newcommand{\resetfirstentry}[0]{
@@ -140,10 +142,7 @@
 \newcommand{\entry}[3][]{
 \preextramark{entry}
 % \hangpara{2em}{1}{
-\paragraph{#2}
-\renewcommand{\entrytitle}{#2}
-\setfirstentry{#2}
-\stepcounter{entry}
+\paragraph{#2}\setfirstentry{#2}
 %}
  #3
 \extramark{entry} %\markboth{#2}{#2}%\ifx\relax#1\relax\markboth{#2}{#2}\else\markboth{#1}{#1}\fi
@@ -248,12 +247,12 @@ thumb/.style={
  %\fancyhead[CO,CE]{\thepage}
  %\fancyhead[RE,RO]{{\fontfamily{phv}\selectfont{\textbf{\leftmark}}}}}
 
- \setlength{\columnsep}{20pt}
- \setlength{\columnseprule}{0.1pt}
+ %\setlength{\columnsep}{20pt}
+ %\setlength{\columnseprule}{0.1pt}
 
- \titleformat{\chapter}[block]
- {\normalfont\huge\bfseries}{\thechapter.}{1em}{\Huge}
- \titlespacing*{\chapter}{20pt}{20pt}{20pt}
+ % \titleformat{\chapter}[block]
+ %{\normalfont\huge\bfseries}{\thechapter.}{1em}{\Huge}
+ %\titlespacing*{\chapter}{20pt}{20pt}{20pt}
 
  % GRAPHICS PATH
 % \graphicspath{/home/SomeUser/Documents/dictionary/images/}
