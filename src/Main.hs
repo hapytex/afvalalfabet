@@ -72,7 +72,7 @@ defcolor _ n t cl = ((comm3 "definecolor" colname "HTML" (raw (T.toUpper (T.drop
     where colname = raw (T.filter (' ' /=) (n <> "-" <> t))
 
 locationToLaTeX :: LaTeXC l => RenderOptions -> WasteLocation -> l
-locationToLaTeX ro (WasteLocation l a bg fg _) = cfg (cbg (comm2 "newglossaryentry" (raw l) (raw "name={" <> comm1 "hspace*" "0.25cm" <> comm2 "colorbox" nbg (comm0 "strut" <> comm2 "textcolor" nfg (raw (protectText l))) <> raw "}, description={" <> text <> raw "}")))
+locationToLaTeX ro (WasteLocation l a bg fg _) = cfg (cbg (comm2 "newglossaryentry" (raw l) (raw "name={" <> comm1 "hspace*" "0.0065cm" <> comm2 "colorbox" nbg (comm0 "strut" <> comm2 "textcolor" nfg (raw (protectText l))) <> raw "}, description={" <> text <> raw "}")))
     where d = dark ro
           (cfg, nfg) = defcolor d l "fg" fg
           (cbg, nbg) = defcolor d l "bg" bg
@@ -80,12 +80,12 @@ locationToLaTeX ro (WasteLocation l a bg fg _) = cfg (cbg (comm2 "newglossaryent
                | otherwise = raw (protectText a)
 
 locationToLaTeX2 :: LaTeXC l => RenderOptions -> WasteLocation -> l
-locationToLaTeX2 ro wl = comm1 "label" (raw ("loc:" <> (slug'' wl))) <> section (raw (locName wl))
+locationToLaTeX2 ro wl = raw "" -- comm1 "label" (raw ("loc:" <> (slug'' wl))) <> section (raw (locName wl))
 
 wasteToLaTeX :: LaTeXC l => WasteRecord -> l
-wasteToLaTeX w@(WasteRecord n s l _) = optFixComm "entry" 1 [raw (slug' w), raw n, subs <> mconcat (Prelude.map (comm1 "gls" . raw) l) <> mconcat (Prelude.map (optFixComm "index" 1 . (raw "locations" :) . pure . raw) l)]
+wasteToLaTeX w@(WasteRecord n s l _) = optFixComm "entry" 1 [raw (slug' w), raw n, subs <> raw " " <> mconcat (Prelude.map (comm1 "gls" . raw) l) <> mconcat (Prelude.map (optFixComm "index" 1 . (raw "locations" :) . pure . raw) l)]
   where subs | T.null s = ""
-             | otherwise = comm1 "hspace*" "0.25cm" <> textit (raw (protectText (T.cons '(' (s <> ") "))))
+             | otherwise = comm1 "hspace*" "0.0625cm" <> textit (raw (protectText (T.cons '(' (s <> ") "))))
 
 wasteToLaTeX' :: LaTeXC l => (WasteRecord, WasteRecord) -> l
 wasteToLaTeX' (WasteRecord a _ _ _, w@(WasteRecord b _ _ _)) = f (wasteToLaTeX w)
@@ -135,12 +135,13 @@ main = do
 
 _document :: Monad m => RenderOptions -> V.Vector WasteLocation -> V.Vector (WasteRecord, WasteRecord) -> LaTeXT_ m
 _document ro locations entries = do
-    documentclass ["titlepage"] "dictionary"
+    documentclass ["titlepage", "8pt"] "dictionary"
     usepackage [raw "dutch"] "babel"
     usepackage [] "index"
     usepackage [] "glossaries"
     usepackage [] "xcolor"
     usepackage [] "titleps"
+    usepackage ["document"] "ragged2e"
     headerCommands ro
     comm0 "makeindex"
     comm0 "makeglossaries"

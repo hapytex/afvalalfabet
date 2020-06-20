@@ -2,7 +2,7 @@
 \LoadClassWithOptions{article}
 % \RequirePackage{makeidx,amsmath,amsthm,amssymb,amsfonts,glossaries,dictionary,xparse,hyperref}
 \RequirePackage{dictionary, makeidx, glossaries}
-\RequirePackage[a5paper, top=2cm, headsep=0.4cm, bottom=1.5cm, left=1.5cm, right=1.5cm, landscape]{geometry}
+\RequirePackage[a5paper, top=1.0cm, headsep=0.4cm, bottom=0.5cm, left=0.5cm, right=0.5cm, landscape]{geometry}
 \makeindex
 \makeglossaries
 
@@ -19,5 +19,6 @@
 }
 \setglossarystyle{dicgls}
 
+\newenvironment{dictionary}{}{}
 \AtBeginDocument{\begin{titlepage}\maketitle\end{titlepage}\begin{twocolumn}\pagestyle{dict}}
 \AtEndDocument{\end{twocolumn}}
