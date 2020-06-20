@@ -2,7 +2,7 @@ Wat?,specificaties,Waar naartoe?
 Aansteker,,KGA
 Aardappelschillen,,Compost/Restafval
 Aardappelzak,kunststof,Restafval
-Aardappelzak,"papier, zuiver aanleveren",Papier en karton
+Aardappelzak,"papier, zuiver",Papier & karton
 Aardbeienbakje,kunststof,Restafval
 Aarde,"droog, geen klei",Bouwafval
 Aardewerk,,Te storten
@@ -21,7 +21,7 @@ Alkaline batterij,,KGA/Bebat punten
 Aluminium blikje,,PMD
 Aluminium schaaltje,,PMD
 Aluminium bakje,,PMD
-Aluminium voorwerp,"geen folie, blikje of schaaltje/bakje",Oude metalen
+Aluminium voorwerp,geen folie/blikje/schaaltje/bakje,Oude metalen
 Aluminiumfolie,,Restafval
 Aluminium schotels,,PMD
 Ammoniak,,KGA
@@ -33,7 +33,7 @@ Appel,-schil,Compost/Restafval
 Appelsien,,Compost/Restafval
 Arduin,,Steenpuin
 As,vb. uit kachel,Restafval
-Asbesthoudend materiaal,"geen eternit of cementgebonden",Erkende ophaler
+Asbesthoudend materiaal,geen eternit/cementgebonden,Erkende ophaler
 Asfalt,,Roofing
 Audiocassette,,KGA
 Audiotape,,KGA
@@ -65,8 +65,8 @@ Bestrijdingsmiddel,,KGA
 Beton,,Onbrandbaar bouwafval
 BH,,Textiel
 Bierfles,wegwerp,Glas
-Bierviltje,,Papier en karton
-Bijsluiter,,Papier en karton
+Bierviltje,,Papier & karton
+Bijsluiter,,Papier & karton
 Bladeren,,Compost/Tuinafval
 Bleekwater,,KGA
 Blikje,,PMD
@@ -74,8 +74,9 @@ Bloemen,,Compost/Tuinafval
 Bloempot,kunstof,Harde plastics
 Bloempot,steen/aardewerk/terracotta,Steenpuin
 Bloempottrays,,Harde plastics
-Boek,,Papier en karton
-Boekentas,textiel of leder,Textiel
+Boek,,Papier & karton
+Boekentas,textiel,Textiel
+Boekentas,leder,Textiel
 Boenwas,,KGA
 Boiler,gas,Oude metalen
 Boiler,elektrisch,AEEA
@@ -103,7 +104,7 @@ Broodzak,,Restafval
 Bruinen-zonder-zon,,KGA
 Buis,pvc,Harde plastics
 Buislamp,"TL-lampen, niet breken",KGA
-Cadeaupapier,,Papier en karton
+Cadeaupapier,,Papier & karton
 Capsules,,Apotheker
 Carbolineum,,KGA
 Carbonpapier,,Restafval
@@ -142,8 +143,8 @@ Detergent,,KGA
 Dettol,,KGA
 Dia,bij voorkeur zonder kader,KGA
 Dicteerapparaat,,AEEA
-Diepvrieszak,"zuiver (niet van vlees, vis, gevogelte of zuivel)",Folies
-Dierlijke uitwerpselen,"gemengd met ander afval, geen zak vol",Restafval
+Diepvrieszak,"zuiver, niet van vlees/vis/gevogelte/zuivel",Folies
+Dierlijke uitwerpselen,"met ander afval, beperkt",Restafval
 Diesel,,KGA
 Diskette,computer,KGA
 Dissolvant,,KGA
@@ -167,12 +168,12 @@ Eau de cologne,,KGA
 Elektrische apparaat,,AEEA
 Elektronische apparaat,,AEEA
 Elektriciteitsdraad,,Oude metalen
-Eierdoos,kartonvezel,Papier en karton
+Eierdoos,kartonvezel,Papier & karton
 Eierdoos,kunststof,Restafval
 Eierschaal,,Compost/Restafval
 Emmer,kunststof,Harde plastics
 Emmer,metaal,Oude metalen
-Envelop,,Papier en karton
+Envelop,,Papier & karton
 Epoxyharsen,,KGA
 Etensresten,,Restafval
 Eterniet,"plaat, buis, golfplaat...",Asbestcement
@@ -180,7 +181,7 @@ Ethanol,,KGA
 Ether,,KGA
 Eyeliner,,KGA
 Faïence,,Onbrandbaar bouwafval
-Faxpapier,,Papier en karton
+Faxpapier,,Papier & karton
 Faxpapier op rol,thermisch,Restafval
 Fiets,,Oude metalen
 Fietspomp,kunststof,Restafval
@@ -196,7 +197,8 @@ Fles,kunststof,PMD
 Flesopener,kunststof,Restafval
 Flesopener,metaal,Oude metalen
 Fluostift,,KGA
-Folie,zuiver - transparant of gekleurd,Folies
+Folie,"zuiver, transparant",Folies
+Folie,"zuiver, gekleurd",Folies
 Fond de teint,,KGA
 Fondue-olie,,KGA
 Fopspeen,,Restafval
@@ -216,10 +218,11 @@ Gebit,vals,Restafval
 Gel,,KGA
 Gelaagd glas,,Vlak glas
 Geneesmiddel,,Apotheker
-Geschenkverpakking,,Papier en karton
+Geschenkverpakking,,Papier & karton
 Geursteentje,w.c.,KGA
 Gevelreiniger,,KGA
 Gewapend glas,,Vlak glas
+Gewicht,fitness,Oude metalen
 Geweer,,Politie
 Gif,,KGA
 Gips,platen,Gipsafval
@@ -252,11 +255,13 @@ Haarverzorgingsproduct,,KGA
 Haarverzorgingsproduct,leeg,PMD
 Halogeenlamp,,KGA
 Halssnoer,,Restafval
-Halter,gewicht fitness - metaal,Oude metalen
+Halter,"metaal",Oude metalen
 Hamer,zonder steel,Oude metalen
 Handdoek,,Textiel
-Handschoen,leder of textiel,Textiel
-Handschoen,rubber of kunststof,Restafval
+Handschoen,leder,Textiel
+Handschoen,textiel,Textiel
+Handschoen,kunststof,Restafval
+Handschoen,kunststof,Restafval
 Handtas,leder,Textiel
 Hangslot,,Oude metalen
 Hars,,KGA
@@ -265,8 +270,9 @@ Hoed,,Textiel
 Hondenpoep,,Restafval
 Hooi,,Compost/Tuinafval
 Horloge,,Restafval
-Hout,zonder verf of vernislaag,Houtafval
-Hout,met verf of vernislaag,Houtafval
+Hout,zonder verf/vernislaag,Houtafval
+Hout,met verf,Hotafval
+Hout,met vernislaag,Houtafval
 Houtbeschermingsmiddel,,KGA
 Houtkrullen,behandeld en hard hout,Houtafval
 Houtkrullen,"van onbehandeld, zacht hout",Houtafval
@@ -284,7 +290,9 @@ Insectenspray,,KGA
 Insecticide,,KGA
 Insulinespuit,in naaldcontainer,KGA
 Isolatiemateriaal,,Restafval
-Isomo,"vervuild, gekleurd of chips",Restafval
+Isomo,vervuild,Restafval
+Isomo,gekleurd,Restafval
+Isomo,chips,Restafval
 Isomo-schaaltjes,,Restafval
 Javel,,KGA
 Jeneverkruik,,Onbrandbaar bouwafval
@@ -293,7 +301,7 @@ kaarsvet,,KGA
 Kaart met magneetband,,Restafval
 Kaas,korstje,Restafval
 Kabel,"elektriciteit, geluidsinstallatie, coax...",Oude metalen
-Karton,,Papier en karton
+Karton,,Papier & karton
 Kartonnen wegwerpbeker,,Restafval
 Kartonnen wegwerpbord,,Restafval
 Kassei,,Steenpuin
@@ -309,7 +317,7 @@ Keukenrol,bevuild met etensresten,Restafval
 Kleding,,Textiel
 Kleefpapier,,Restafval
 Knoopcellen,,KGA/Bebat punten
-Koekjesdozen,karton,Papier en karton
+Koekjesdozen,karton,Papier & karton
 Koekjesdozen,metaal,PMD
 Koelvloeistof,,KGA
 Koffiedik,,Compost/Restafval
@@ -324,7 +332,7 @@ Kompressen,,Restafval
 Koper,,Oude metalen
 Koperpoets,,KGA
 Kraan,"sanitair, loodgieterij",Oude metalen
-Krant,,Papier en karton
+Krant,,Papier & karton
 Kreeftenschaal,,Restafval
 Kristal,"servies, vaas, beeldje...",Onbrandbaar bouwafval
 Krimpfolie,,Folies
@@ -340,7 +348,7 @@ Kussen,,Textiel
 Kussensloop,,Textiel
 Kwik,"barometer, batterijen, thermometer, ...",KGA
 Lakken,verf,KGA
-Lamp,gewone gloeilamp of peertje,Restafval
+Lamp,gloeilamp/peertje,Restafval
 Lampolie,,KGA
 Laptop,,AEEA
 Lavabo,zonder metalen delen,Onbrandbaar bouwafval
@@ -409,7 +417,7 @@ Oven,,AEEA
 Paletten,,Houtafval
 Pallethoezen,,Folies
 Pan of pot,metaal,Oude metalen
-Papier,,Papier en karton
+Papier,,Papier & karton
 Papier,geplastificeerd,Restafval
 Papieren zakdoeken,gebruikt,Restafval
 Paraffine,,KGA
@@ -423,7 +431,7 @@ PET-fles,meestal doorschijend,PMD
 Plexiglas,,Harde plastics
 Pickles,,Restafval
 Pillen,,Restafval/Apotheker
-Pit,van fruit,Restafval
+Pit,fruit,Restafval
 Plakband,,Restafval
 Plant,zonder kluit,Compost/Tuinafval
 Plasticfles,,PMD
@@ -444,7 +452,7 @@ PVC-fles,,PMD
 Pyrex,,Restglas
 Raamglas,,Vlak glas
 Rattenvergif,,KGA
-Reclamedrukwerk,,Papier en karton
+Reclamedrukwerk,,Papier & karton
 Regenpijp,,Harde plastics
 Remover,voor nagellak,KGA
 Revolver,,Politie
@@ -467,7 +475,7 @@ Scheerzeep,,KGA
 Scheermes,,Restafval
 Schmink,,KGA
 Schoen,,Textiel
-Schoendoos,,Papier en karton
+Schoendoos,,Papier & karton
 Schoenlepel,kunststof,Restafval
 Schoenlepel,metaal,Oude metalen
 Schoensmeer,,KGA
@@ -486,13 +494,13 @@ Shampoo,,KGA
 Sigaret,,Restafval
 Sigarettenpeuk,,Restafval
 Sigarettenpakje,,Restafval
-Siliconen,tuben of spuiten,KGA
+Siliconen,tuben/spuiten,KGA
 Skateboard,,Grofvuil
 Skeeler,,Restafval
 Ski,,Grofvuil
 Slaapzak,,Textiel
 Slachtafval,,Rendac
-Slagerspapier,na verwijdering binnenfolie,Papier en karton
+Slagerspapier,na verwijdering binnenfolie,Papier & karton
 Slagroomspuitbus,,KGA
 Slagroomspuitbus,leeg,PMD
 Sla-olie,,PMD
@@ -513,10 +521,16 @@ Spiritus,,KGA
 Spuit,"zonder injectienaald, kunststof",Restafval
 Spuitbus cosmetica,"deodorant, haarlak, ...",KGA
 Spuitbus cosmetica,leeg,PMD
-Spuitbus,andere dan cosmetica of voeding,KGA
-Steel,hout van tuin- kuis- of ander gereedschap,Houtafval
-Steel,kunststof van tuin- kuis of ander gereedschap,Harde plastics
-Steel,metaal van tuin- kuis- of ander gereedschap,Oude metalen
+Spuitbus,geen cosmetica/voeding,KGA
+Steel,"hout, tuingereedschap",Houtafval
+Steel,"hout, kuisgereedschap",Houtafval
+Steel,"hout, ander gereedschap",Houtafval
+Steel,"kunststof, tuingereedschap",Harde plastics
+Steel,"kunststof, kuisgereedschap",Harde plastics
+Steel,"kunststof, ander gereedschap",Harde plastics
+Steel,"metaal, tuingereedschap",Oude metalen
+Steel,"metaal, kuis gereedschap",Oude metalen
+Steel,"metaal, ander gereedschap",Oude metalen
 Steenpuin,,Steenpuin
 Steen,,Steenpuin
 Stempelkussen,,KGA
@@ -546,7 +560,7 @@ Tandpasta tandzijde,flos,KGA/Restafval
 Tapes,,KGA
 Tapijt,,Grofvuil
 Tegel,steen,Onbrandbaar bouwafval
-Telefoonboek,,Papier en karton
+Telefoonboek,,Papier & karton
 Terpentijn,,KGA
 Tetrabrik,,PMD
 Textiel,algemeen,Textiel
@@ -555,7 +569,7 @@ Theelichtje,,Restafval
 Theezakje,,Restafval
 Thermometer,"klassieke, kwikhoudend",KGA
 Thermos,,Restafval
-Tijdschrift,,Papier en karton
+Tijdschrift,,Papier & karton
 Tippex,,KGA
 Tippexverdunner,,KGA
 TL-lamp,,KGA
@@ -578,10 +592,10 @@ Veegborstel,hout,Houtafval
 Veegborstel,kunststof,Grofvuil
 Veegvuil,,Restafval
 Veevoederzakken,,Folies
-Velg,van autoband,Oude metalen
+Velg,autoband,Oude metalen
 Vensterglas,,Vlak glas
 Verdunner,,KGA
-Veren,van vogels,Restafval
+Veren,vogel,Restafval
 Verf,,KGA
 Verfafbijter,,KGA
 Verfborstel,met verfresten,KGA
@@ -594,9 +608,9 @@ Verfstripper,,AEEA
 Vernis,,KGA
 Verpakking keukenrol,,Folies
 Verpakkingsfolie,,Folies
-Verplegingsafval,thuisverpleging - niet-risicohoudend,Restafval
+Verplegingsafval,"thuisverpleging, niet-risicohoudend",Restafval
 Vershoudfolie,,Restafval
-Vertrouwelijk papier,,Papier en karton
+Vertrouwelijk papier,,Papier & karton
 Vervallen eetwaren,niet vloeibaar,Restafval
 Vervuild papier,vb. van vleeswaren,Restafval
 Verwarmingskussen,elektrisch,AEEA
@@ -613,7 +627,7 @@ Vinyl vloerbedekking,,Grofvuil
 Vinylplaat,,Grofvuil
 Vis,,Restafval
 Visgraat,,Restafval
-Vlak glas,niet gewapend - niet met metaal in - nietgelaagd,Vlak glas
+Vlak glas,"niet-gewapend, niet-gelaagd",Vlak glas
 Vlees,,Restafval
 Vliegengordijn,,Restafval/Grofvuil
 Vliegenvanger,spuitbus,KGA
@@ -653,11 +667,11 @@ Wc,zonder metalen delen,Onbrandbaar bouwafval
 Wc-borstel,,Restafval
 Wc-ontstopper,,KGA
 Wc-reiniger,,KGA
-Wc-rolletje,,Papier en karton
-Wegenkaart,,Papier en karton
+Wc-rolletje,,Papier & karton
+Wegenkaart,,Papier & karton
 Wegwerpbord,,Restafval
 Wegwerpfototoestel,,Restafval
-Wenskaart,,Papier en karton
+Wenskaart,,Papier & karton
 Wespennest,onschadelijk gemaakt,Restafval
 White-spirit,,KGA
 Wieg,indien voornamelijk uit hout,Houtafval
@@ -673,11 +687,11 @@ Yoghurtkarton,brik,PMD
 Yoghurtpot,kunststof,Restafval
 Ytongblok,,Kalkafval
 Zaag,,Oude metalen
-Zaagmeel,van vervuild of behandeld hout,Restafval
-Zaagmeel,van onbehandeld en onvervuild hout,Restafval
+Zaagmeel,vervuild/behandeld hout,Restafval
+Zaagmeel,onbehandeld en onvervuild hout,Restafval
 Zakdoek,nextiel,Restafval
-Zakje van warenhuis,,Folies
-Zak,papier,Papier en karton
+Zakje,warenhuis,Folies
+Zak,papier,Papier & karton
 Zak,plastic,Folies
 Zakmes,,Oude metalen
 Zalf,rest in tube,Apotheker

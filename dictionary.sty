@@ -25,6 +25,7 @@
 % \RequirePackage{fixltx2e}
 % \RequirePackage{fix2col}
 \RequirePackage{bophook}
+\RequirePackage{atbegshi}
 % \RequirePackage{fixmarks}
 % \RequirePackage{fourier-orns} %used for ornaments
 % \RequirePackage{amsmath} %used for non-breakabledash
@@ -140,13 +141,7 @@
 }
 
 \newcommand{\entry}[3][]{
-\preextramark{entry}
-% \hangpara{2em}{1}{
-\paragraph{#2}\setfirstentry{#2}
-%}
- #3
-\extramark{entry}
-\\
+\preextramark{entry}\textbf{#2}\setfirstentry{#2} #3\extramark{entry}\\
 }
 %}
 \nopagebreak[4]
