@@ -97,7 +97,7 @@ Brikverpakking,drankkarton,PMD
 Bril,,Restafval
 Brilglas,,Restglas
 Broeksriem,,Textiel
-Brons,"beeldje,...",Oude metalen
+Brons,"beeldje/…",Oude metalen
 Brood,,Restafval
 Broodrooster,,AEEA
 Broodzak,,Restafval
@@ -176,7 +176,7 @@ Emmer,metaal,Oude metalen
 Envelop,,Papier & karton
 Epoxyharsen,,KGA
 Etensresten,,Restafval
-Eterniet,"plaat, buis, golfplaat...",Asbestcement
+Eterniet,"plaat/buis/golfplaat/…",Asbestcement
 Ethanol,,KGA
 Ether,,KGA
 Eyeliner,,KGA
@@ -300,7 +300,7 @@ Kaars,,KGA
 kaarsvet,,KGA
 Kaart met magneetband,,Restafval
 Kaas,korstje,Restafval
-Kabel,"elektriciteit, geluidsinstallatie, coax...",Oude metalen
+Kabel,"elektriciteit/geluidsinstallatie/coax/…",Oude metalen
 Karton,,Papier & karton
 Kartonnen wegwerpbeker,,Restafval
 Kartonnen wegwerpbord,,Restafval
@@ -334,7 +334,7 @@ Koperpoets,,KGA
 Kraan,"sanitair, loodgieterij",Oude metalen
 Krant,,Papier & karton
 Kreeftenschaal,,Restafval
-Kristal,"servies, vaas, beeldje...",Onbrandbaar bouwafval
+Kristal,"servies/vaas/beeldje/…",Onbrandbaar bouwafval
 Krimpfolie,,Folies
 Krimphoes drankflessen,,Folies
 Krimphoes bakstenen,,Folies
@@ -343,10 +343,10 @@ Kunstmest,,KGA
 Kunstplant,plastic,Restafval
 Kunststof mapje,bureau,Folies
 Kunststoffles,,PMD
-Kurk,"stopsel, prikbord, onderlegger...",Kurkafval
+Kurk,"stopsel/prikbord/onderlegger/…",Kurkafval
 Kussen,,Textiel
 Kussensloop,,Textiel
-Kwik,"barometer, batterijen, thermometer, ...",KGA
+Kwik,"barometer/batterijen/thermometer/…",KGA
 Lakken,verf,KGA
 Lamp,gloeilamp/peertje,Restafval
 Lampolie,,KGA
@@ -440,7 +440,7 @@ Polijstmiddel,,KGA
 Polshorloge,,Restafval
 Pop,,Restafval
 Poppenhuis,te groot voor Restfractiezak,Grofvuil
-Porselein,"servies, beeldje...",Onbrandbaar bouwafval
+Porselein,"servies/beeldje/…",Onbrandbaar bouwafval
 Potlood,,Restafval
 Printercartridge,,KGA
 Printercassette,,KGA
@@ -519,7 +519,7 @@ Speelgoed,"kunststof, grote stukken",Harde plastics
 Spiegel,,Restglas
 Spiritus,,KGA
 Spuit,"zonder injectienaald, kunststof",Restafval
-Spuitbus cosmetica,"deodorant, haarlak, ...",KGA
+Spuitbus cosmetica,"deodorant/haarlak/…",KGA
 Spuitbus cosmetica,leeg,PMD
 Spuitbus,geen cosmetica/voeding,KGA
 Steel,"hout, tuingereedschap",Houtafval
