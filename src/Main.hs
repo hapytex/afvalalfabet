@@ -72,7 +72,7 @@ defcolor _ n t cl = ((comm3 "definecolor" colname "HTML" (raw (T.toUpper (T.drop
     where colname = raw (T.filter (' ' /=) (n <> "-" <> t))
 
 locationToLaTeX :: LaTeXC l => RenderOptions -> WasteLocation -> l
-locationToLaTeX ro (WasteLocation l a bg fg _) = cfg (cbg (comm2 "newglossaryentry" (raw l) (raw "name={" <> comm1 "hspace*" "0.25cm" <> comm2 "colorbox" nbg (comm0 "strut" <> comm2 "textcolor" nfg (raw (protectText l))) <> raw "}, description={" <> text <> raw "}")))
+locationToLaTeX ro (WasteLocation l a bg fg _) = cfg (cbg (comm2 "newglossaryentry" (raw l) (raw "name={" <> comm1 "hspace*" "0.125cm" <> comm2 "colorbox" nbg (comm0 "strut" <> comm2 "textcolor" nfg (raw (protectText l))) <> raw "}, description={" <> text <> raw "}")))
     where d = dark ro
           (cfg, nfg) = defcolor d l "fg" fg
           (cbg, nbg) = defcolor d l "bg" bg
@@ -149,4 +149,4 @@ _document ro locations entries = do
     mapM_ (locationToLaTeX ro) locations
     title "Afvalwoordenboek"
     author "Willem Van Onsem"
-    document (mapM_ wasteToLaTeX' entries >> newpage >> mapM_ (locationToLaTeX2 ro) locations >> optFixComm "printindex" 1 [raw "locations"])
+    document (env0 "dictionary" (mapM_ wasteToLaTeX' entries) >> newpage >> mapM_ (locationToLaTeX2 ro) locations >> optFixComm "printindex" 1 [raw "locations"])

@@ -12,7 +12,7 @@
 %\RequirePackage{makeidx}
 %\RequirePackage{stmaryrd}
 \RequirePackage{tikz}
-\usetikzlibrary{calc}
+\usetikzlibrary{calc, fadings}
 %\RequirePackage{tipa}
 %\RequirePackage{dingbat}
 %\RequirePackage{manfnt}
@@ -64,6 +64,7 @@
     {\botextramarks{entry}\entrytitle}% right
    \setheadrule{.4pt}% Regular header rule
 }
+\pagestyle{normal}{}
 
 % place frequent star
 \newcommand{\freqstar}{%
@@ -102,30 +103,7 @@
 \definecolor{royalazure}{rgb}{0.0, 0.22, 0.66}
 \definecolor{brown}{rgb}{0.4, 0.01, 0.24}
 
-% COLORS FOR THUMB INDEXES
-\definecolor{babyblueeyes}{rgb}{0.63, 0.79, 0.95}
-\definecolor{unitednationsblue}{rgb}{0.36, 0.57, 0.9}
-\definecolor{blue(ryb)}{rgb}{0.01, 0.28, 1.0}
-\definecolor{darkblue}{rgb}{0.0, 0.0, 0.55}
-\definecolor{screamingreen}{rgb}{0.46, 1.0, 0.44}
-\definecolor{limegreen}{rgb}{0.2, 0.8, 0.2}
-\definecolor{islamicgreen}{rgb}{0.0, 0.56, 0.0}
-\definecolor{upforestgreen}{rgb}{0.0, 0.27, 0.13}
-\definecolor{icterine}{rgb}{0.99, 0.97, 0.37}
-\definecolor{orange(colorwheel)}{rgb}{1.0, 0.5, 0.0}
-\definecolor{orange-red}{rgb}{1.0, 0.27, 0.0}
-\definecolor{oucrimsonred}{rgb}{0.6, 0.0, 0.0}
-\definecolor{cottoncandy}{rgb}{1.0, 0.74, 0.85}
-\definecolor{orchid}{rgb}{0.85, 0.44, 0.84}
-\definecolor{vividcerise}{rgb}{0.85, 0.11, 0.51}
-\definecolor{patriarch}{rgb}{0.5, 0.0, 0.5}
-
 % Thumb indexes' colors
-\newcommand\BoxColor{%
-\ifcase\theletternum darkgreen!30\or babyblueeyes\or unitednationsblue\or blue(ryb)\or screamingreen\or limegreen\or islamicgreen\or upforestgreen\or icterine\or orange(colorwheel)\or orange-red%
-\or oucrimsonred\or cottoncandy\or orchid\or vividcerise\or patriarch\or babyblueeyes\or unitednationsblue\or blue(ryb)\or screamingreen\or limegreen\or islamicgreen\or upforestgreen\or icterine\or orange(colorwheel)\or orange-red%
-\or oucrimsonred\or cottoncandy\or orchid\or vividcerise\or patriarch\else darkgreen!30\fi}
-
 %COMMANDS
 \def\firstentry{}
 \newcommand{\setfirstentry}[1]{
@@ -157,26 +135,25 @@
 \makeatletter
 \let\Hy@linktoc\Hy@linktoc@none
 \makeatother
-%FANCY PAGE STYLES
-% \pagestyle{fancy}
-
 % THUMB INDEXES
 % new counter to hold the current number of the letter to determine the vertical position
 \newcounter{letternum}
 % newcounter for the sum of all letters to get the right height of a box
 \newcounter{lettersum}
-\setcounter{lettersum}{33}
+\setcounter{lettersum}{50}
 % some margin settings
 \newlength{\thumbtopmargin}
 \setlength{\thumbtopmargin}{1cm}
 \newlength{\thumbbottommargin}
-\setlength{\thumbbottommargin}{3cm}
+\setlength{\thumbbottommargin}{1cm}
 % calculate the box height by dividing the page height
 \newlength{\thumbheight}
-\pgfmathsetlength{\thumbheight}{%
-(\paperheight-\thumbtopmargin-\thumbbottommargin)%
-/%
-\value{lettersum}
+\pgfmathsetlength{\thumbheight}{0cm}
+\newif\ifdict
+\newenvironment{dictionary}[1][26]{
+  \setcounter{lettersum}{#1}\pagestyle{dict}\dicttrue\newpage\begin{flushleft}\pgfmathsetlength{\thumbheight}{(\paperheight-\thumbtopmargin-\thumbbottommargin)/\value{lettersum}}
+}{
+  \newpage\end{flushleft}\pagestyle{normal}\dictfalse
 }
 % box width
 \newlength{\thumbwidth}
@@ -184,37 +161,56 @@
 % style the boxes
 \tikzset{
 thumb/.style={
-   text=white,
-   minimum height=\thumbheight,
+   text centered,
    text width=\thumbwidth,
    outer sep=0pt,
    font=\sffamily\bfseries,
 }
 }
-\newcommand{\oddthumb}[1]{%
+
+\pgfdeclareverticalshading{rainbow}{100bp}
+{color(0bp)=(red); color(25bp)=(red); color(35bp)=(yellow);
+color(45bp)=(green); color(55bp)=(cyan); color(65bp)=(blue);
+color(75bp)=(violet); color(100bp)=(violet)}
+
+\newcommand{\eventhumb}[1]{%
     % see pgfmanual.pdf for more information about this part
     \begin{tikzpicture}[remember picture, overlay]
-        \node [thumb,fill=\BoxColor, text centered,anchor=north east,] at ($%
-            (current page.north east)-%
-            (0,\thumbtopmargin+\value{letternum}*\thumbheight)%
-        $) {#1};
+      \clip ($(current page.north east)-(\thumbwidth,\thumbtopmargin+\value{letternum}*\thumbheight)$) rectangle +(\thumbwidth,\thumbheight);
+      \shade[shading=rainbow, nearly opaque] ($(current page.north east)-(0,\thumbtopmargin)$) rectangle +(-\thumbwidth,-\paperheight+\thumbtopmargin+\thumbbottommargin);
+      \node[thumb] at ($(current page.north east)+(-0.5*\thumbwidth,0.5*\thumbheight-\thumbtopmargin-\value{letternum}*\thumbheight)$) {#1};
+      % \rectange[fill=green] (current page.north west) rectangle ++(2 cm,-\paperheight);
+      %  \node [thumb,fill=\BoxColor, text centered,anchor=north east,] at ($%
+      %      (current page.north east)-%
+      %      (0,\thumbtopmargin+\value{letternum}*\thumbheight)%
+      %  $) {#1};
    \end{tikzpicture}
  }
- \newcommand{\eventhumb}[1]{%
+ \newcommand{\oddthumb}[1]{%
     % see pgfmanual.pdf for more information about this part
     \begin{tikzpicture}[remember picture, overlay]
-        \node [thumb,fill=\BoxColor, text centered,anchor=north west,] at ($%
-            (current page.north west)-%
-            (0,\thumbtopmargin+\value{letternum}*\thumbheight)%
-        $) {#1};
+      \clip ($(current page.north west)-(0, \thumbtopmargin+\value{letternum}*\thumbheight)$) rectangle +(\thumbwidth,\thumbheight);
+      \shade[shading=rainbow, nearly opaque] ($(current page.north west)-(0,\thumbtopmargin)$) rectangle +(\thumbwidth,-\paperheight+\thumbtopmargin+\thumbbottommargin);
+      \node[thumb] at ($(current page.north west)+(0.5*\thumbwidth,0.5*\thumbheight-\thumbtopmargin-\value{letternum}*\thumbheight)$) {#1};
+      %  \node [thumb,fill=\BoxColor, text centered,anchor=north west,] at ($%
+      %      (current page.north west)-%
+      %      (0,\thumbtopmargin+\value{letternum}*\thumbheight)%
+      %  $) {#1};
    \end{tikzpicture}
  }
+
+\AtBeginShipout{
+  \ifdict
+  \AtBeginShipoutUpperLeft{
+    \raisebox{-\height}{\ifodd\thepage\oddthumb{\thelettergroup{}}\else\eventhumb{\thelettergroup{}}\fi} %\checkoddpage\ifoddpage\oddthumb{\thelettergroup{}}\else\eventhumb{\thelettergroup{}}}
+  }
+  \fi
+}
  % create a new command to set a new lettergroup with thumb indexes
+ \newcommand{\thelettergroup}{}
  \newcommand{\lettergroup}[1]{%
- % \fancyhead[LO]{\fontfamily{phv}\selectfont{\textbf{\rightmark}}\eventhumb{#1}}%
- % \fancyhead[RE]{\fontfamily{phv}\selectfont{\textbf{\leftmark}}\oddthumb{#1}}%
- % step the counter of the letters
- \stepcounter{letternum}%
+   \renewcommand{\thelettergroup}{#1}
+   \stepcounter{letternum}%
  }
 
  % BASIC PAGE STYLE
