@@ -47,22 +47,15 @@
 \newextramark*{entry}{entry}
 
 % tables
-% declention and conjugation tables
-% \RequirePackage{caption}
-% \RequirePackage{booktabs}
 \captionsetup{labelformat=empty}
-% \RequirePackage{floatrow}
-% \DeclareFloatFont{footnotesize}{\footnotesize}% "scriptsize" is defined by floatrow, "tiny" not
-% \floatsetup[table]{font=footnotesize}
-%\setlength {\heavyrulewidth }{0.1 em}
-%\setlength{\columnwidth}{2cm}
 
 \newpagestyle{dict}{%
   \sethead
     {\firstentry{}} % \topextramarks{entry}\entrytitle}% left
     {\thepage}% centre
     {\botextramarks{entry}\entrytitle}% right
-   \setheadrule{.4pt}% Regular header rule
+   % \setheadrule{.4pt}% Regular header rule
+   % \setfootrule{0.4pt}
 }
 \pagestyle{normal}{}
 
@@ -160,24 +153,23 @@
 \setlength{\thumbwidth}{0.5cm}
 % style the boxes
 \tikzset{
-thumb/.style={
-   text centered,
-   text width=\thumbwidth,
-   outer sep=0pt,
-   font=\sffamily\bfseries,
-}
+  thumb/.style={
+    text=white,
+    text centered,
+    text width=\thumbwidth,
+    outer sep=0pt,
+    font=\sffamily\bfseries,
+  }
 }
 
-\pgfdeclareverticalshading{rainbow}{100bp}
-{color(0bp)=(red); color(25bp)=(red); color(35bp)=(yellow);
-color(45bp)=(green); color(55bp)=(cyan); color(65bp)=(blue);
-color(75bp)=(violet); color(100bp)=(violet)}
+\pgfdeclareverticalshading{rainbow}{100bp}{color(0bp)=(red); color(25bp)=(red); color(35bp)=(yellow);color(45bp)=(green); color(55bp)=(cyan); color(65bp)=(blue);color(75bp)=(violet); color(100bp)=(violet)}
 
 \newcommand{\eventhumb}[1]{%
     % see pgfmanual.pdf for more information about this part
     \begin{tikzpicture}[remember picture, overlay]
+      \draw ($(current page.north west)+(\thumbwidth,0.25cm-\thumbtopmargin)$) -- +(\paperwidth-2*\thumbwidth,0);
       \clip ($(current page.north east)-(\thumbwidth,\thumbtopmargin+\value{letternum}*\thumbheight)$) rectangle +(\thumbwidth,\thumbheight);
-      \shade[shading=rainbow, nearly opaque] ($(current page.north east)-(0,\thumbtopmargin)$) rectangle +(-\thumbwidth,-\paperheight+\thumbtopmargin+\thumbbottommargin);
+      \shade[shading=rainbow] ($(current page.north east)-(0,\thumbtopmargin)$) rectangle +(-\thumbwidth,-\paperheight+\thumbtopmargin+\thumbbottommargin);
       \node[thumb] at ($(current page.north east)+(-0.5*\thumbwidth,0.5*\thumbheight-\thumbtopmargin-\value{letternum}*\thumbheight)$) {#1};
       % \rectange[fill=green] (current page.north west) rectangle ++(2 cm,-\paperheight);
       %  \node [thumb,fill=\BoxColor, text centered,anchor=north east,] at ($%
@@ -189,9 +181,11 @@ color(75bp)=(violet); color(100bp)=(violet)}
  \newcommand{\oddthumb}[1]{%
     % see pgfmanual.pdf for more information about this part
     \begin{tikzpicture}[remember picture, overlay]
+      \draw ($(current page.north west)+(\thumbwidth,0.25cm-\thumbtopmargin)$) -- +(\paperwidth-2*\thumbwidth,0);
       \clip ($(current page.north west)-(0, \thumbtopmargin+\value{letternum}*\thumbheight)$) rectangle +(\thumbwidth,\thumbheight);
-      \shade[shading=rainbow, nearly opaque] ($(current page.north west)-(0,\thumbtopmargin)$) rectangle +(\thumbwidth,-\paperheight+\thumbtopmargin+\thumbbottommargin);
+      \shade[shading=rainbow] ($(current page.north west)-(0,\thumbtopmargin)$) rectangle +(\thumbwidth,-\paperheight+\thumbtopmargin+\thumbbottommargin);
       \node[thumb] at ($(current page.north west)+(0.5*\thumbwidth,0.5*\thumbheight-\thumbtopmargin-\value{letternum}*\thumbheight)$) {#1};
+      % \draw[white] ()
       %  \node [thumb,fill=\BoxColor, text centered,anchor=north west,] at ($%
       %      (current page.north west)-%
       %      (0,\thumbtopmargin+\value{letternum}*\thumbheight)%
