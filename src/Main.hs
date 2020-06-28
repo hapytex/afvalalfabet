@@ -50,11 +50,11 @@ slug' (WasteRecord n s _ _) = slug (n <> s)
 slug'' :: WasteLocation -> Text
 slug'' = slug . Main.label
 
-toWasteLocation :: (Text, Text, Text, Text, Text, Text) -> WasteLocation
-toWasteLocation (l, n, cbg, cfg, t, _) = WasteLocation l n cbg cfg t
+toWasteLocation :: (Text, Text, Text, Text, Text) -> WasteLocation
+toWasteLocation (l, n, cbg, cfg, t) = WasteLocation l n cbg cfg t
 
-toWasteRecord :: (Text, Text, Text) -> WasteRecord
-toWasteRecord (na, sp, lcs) = WasteRecord (titleFirst (strip na)) (strip sp) (Prelude.map strip (T.splitOn "/" lcs)) []
+toWasteRecord :: (Text, Text, Text, Text) -> WasteRecord
+toWasteRecord (na, sp, lcs, _) = WasteRecord (titleFirst (strip na)) (strip sp) (Prelude.map strip (T.splitOn "/" lcs)) []
 
 addTip :: WasteRecord -> Tip -> WasteRecord
 addTip w@WasteRecord{tips=ts} t = w {tips=t:ts}
@@ -147,6 +147,6 @@ _document ro locations entries = do
     comm0 "makeglossaries"
     comm4 "newindex" (raw "locations") (raw "adx") (raw "and") (raw "Locaties")
     mapM_ (locationToLaTeX ro) locations
-    title "Afvalwoordenboek"
-    author "Willem Van Onsem"
+    title "Afval-sorteer-woordenboek"
+    author "Willem Van Onsem \& Lindsay Louwyck"
     document (env0 "dictionary" (mapM_ wasteToLaTeX' entries) >> newpage >> mapM_ (locationToLaTeX2 ro) locations >> optFixComm "printindex" 1 [raw "locations"])
