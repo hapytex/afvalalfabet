@@ -50,8 +50,8 @@ slug' (WasteRecord n s _ _) = slug (n <> s)
 slug'' :: WasteLocation -> Text
 slug'' = slug . Main.label
 
-toWasteLocation :: (Text, Text, Text, Text, Text) -> WasteLocation
-toWasteLocation (l, n, cbg, cfg, t) = WasteLocation l n cbg cfg t
+toWasteLocation :: (Text, Text, Text, Text, Text, Text) -> WasteLocation
+toWasteLocation (l, n, cbg, cfg, t, _) = WasteLocation l n cbg cfg t
 
 toWasteRecord :: (Text, Text, Text) -> WasteRecord
 toWasteRecord (na, sp, lcs) = WasteRecord (titleFirst (strip na)) (strip sp) (Prelude.map strip (T.splitOn "/" lcs)) []
