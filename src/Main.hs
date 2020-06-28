@@ -148,5 +148,5 @@ _document ro locations entries = do
     comm4 "newindex" (raw "locations") (raw "adx") (raw "and") (raw "Locaties")
     mapM_ (locationToLaTeX ro) locations
     title "Afval-sorteer-woordenboek"
-    author "Willem Van Onsem \& Lindsay Louwyck"
+    author (raw "Willem Van Onsem \\and Lindsay Louwyck")
     document (env0 "dictionary" (mapM_ wasteToLaTeX' entries) >> newpage >> mapM_ (locationToLaTeX2 ro) locations >> optFixComm "printindex" 1 [raw "locations"])
