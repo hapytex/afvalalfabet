@@ -1,0 +1,12 @@
+#!/usr/bin/python3
+
+import pandas as pd
+
+df = pd.read_csv('data/data.csv')
+
+df.loc[df['specificaties'].isna(), 'specificaties'] = ''
+
+df = df.iloc[df['specificaties'].str.casefold().argsort(kind='mergesort')]
+df = df.iloc[df['Wat?'].str.casefold().argsort(kind='mergesort')]
+
+df.to_csv('data/data.csv', index=False)
