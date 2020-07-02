@@ -143,7 +143,7 @@
 \newlength{\thumbheight}
 \pgfmathsetlength{\thumbheight}{0cm}
 \newif\ifdict
-\newenvironment{dictionary}[1][26]{
+\newenvironment{dictionary}[1][25]{
   \setcounter{lettersum}{#1}\pagestyle{dict}\dicttrue\newpage\begin{flushleft}\pgfmathsetlength{\thumbheight}{(\paperheight-\thumbtopmargin-\thumbbottommargin)/\value{lettersum}}
 }{
   \cleardoublepage\newpage\end{flushleft}\pagestyle{normal}\dictfalse
