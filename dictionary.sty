@@ -4,7 +4,7 @@
 %\DeclareUnicodeCharacter{00A0}{~} % finds hidden non-breakable space
 \RequirePackage[T1]{fontenc}
 \RequirePackage{xparse}
-\RequirePackage{glossaries}
+%\RequirePackage{glossaries}
 %\RequirePackage{tgpagella}
 %\RequirePackage[scaled]{helvet}
 %\RequirePackage{enumitem}
@@ -47,8 +47,8 @@
 \newcommand{\hint}[1]{\begin{quote}\fcolorbox{hint-fg}{hint-bg}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{\textcolor{hint-tx}{\textit{tip}}\\\textcolor{black}{#1}}}\end{quote}}
 
 
-\def{\oldentry}{}
-\def{\firstentry}{}
+\def\oldentry{}
+\def\firstentry{}
 \newmarkset{entry}
 \newextramark{entry}{\entrytitle}
 \newtitlemark{\entrytitle}

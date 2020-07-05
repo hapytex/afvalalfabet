@@ -153,7 +153,7 @@ _document ro locations entries = do
     documentclass ["titlepage", "8pt"] "dictionary"
     usepackage [raw "dutch"] "babel"
     usepackage [] "index"
-    usepackage [] "glossaries"
+    -- usepackage [] "glossaries"
     usepackage [] "xcolor"
     usepackage [] "titleps"
     usepackage ["document"] "ragged2e"
