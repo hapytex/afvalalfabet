@@ -137,7 +137,7 @@ main = do
     wr <- readWasteRecords
     let _wr = (V.fromList . sort . V.toList) wr
         wr' = V.zip (V.cons (WasteRecord "" "" [] []) _wr) _wr
-    execLaTeXT (_document ro wl wr') >>= TI.putStrLn . render -- (V.toList (V.map toWasteRecord v))
+    execLaTeXT (_document ro wl wr') >>= TI.putStrLn . render
                   
 
 _document :: Monad m => RenderOptions -> V.Vector WasteLocation -> V.Vector (WasteRecord, WasteRecord) -> LaTeXT_ m
