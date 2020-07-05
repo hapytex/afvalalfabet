@@ -67,7 +67,7 @@ addTip :: WasteIndex -> (Text, Text, Tip) -> WasteIndex
 addTip w0 (k, s, t) = update (Just <$> addTip' t) (k, s) w0
 
 addTips :: Foldable f => WasteIndex -> f (Text, Text, Tip) -> WasteIndex
-addTips w0 = Prelude.foldl addTip w0
+addTips = Prelude.foldl addTip
 
 newLetter :: LaTeXC l => Char -> l
 newLetter c = comm1 "dictchar" (raw dc) <> comm1 "lettergroup" (raw sc)
