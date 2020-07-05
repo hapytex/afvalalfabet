@@ -8,12 +8,12 @@ cd out
 
 for t in dark light; do
   for i in `seq 5`; do
-    pdflatex --interaction=nonstopmode "afvalwoordenboek_$t.tex"
+    pdflatex --interaction=nonstopmode "afvalwoordenboek_$t.tex" || true
     for f in *.adx; do
       fb=$(basename "$f" '.adx')
-      makeindex "$f" -o "$fb.and"
+      makeindex "$f" -o "$fb.and" || true
     done
-    makeindex "afvalwoordenboek_$t"
+    makeindex "afvalwoordenboek_$t" || true
   done
 done
 
