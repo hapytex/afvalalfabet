@@ -32,12 +32,19 @@
 % \RequirePackage{hyphenat} % no hyphen in abbreviations
 \RequirePackage[labelformat=empty]{caption}
 
+\definecolor{hint-bg}{RGB}{255,247,220}
+\definecolor{hint-fg}{RGB}{224,220,191}
+\definecolor{hint-tx}{RGB}{119,119,119}
+
 \newcommand{\entrytitle}{}
 \newcounter{entry}
 \setlength{\parskip}{0cm}
 \setlength{\parindent}{0cm}
 \titlespacing{\paragraph}{0cm}{0cm}{0cm}
 \renewcommand{\baselinestretch}{0}
+
+\newcommand{\hint}[1]{\begin{quote}\fcolorbox{hint-fg}{hint-bg}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{\textcolor{hint-tx}{\textit{tip}}\\#1}}\end{quote}}
+
 
 \def{\oldentry}{}
 \def{\firstentry}{}

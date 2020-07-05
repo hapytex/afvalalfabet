@@ -53,8 +53,8 @@ slug'' = slug . Main.label
 toWasteLocation :: (Text, Text, Text, Text, Text) -> WasteLocation
 toWasteLocation (l, n, cbg, cfg, t) = WasteLocation l n cbg cfg t
 
-toTip :: (Text, Text) -> (Text, Tip)
-toTip (k, t) = (k, Tip t)
+toTip :: (Text, Text, Text) -> (Text, Text, Tip)
+toTip (k, s, t) = (k, s, Tip t)
 
 toWasteRecord :: (Text, Text, Text, Text) -> WasteRecord
 toWasteRecord (na, sp, lcs, _) = WasteRecord (titleFirst (strip na)) (strip sp) (Prelude.map strip (T.splitOn "/" lcs)) []
@@ -111,7 +111,7 @@ readLocations = parseCsvFile toWasteLocation "data/where.csv"
 readWasteRecords :: IO (V.Vector WasteRecord)
 readWasteRecords = parseCsvFile toWasteRecord "data/data.csv"
 
-readTips :: IO (V.Vector (Text, Tip))
+readTips :: IO (V.Vector (Text, Text, Tip))
 readTips = parseCsvFile toTip "data/tips.csv"
 
 newtype RenderOptions = RenderOptions { dark :: Bool }
