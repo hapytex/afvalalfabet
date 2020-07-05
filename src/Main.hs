@@ -8,7 +8,8 @@ import Data.Char as C
 import Data.Csv
 import Data.Function(on)
 import Data.List(sort)
-import Data.Map(Map)
+import Data.Map(Map, update)
+import qualified Data.Map as M
 import Data.Text as T
 import qualified Data.Text.IO as TI
 import qualified Data.Vector as V
@@ -25,7 +26,7 @@ titleFirst :: Text -> Text
 titleFirst t = T.toUpper t1 <> t2
     where (t1, t2) = T.splitAt 1 t
 
-newtype Tip = Tip Text deriving (Eq, Ord, Show)
+newtype Tip = Tip {untip :: Text} deriving (Eq, Ord, Show)
 
 data WasteRecord = WasteRecord { name :: Text, specs :: Text, location :: [Text], tips :: [Tip] } deriving (Eq, Show)
 
@@ -59,8 +60,14 @@ toTip (k, s, t) = (k, s, Tip t)
 toWasteRecord :: (Text, Text, Text, Text) -> WasteRecord
 toWasteRecord (na, sp, lcs, _) = WasteRecord (titleFirst (strip na)) (strip sp) (Prelude.map strip (T.splitOn "/" lcs)) []
 
-addTip :: WasteRecord -> Tip -> WasteRecord
-addTip w@WasteRecord{tips=ts} t = w {tips=t:ts}
+addTip' :: Tip -> WasteRecord -> WasteRecord
+addTip' t w@WasteRecord{tips=ts} = w {tips=t:ts}
+
+addTip :: WasteIndex -> (Text, Text, Tip) -> WasteIndex
+addTip w0 (k, s, t) = update (Just <$> addTip' t) (k, s) w0
+
+addTips :: Foldable f => WasteIndex -> f (Text, Text, Tip) -> WasteIndex
+addTips w0 = Prelude.foldl addTip w0
 
 newLetter :: LaTeXC l => Char -> l
 newLetter c = comm1 "dictchar" (raw dc) <> comm1 "lettergroup" (raw sc)
@@ -86,7 +93,7 @@ locationToLaTeX2 :: LaTeXC l => RenderOptions -> WasteLocation -> l
 locationToLaTeX2 ro wl = raw "" -- comm1 "label" (raw ("loc:" <> (slug'' wl))) <> section (raw (locName wl))
 
 wasteToLaTeX :: LaTeXC l => WasteRecord -> l
-wasteToLaTeX w@(WasteRecord n s l _) = optFixComm "entry" 1 [raw (slug' w), raw n, subs <> raw " " <> mconcat (Prelude.map (comm1 "gls" . raw) l) <> mconcat (Prelude.map (optFixComm "index" 1 . (raw "locations" :) . pure . raw . protectText) l)]
+wasteToLaTeX w@(WasteRecord n s l ts) = optFixComm "entry" 1 [raw (slug' w), raw n, subs <> raw " " <> mconcat (Prelude.map (comm1 "gls" . raw) l) <> mconcat (Prelude.map (optFixComm "index" 1 . (raw "locations" :) . pure . raw . protectText) l) <> mconcat (Prelude.map (comm1 "hint" . raw . protectText . untip) ts)]
   where subs | T.null s = ""
              | otherwise = {- comm1 "hspace*" "0.25cm" <> -} textit (raw (protectText (T.cons '(' (s <> ") "))))
 
@@ -133,9 +140,10 @@ main = do
         (o, n, []) -> pure (Prelude.foldr ($) (RenderOptions False) o)
         _ -> fail "Invalid program parameters"
     wl <- readLocations
-    tp <- readTips
     wr <- readWasteRecords
-    let _wr = (V.fromList . sort . V.toList) wr
+    tp <- readTips
+    let wrt = addTips (M.fromList (Prelude.map (\w -> ((name w, specs w), w)) (V.toList wr))) tp
+    let _wr = (V.fromList . sort . M.elems) wrt
         wr' = V.zip (V.cons (WasteRecord "" "" [] []) _wr) _wr
     execLaTeXT (_document ro wl wr') >>= TI.putStrLn . render
                   
