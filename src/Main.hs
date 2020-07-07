@@ -93,7 +93,7 @@ locationToLaTeX2 :: LaTeXC l => RenderOptions -> WasteLocation -> l
 locationToLaTeX2 ro wl = raw "" -- comm1 "label" (raw ("loc:" <> (slug'' wl))) <> section (raw (locName wl))
 
 wasteToLaTeX :: LaTeXC l => WasteRecord -> l
-wasteToLaTeX w@(WasteRecord n s l ts) = optFixComm "entry" 1 [raw (slug' w), raw n, subs <> raw " " <> mconcat (Prelude.map (comm1 "gls" . raw) l) <> mconcat (Prelude.map (optFixComm "index" 1 . (raw "locations" :) . pure . raw . protectText) l) <> raw "\\\\" <> mconcat (Prelude.map (comm1 "hint" . raw . protectText . untip) ts)]
+wasteToLaTeX w@(WasteRecord n s l ts) = optFixComm "entry" 1 [raw (slug' w), raw n, subs <> raw " " <> mconcat (Prelude.map (comm1 "gls" . raw) l) <> mconcat (Prelude.map (optFixComm "index" 1 . (raw "locations" :) . pure . raw . protectText) l) <> raw "\\\\" <> Prelude.foldMap (comm1 "hint" . raw . protectText . untip) ts]
   where subs | T.null s = ""
              | otherwise = {- comm1 "hspace*" "0.25cm" <> -} textit (raw (protectText (T.cons '(' (s <> ") "))))
 
