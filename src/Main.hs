@@ -16,6 +16,7 @@ import qualified Data.Vector as V
 
 import System.Console.GetOpt
 import System.Environment
+import System.IO(hPutStrLn, stderr)
 
 import Text.LaTeX.Base
 import Text.LaTeX.Base.Class
@@ -82,7 +83,7 @@ defcolor _ n t cl = ((comm3 "definecolor" colname "HTML" (raw (T.toUpper (T.drop
     where colname = raw (T.filter (' ' /=) (n <> "-" <> t))
 
 locationToLaTeX :: LaTeXC l => RenderOptions -> WasteLocation -> l
-locationToLaTeX ro (WasteLocation l a bg fg _) = cfg (cbg (comm2 "newglossaryentry" (raw l) (raw "name={" <> comm1 "hspace*" "0.125cm" <> comm2 "colorbox" nbg (comm0 "strut" <> comm2 "textcolor" nfg (raw (protectText l))) <> raw "}, description={" <> text <> raw "}")))
+locationToLaTeX ro (WasteLocation l a bg fg _) = cfg (cbg (comm2 "newglossaryentry" (raw (slug l)) (raw "name={" <> comm1 "hspace*" "0.125cm" <> comm2 "colorbox" nbg (comm0 "strut" <> comm2 "textcolor" nfg (raw (protectText l))) <> raw "}, description={" <> text <> raw "}")))
     where d = dark ro
           (cfg, nfg) = defcolor d l "fg" fg
           (cbg, nbg) = defcolor d l "bg" bg
@@ -93,7 +94,7 @@ locationToLaTeX2 :: LaTeXC l => RenderOptions -> WasteLocation -> l
 locationToLaTeX2 ro wl = raw "" -- comm1 "label" (raw ("loc:" <> (slug'' wl))) <> section (raw (locName wl))
 
 wasteToLaTeX :: LaTeXC l => WasteRecord -> l
-wasteToLaTeX w@(WasteRecord n s l ts) = optFixComm "entry" 1 [raw (slug' w), raw n, subs <> raw " " <> mconcat (Prelude.map (comm1 "gls" . raw) l) <> mconcat (Prelude.map (optFixComm "index" 1 . (raw "locations" :) . pure . raw . protectText) l) <> raw "\\\\" <> Prelude.foldMap (comm1 "hint" . raw . protectText . untip) ts]
+wasteToLaTeX w@(WasteRecord n s l ts) = optFixComm "entry" 1 [raw (slug' w), raw n, subs <> raw " " <> mconcat (Prelude.map (comm1 "gls" . raw . slug) l) <> mconcat (Prelude.map (optFixComm "index" 1 . (raw "locations" :) . pure . raw . protectText) l) <> raw "\\\\" <> Prelude.foldMap (comm1 "hint" . raw . protectText . untip) ts]
   where subs | T.null s = ""
              | otherwise = {- comm1 "hspace*" "0.25cm" <> -} textit (raw (protectText (T.cons '(' (s <> ") "))))
 
@@ -145,6 +146,8 @@ main = do
     let wrt = addTips (M.fromList (Prelude.map (\w -> ((name w, specs w), w)) (V.toList wr))) tp
     let _wr = (V.fromList . sort . M.elems) wrt
         wr' = V.zip (V.cons (WasteRecord "" "" [] []) _wr) _wr
+    let tpks = (V.filter (`M.notMember` wrt) . V.map (\(x, y, _) -> (x, y))) tp
+    hPutStrLn stderr ("Hint keys not found:" ++ show tpks)
     execLaTeXT (_document ro wl wr') >>= TI.putStrLn . render
                   
 
