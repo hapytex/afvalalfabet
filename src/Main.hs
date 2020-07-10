@@ -167,7 +167,7 @@ main = do
     execLaTeXT (_document ro wl wr' fsm) >>= TI.putStrLn . render
 
 conflictfsm :: WasteFsm -> [(Text, Text)]
-conflictfsm fsm = [ (ta, tb) | ((ta, tb), na) <- M.assocs fsm, M.findWithDefault 0 (tb, ta) fsm > na ]
+conflictfsm fsm = [ (ta, tb) | ((ta, tb), na) <- M.assocs fsm, M.findWithDefault 0 (tb, ta) fsm >= na ]
 
 makelocgraph :: LaTeXC l => WasteFsm -> l
 makelocgraph fsm = raw "\\graph[layered layout, component direction=up, grow=right] { " <> foldMap (\(ta, tb) -> rawSlug ta <> " -> " <> rawSlug tb <> ", ") (M.keys fsm)  <> raw " };"
