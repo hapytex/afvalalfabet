@@ -9,7 +9,7 @@ Badschuim,,Gebruik gewone zeep.
 Balpen,,Gebruik een navulbare pen.
 Behanglijmoplosser,,'stoom' uw behang af.
 Bestek,kunststof,"Gebruik duurzaam, metalen, bestek."
-Bestrijdingsmiddelen,,"Hou ongedierte en ziekten binnen de perken door vruchtwisseling toe te passen, natuurlijke vijanden aan te trekken (vogels, egels, kikkers, …)."
+Bestrijdingsmiddel,,"Hou ongedierte en ziekten binnen de perken door vruchtwisseling toe te passen, natuurlijke vijanden aan te trekken (vogels, egels, kikkers, …)."
 Blikje,,Geef de voorkeur aan statiegeldflessen.
 Blikje,,Gebruik een drinkbus of thermos.
 Bloempot,kunststof,Gebruik biodegradeerbare bloempotjes.
@@ -23,8 +23,8 @@ Broodzak,,Neem uw eigen broodzak mee naar de bakker.
 Cadeaupapier,,"Verpak een geschenk in een herbruikbare verpakking (handdoek, brooddoos, …)."
 Cartridge,,Geef de voorkeur aan hervulbare inktpatronen.
 Conserveblikje,,Geef de voorkeur aan verse producten.
-Detergent,fles of flacon,Kies een navulbare verpakking.
-Dierlijke uitwerpselen,,"Van planteneters (cavia, etc.) is de mest composteerbaar."
+Detergent,,Kies een navulbare verpakking.
+Dierlijke uitwerpselen,grote hoeveelheid,"Van planteneters (cavia, etc.) is de mest composteerbaar."
 Diskette,computer,Gebruik een memory-stick.
 Douchegel,,Geef de voorkeur aan zeep.
 Drankblikjes en -kartons,,Geef de voorkeur aan statiegeldflessen.
@@ -42,13 +42,14 @@ Gootsteenontstopper,,"Ontstop de gootsteen met een rubberen zuignam. Indien dit 
 Gras,,Gebruik een mulchmaaier.
 Gras,,Zaai een traaggroeiend grasmengsel en dien hoogstens organische meststof op fijn gezeefde compost toe.
 Gras,,Vervang (een stuk) van uw gazon door een bloemenwijde die een of twee keer per jaar maait.
-Haag,geknipt of geschoren,"Stel snoeien uit tot juli, anders stimuleert u de
-haagplanten om sneller te groeien."
-Haag,geknipt of geschoren,"Gooi het op de composthoop, in de compostbak, of het compostvat."
+Haagscheersel,,"Stel snoeien uit tot juli, anders stimuleert u de haagplanten om sneller te groeien."
+Haagscheersel,,"Gooi het op de composthoop, in de compostbak, of het compostvat."
 Herbicide,,"Geef onkruid geen kans door te schoffelen, te spitten, bodembedekkers te planten, of mulchmateriaal aan te brengen."
 Hooi,,"Voeder het aan dieren (konijnen, cavia, …)."
-Insectenspray en insecticide,,Bestrijd insecten met natuurlijke middelen.
-Insectenspray en insecticide,,Gebruik een vliegenraam/hor.
+Insectenspray,,Bestrijd insecten met natuurlijke middelen.
+Insectenspray,,Gebruik een vliegenraam/hor.
+Insecticide,,Bestrijd insecten met natuurlijke middelen.
+Insecticide,,Gebruik een vliegenraam/hor.
 Kartonnen beker,,Gebruik een gewoon glas of herbruikbare bekers.
 Kartonnen bord,,Gebruik een gewoon bord.
 Kerstboom,,Koop een kerstboom met wortel die u na de kerstperiode in de tuin plant.
@@ -74,14 +75,14 @@ Salon,,Laat uw niet versleten salon gratis ophalen door de winkel.
 Scheermesje,,Vermijd wegwerpscheermesjes met handvat. Wil u zich nat scheren dan kan u een scheermeshouder gebruiken en dan de scheermesjes vervangen.
 Scheermesje,,Opteer voor scheerzeep eerder dan scheerschuim (minder verpakking).
 Scheermesje,,Scheer elektrisch.
-Servet,papier,Gebruik stoffen servetten.
+Servet,"papier, gebruikt",Gebruik stoffen servetten.
 Slagerspapier,,Laat de slager uw vlees verpakken in uw eigen bewaardozen.
 Snoeihout,,"Geef bomen en struiken ruimte om te groeien, beperk snoeibeurten tot die plaatsen waar het nodig is."
 Snoeihout,,"Vanuit veiligheidsoogpunt, opteer voor traag groeiende inheemse soorten."
-Spuitbussen,,"Overweeg navulbare verstuivers met handpompje, roller, …."
+Spuitbus,,"Overweeg navulbare verstuivers met handpompje, roller, …."
 Stronk,,Laat de stronk ter plaatse verteren.
 Stylo,,Gebruik een navulbare pen.
-Tafellaken,,Vermijd zoveel mogelijk eenmalige papieren wegwerptafellakens.
+Tafellaken,papier,Vermijd zoveel mogelijk eenmalige papieren wegwerptafellakens.
 Takken,,Leg een takkenwal aan als afsluiting.
 Takken,,Maak een takkenstapel in uw tuin als schuilplaats voor allerlei dieren.
 Takken,,"Verklein ze en gooi ze op de composthoop, in de compostbak, of compstvat."
@@ -99,7 +100,7 @@ Wegwerpbord,,"Af te raden, gebruik afwasbaar servies."
 Wegwerpfototoestel,,Gebruik een gewoon fototoestel.
 White spirit,,Laat de white spirit met vetresten bezinken en hergebruik de bovenste laag van de vloeistof.
 Zak,papier,Gebruik hem om er uw oud papier in aan te bieden voor de huis-aan-huis inzameling.
-Zak,pastic, stop verschillende aankopen in eenzelfde zak (en vraag dus niet steeds een nieuwe zak).
+Zak,plastic,Stop verschillende aankopen in eenzelfde zak (en vraag dus niet steeds een nieuwe zak).
 Zak,plastic,Winkel met je eigen boodschappentas.
 Zak,plastic,Stop je inkopen in je handtas.
 Zakje,warenhuis,"Gebruik een herbruikbare zak, een plooikrat, een boodschappentas of een kartonnen doos."
