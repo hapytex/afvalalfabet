@@ -163,11 +163,14 @@ main = do
         wr' = V.zip (V.cons (WasteRecord "" "" [] []) _wr) _wr
     let tpks = (V.filter (`M.notMember` wrt) . V.map (\(x, y, _) -> (x, y))) tp
     hPutStrLn stderr ("Hint keys not found:" ++ show tpks)
+    hPutStrLn stderr ("Conflicting directions: " ++ show (conflictfsm fsm))
     execLaTeXT (_document ro wl wr' fsm) >>= TI.putStrLn . render
+
+conflictfsm :: WasteFsm -> [(Text, Text)]
+conflictfsm fsm = [ (ta, tb) | ((ta, tb), na) <- M.assocs fsm, M.findWithDefault 0 (tb, ta) fsm > na ]
 
 makelocgraph :: LaTeXC l => WasteFsm -> l
 makelocgraph fsm = raw "\\graph[layered layout, component direction=up, grow=right] { " <> foldMap (\(ta, tb) -> rawSlug ta <> " -> " <> rawSlug tb <> ", ") (M.keys fsm)  <> raw " };"
---    where k = [ t | (ta,tb) <- M.keys fsm, t <- [ta, tb] ]
 
 _document :: Monad m => RenderOptions -> V.Vector WasteLocation -> V.Vector (WasteRecord, WasteRecord) -> WasteFsm -> LaTeXT_ m
 _document ro locations entries fsm = do
