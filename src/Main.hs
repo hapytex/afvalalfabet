@@ -166,7 +166,7 @@ main = do
     execLaTeXT (_document ro wl wr' fsm) >>= TI.putStrLn . render
 
 makelocgraph :: LaTeXC l => WasteFsm -> l
-makelocgraph fsm = raw "\\graph[layered layout] { " <> foldMap (\(ta, tb) -> rawSlug ta <> " -> " <> rawSlug tb <> ", ") (M.keys fsm)  <> raw " };"
+makelocgraph fsm = raw "\\graph[layered layout, component direction=up, grow=right] { " <> foldMap (\(ta, tb) -> rawSlug ta <> " -> " <> rawSlug tb <> ", ") (M.keys fsm)  <> raw " };"
 --    where k = [ t | (ta,tb) <- M.keys fsm, t <- [ta, tb] ]
 
 _document :: Monad m => RenderOptions -> V.Vector WasteLocation -> V.Vector (WasteRecord, WasteRecord) -> WasteFsm -> LaTeXT_ m
