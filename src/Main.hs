@@ -20,8 +20,14 @@ import System.IO(hPutStrLn, stderr)
 
 import Text.LaTeX.Base
 import Text.LaTeX.Base.Class
+import Text.LaTeX.Packages.TikZ(tikzpicture)
+import Text.LaTeX.Packages.TikZ.Syntax(TikZ, emptytikz)
 
 type WasteIndex = Map (Text, Text) WasteRecord
+type WasteFsm = Map (Text, Text) Int
+
+incFsm :: (Text, Text) -> WasteFsm -> WasteFsm
+incFsm ts = M.insertWith (+) ts 1
 
 titleFirst :: Text -> Text
 titleFirst t = T.toUpper t1 <> t2
@@ -41,10 +47,17 @@ instance Ord WasteRecord where
 data WasteLocation = WasteLocation { label :: Text, locName :: Text, locBgColor :: Text, logFgColor :: Text, contact :: Text} deriving (Eq, Ord, Show)
 
 slug :: Text -> Text
-slug = T.map f . T.toLower
-    where f c | '0' <= c && c <= '9' = c
-              | 'a' <= c && c <= 'z' = c
-              | otherwise = '-'
+slug = T.filter f . T.toLower
+    where f c = ('0' <= c && c <= '9') || ('a' <= c && c <= 'z')
+
+rawProtect :: LaTeXC l => Text -> l
+rawProtect = raw . protectText
+
+rawSlug :: LaTeXC l => Text -> l
+rawSlug = raw . slug
+
+rawProtectSlug :: LaTeXC l => Text -> l
+rawProtectSlug = rawProtect . slug
 
 slug' :: WasteRecord -> Text
 slug' (WasteRecord n s _ _) = slug (n <> s)
@@ -83,20 +96,21 @@ defcolor _ n t cl = ((comm3 "definecolor" colname "HTML" (raw (T.toUpper (T.drop
     where colname = raw (T.filter (' ' /=) (n <> "-" <> t))
 
 locationToLaTeX :: LaTeXC l => RenderOptions -> WasteLocation -> l
-locationToLaTeX ro (WasteLocation l a bg fg _) = cfg (cbg (comm2 "newglossaryentry" (raw (slug l)) (raw "name={" <> comm1 "hspace*" "0.125cm" <> comm2 "colorbox" nbg (comm0 "strut" <> comm2 "textcolor" nfg (raw (protectText l))) <> raw "}, description={" <> text <> raw "}")))
+locationToLaTeX ro (WasteLocation l a bg fg _) = cfg (cbg (comm2 "newglossaryentry" (rawSlug l) (raw "name={" <> comm1 "hspace*" "0.125cm" <> comm2 "colorbox" nbg (comm0 "strut" <> comm2 "textcolor" nfg (rawProtect l)) <> raw "}, description={" <> text <> raw "}")))
     where d = dark ro
           (cfg, nfg) = defcolor d l "fg" fg
           (cbg, nbg) = defcolor d l "bg" bg
-          text | T.null a = raw (protectText l)
-               | otherwise = raw (protectText a)
+          text | T.null a = rawProtect l
+               | otherwise = rawProtect a
 
 locationToLaTeX2 :: LaTeXC l => RenderOptions -> WasteLocation -> l
-locationToLaTeX2 ro wl = raw "" -- comm1 "label" (raw ("loc:" <> (slug'' wl))) <> section (raw (locName wl))
+locationToLaTeX2 _ (WasteLocation l _ _ _ _) = comm1 "label" ((raw . ("glo:" <> ) . protectText . slug) l) -- ""
+-- locationToLaTeX2 ro (WasteLocation l _ _ _ _) = comm1 "section*" (raw l) <> (optFixComm "index" 1 . (raw "locations" :) . pure . raw . (<> "|textbf") . protectText) l <> optFixComm "pdfbookmark" 1 ["1", raw (protectText l), (raw . ("glo:" <>) . slug) l] <> raw "lorem ipsum" -- comm1 "label" (raw ("loc:" <> (slug'' wl))) <> section (raw (locName wl))
 
 wasteToLaTeX :: LaTeXC l => WasteRecord -> l
-wasteToLaTeX w@(WasteRecord n s l ts) = optFixComm "entry" 1 [raw (slug' w), raw n, subs <> raw " " <> mconcat (Prelude.map (comm1 "gls" . raw . slug) l) <> mconcat (Prelude.map (optFixComm "index" 1 . (raw "locations" :) . pure . raw . protectText) l) <> raw "\\\\" <> Prelude.foldMap (comm1 "hint" . raw . protectText . untip) ts]
+wasteToLaTeX w@(WasteRecord n s l ts) = optFixComm "entry" 1 [raw (slug' w), raw n, subs <> raw " " <> Prelude.foldMap (comm1 "gls" . rawSlug) l <> Prelude.foldMap (optFixComm "index" 1 . (raw "locations" :) . pure . rawProtect) l <> raw "\\\\" <> Prelude.foldMap (comm1 "hint" . rawProtect . untip) ts]
   where subs | T.null s = ""
-             | otherwise = {- comm1 "hspace*" "0.25cm" <> -} textit (raw (protectText (T.cons '(' (s <> ") "))))
+             | otherwise = {- comm1 "hspace*" "0.25cm" <> -} textit (rawProtect (T.cons '(' (s <> ") ")))
 
 wasteToLaTeX' :: LaTeXC l => (WasteRecord, WasteRecord) -> l
 wasteToLaTeX' (WasteRecord a _ _ _, w@(WasteRecord b _ _ _)) = f (wasteToLaTeX w)
@@ -126,7 +140,7 @@ newtype RenderOptions = RenderOptions { dark :: Bool }
 
 headerCommands :: Monad m => RenderOptions -> LaTeXT_ m
 headerCommands r
-    | dark r = comm1 "pagecolor" "black" >> comm1 "color" "white"
+    | dark r = comm1 "pagecolor" "black" >> comm1 "color" "white" >> comm3 "definecolor" "hint-bg" "RGB" "70,66,54" >> comm3 "definecolor" "hint-fg" "RGB" "103,92,55" >> comm3 "definecolor" "hint-tx" "RGB" "207,210,214"
     | otherwise = pure ()
 
 options :: [OptDescr (RenderOptions -> RenderOptions)]
@@ -143,16 +157,20 @@ main = do
     wl <- readLocations
     wr <- readWasteRecords
     tp <- readTips
+    let fsm = Prelude.foldr (\WasteRecord {location=l} fsm0 -> Prelude.foldr incFsm fsm0 (Prelude.zip l (Prelude.tail l))) M.empty wr
     let wrt = addTips (M.fromList (Prelude.map (\w -> ((name w, specs w), w)) (V.toList wr))) tp
     let _wr = (V.fromList . sort . M.elems) wrt
         wr' = V.zip (V.cons (WasteRecord "" "" [] []) _wr) _wr
     let tpks = (V.filter (`M.notMember` wrt) . V.map (\(x, y, _) -> (x, y))) tp
     hPutStrLn stderr ("Hint keys not found:" ++ show tpks)
-    execLaTeXT (_document ro wl wr') >>= TI.putStrLn . render
-                  
+    execLaTeXT (_document ro wl wr' fsm) >>= TI.putStrLn . render
 
-_document :: Monad m => RenderOptions -> V.Vector WasteLocation -> V.Vector (WasteRecord, WasteRecord) -> LaTeXT_ m
-_document ro locations entries = do
+makelocgraph :: LaTeXC l => WasteFsm -> l
+makelocgraph fsm = raw "\\graph[layered layout] { " <> foldMap (\(ta, tb) -> rawSlug ta <> " -> " <> rawSlug tb <> ", ") (M.keys fsm)  <> raw " };"
+--    where k = [ t | (ta,tb) <- M.keys fsm, t <- [ta, tb] ]
+
+_document :: Monad m => RenderOptions -> V.Vector WasteLocation -> V.Vector (WasteRecord, WasteRecord) -> WasteFsm -> LaTeXT_ m
+_document ro locations entries fsm = do
     documentclass ["titlepage", "8pt"] "dictionary"
     usepackage [raw "dutch"] "babel"
     usepackage [] "index"
@@ -166,6 +184,5 @@ _document ro locations entries = do
     comm4 "newindex" (raw "locations") (raw "adx") (raw "and") (raw "Locaties")
     mapM_ (locationToLaTeX ro) locations
     title "Afval-sorteer-woordenboek"
-    if dark ro then comm3 "definecolor" "hint-bg" "RGB" "70,66,54" >> comm3 "definecolor" "hint-fg" "RGB" "103,92,55" >> comm3 "definecolor" "hint-tx" "RGB" "207,210,214" else pure ()
     author (raw "Willem Van Onsem \\and Lindsey Louwyck")
-    document (env0 "dictionary" (mapM_ wasteToLaTeX' entries) >> newpage >> mapM_ (locationToLaTeX2 ro) locations >> optFixComm "printindex" 1 [raw "locations"])
+    document (env0 "dictionary" (mapM_ wasteToLaTeX' entries) >> newpage >> env0 "tikzpicture" (makelocgraph fsm) >> mapM_ (locationToLaTeX2 ro) locations >> optFixComm "printindex" 1 [raw "locations"])

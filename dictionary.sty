@@ -4,7 +4,8 @@
 %\DeclareUnicodeCharacter{00A0}{~} % finds hidden non-breakable space
 \RequirePackage[T1]{fontenc}
 \RequirePackage{xparse}
-%\RequirePackage{glossaries}
+% \RequirePackage{bookmark}
+\RequirePackage{glossaries}
 %\RequirePackage{tgpagella}
 %\RequirePackage[scaled]{helvet}
 %\RequirePackage{enumitem}
@@ -12,7 +13,8 @@
 %\RequirePackage{makeidx}
 %\RequirePackage{stmaryrd}
 \RequirePackage{tikz}
-\usetikzlibrary{calc, fadings}
+\usetikzlibrary{calc, fadings, graphs, graphdrawing, graphdrawing.layered}
+\usegdlibrary{trees, layered, force}
 %\RequirePackage{tipa}
 %\RequirePackage{dingbat}
 %\RequirePackage{manfnt}
@@ -57,6 +59,7 @@
 % tables
 \captionsetup{labelformat=empty}
 
+\newpagestyle{normal}{\sethead{}{\thepage}{}}
 \newpagestyle{dict}{%
   \sethead
     {\firstentry{}} % \topextramarks{entry}\entrytitle}% left
@@ -65,7 +68,6 @@
    % \setheadrule{.4pt}% Regular header rule
    % \setfootrule{0.4pt}
 }
-\newpagestyle{normal}{}
 \pagestyle{normal}
 
 % place frequent star
@@ -155,7 +157,7 @@
 \newenvironment{dictionary}[1][25]{
   \setcounter{lettersum}{#1}\pagestyle{dict}\dicttrue\newpage\begin{flushleft}\pgfmathsetlength{\thumbheight}{(\paperheight-\thumbtopmargin-\thumbbottommargin)/\value{lettersum}}
 }{
-  \cleardoublepage\newpage\end{flushleft}\pagestyle{normal}\dictfalse
+  \cleardoublepage\sethead{}{\thepage}{}\pagestyle{normal}\newpage\end{flushleft}\dictfalse
 }
 % box width
 \newlength{\thumbwidth}
