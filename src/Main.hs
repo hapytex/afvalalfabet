@@ -40,8 +40,8 @@ data WasteRecord = WasteRecord { name :: Text, specs :: Text, location :: [Text]
 instance Semigroup WasteRecord where
     WasteRecord n s ls1 ts1 <> WasteRecord { location=ls2, tips=ts2 } = WasteRecord n s (ls1 <> ls2) (ts1 <> ts2)
 
-fromTip :: Text -> Tip -> WasteRecord
-fromTip n t = WasteRecord n "" [] [t]
+fromTip :: (Text, Text, Tip) -> ((Text, Text), WasteRecord)
+fromTip (n,s,t) = ((n, s), WasteRecord n "" [] [t])
 
 instance Ord WasteRecord where
     compare wa wb = on compare (T.toCaseFold . name) wa wb <> on go (T.toCaseFold . specs) wa wb
@@ -165,11 +165,12 @@ main = do
     tp <- readTips
     let fsm = Prelude.foldr (\WasteRecord {location=l} fsm0 -> Prelude.foldr incFsm fsm0 (Prelude.zip l (Prelude.tail l))) M.empty wr
     let wrt0 = addTips (M.fromList (Prelude.map (\w -> ((name w, specs w), w)) (V.toList wr))) tp
-    let tpks = (V.filter (`M.notMember` wrt0) . V.map (\(x, y, _) -> (x, y))) tp
-    let wrt = wrt0
+    let tpks0 = V.filter (\(x, y, _) -> M.notMember (x,y) wrt0) tp
+    let tpempty = (M.fromListWith (<>) . Prelude.map fromTip . Prelude.filter (\(_, x, _) -> T.null x) . V.toList) tpks0
+    let wrt = M.union wrt0 tpempty
     let _wr = (V.fromList . sort . M.elems) wrt
         wr' = V.zip (V.cons (WasteRecord "" "" [] []) _wr) _wr
-    hPutStrLn stderr ("Hint keys not found:" ++ show tpks)
+    hPutStrLn stderr ("Hint keys not found:" ++ show (V.filter (\(_, x, _) -> not (T.null x)) tpks0))
     hPutStrLn stderr ("Conflicting directions: " ++ show (conflictfsm fsm))
     execLaTeXT (_document ro wl wr' fsm) >>= TI.putStrLn . render
 
