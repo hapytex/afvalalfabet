@@ -24,6 +24,7 @@ import Text.LaTeX.Packages.TikZ(tikzpicture)
 import Text.LaTeX.Packages.TikZ.Syntax(TikZ, emptytikz)
 
 type WasteIndex = Map (Text, Text) WasteRecord
+type WasteIndex' = Map Text [WasteRecord]
 type WasteFsm = Map (Text, Text) Int
 
 incFsm :: (Text, Text) -> WasteFsm -> WasteFsm
@@ -136,11 +137,19 @@ parseCsvFile f = fmap (V.map f) . readCsvFile
 readLocations :: IO (V.Vector WasteLocation)
 readLocations = parseCsvFile toWasteLocation "data/where.csv"
 
+readSynonyms :: IO (V.Vector (Text, Text))
+readSynonyms = parseCsvFile id "data/synonyms.csv"
+
 readWasteRecords :: IO (V.Vector WasteRecord)
 readWasteRecords = parseCsvFile toWasteRecord "data/data.csv"
 
 readTips :: IO (V.Vector (Text, Text, Tip))
 readTips = parseCsvFile toTip "data/tips.csv"
+
+synonym :: Text -> Text -> WasteIndex' -> WasteIndex'
+synonym na nb m
+    | Just ls <- (M.!?) m na = M.insert nb [ l { name = nb } | l <- ls] m
+    | otherwise = m
 
 newtype RenderOptions = RenderOptions { dark :: Bool }
 
@@ -162,13 +171,16 @@ main = do
         _ -> fail "Invalid program parameters"
     wl <- readLocations
     wr <- readWasteRecords
+    sy <- readSynonyms
     tp <- readTips
     let fsm = Prelude.foldr (\WasteRecord {location=l} fsm0 -> Prelude.foldr incFsm fsm0 (Prelude.zip l (Prelude.tail l))) M.empty wr
     let wrt0 = addTips (M.fromList (Prelude.map (\w -> ((name w, specs w), w)) (V.toList wr))) tp
     let tpks0 = V.filter (\(x, y, _) -> M.notMember (x,y) wrt0) tp
     let tpempty = (M.fromListWith (<>) . Prelude.map fromTip . Prelude.filter (\(_, x, _) -> T.null x) . V.toList) tpks0
-    let wrt = M.union wrt0 tpempty
-    let _wr = (V.fromList . sort . M.elems) wrt
+    let wrt1 = M.union wrt0 tpempty
+    let wrt2 = (M.fromListWith (<>) . Prelude.map (\x -> (name x, [x])) . M.elems) wrt1
+    let wrt = Prelude.foldr (uncurry synonym) wrt2 sy
+    let _wr = (V.fromList . sort . Prelude.concat . M.elems) wrt
         wr' = V.zip (V.cons (WasteRecord "" "" [] []) _wr) _wr
     hPutStrLn stderr ("Hint keys not found:" ++ show (V.filter (\(_, x, _) -> not (T.null x)) tpks0))
     hPutStrLn stderr ("Conflicting directions: " ++ show (conflictfsm fsm))
