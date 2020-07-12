@@ -1,4 +1,4 @@
-{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE OverloadedStrings, ScopedTypeVariables #-}
 
 module Main where
 
@@ -138,7 +138,7 @@ readLocations :: IO (V.Vector WasteLocation)
 readLocations = parseCsvFile toWasteLocation "data/where.csv"
 
 readSynonyms :: IO (V.Vector (Text, Text))
-readSynonyms = parseCsvFile id "data/synonyms.csv"
+readSynonyms = parseCsvFile (\(x,y,_ :: Text) -> (x,y)) "data/synonyms.csv"
 
 readWasteRecords :: IO (V.Vector WasteRecord)
 readWasteRecords = parseCsvFile toWasteRecord "data/data.csv"

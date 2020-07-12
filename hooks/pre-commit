@@ -11,6 +11,7 @@ def sortdf(filename, *columns):
     for col in reversed(columns):
         df = df.iloc[df[col].str.casefold().argsort(kind='mergesort')]
     df.to_csv(filename, index=False)
+    return df
 
 fns = ['data/data.csv', 'data/tips.csv']
 

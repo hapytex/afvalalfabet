@@ -1,6 +1,16 @@
-origin,target
-Band,Autoband
-Wieldop,Autowieldop
-Zonnepanelen,Fotovoltaïshe cellen
-Nummerplaat,Kentekenplaat
-Gif,Vergif
+origin,target,dialect
+Aansteker,Briquet,1
+Aansteker,Allumeur,1
+Aardappelschillen,Petetteschel,1
+Aarde,Grond,0
+Aardewerk,Gleierwerk,1
+Aardewerk,Pottekarree,1
+Accu,Autobatterij,0
+Aftershave,Scheerlotion,0
+Aftershave,Kinfris,0
+Alcohol,Sterke drank,0
+Band,Autoband,0
+Wieldop,Autowieldop,0
+Zonnepanelen,Fotovoltaïshe cellen,0
+Nummerplaat,Kentekenplaat,0
+Gif,Vergif,0
