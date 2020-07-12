@@ -10,7 +10,9 @@ You can look at the [**`data.csv`** file](data/data.csv) for a list of
 items, and how to get rid of these.
 
 The [**`tips.csv`** file](data/tips.csv) contains a set of *tips and tricks* to avoid
-waste.
+waste. The [**`synonyms.csv`** file](data/synonyms.csv) lists synonyms. These
+synonyms will be typesetted a second time under a different name. This can be
+useful if the same entry occurs multiple times with a different specification.
 
 If there are still items not on the list, or you want to make a correction, you
 can open a *pull request*.
@@ -28,7 +30,10 @@ Het [**`data.csv`** bestand](data/data.csv) bevat een lijst van items en hoe
 deze te sorteren.
 
 Het [**`tips.csv`** bestand](data/tips.csv) bevat een lijst met "*tips and
-tricks*" hoe afval voorkomen.
+tricks*" hoe afval voorkomen. Het [**`synonyms.csv`** bestand](data/synonyms.csv) bevat
+een lijst met synoniemen. Dit is handig wanneer eenzelfde object met
+verschillende spcifictaties voorkomt, omdat al die items dan worden gekopieerd
+onder een andere naam.
 
 Men kan een *pull request* maken om items toe te voegen of te corrigeren.
 

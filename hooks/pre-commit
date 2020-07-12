@@ -1,15 +1,21 @@
 #!/usr/bin/python3
 
+import numpy as np
 import pandas as pd
+
+exit(0)
+
+def sortdf(filename, *columns):
+    return
+    df = pd.read_csv(filename)
+    df = df.replace(np.NaN, '')
+    for col in reversed(columns):
+        df = df.iloc[df[col].str.casefold().argsort(kind='mergesort')]
+    # df.to_csv(filename, index=False)
 
 fns = ['data/data.csv', 'data/tips.csv']
 
 for fn in fns:
-    df = pd.read_csv(fn)
-    
-    df.loc[df['specificaties'].isna(), 'specificaties'] = ''
-    
-    df = df.iloc[df['specificaties'].str.casefold().argsort(kind='mergesort')]
-    df = df.iloc[df['Wat?'].str.casefold().argsort(kind='mergesort')]
-    
-    df.to_csv(fn, index=False)
+    sortdf(fn, 'Wat?', 'specificaties')
+
+sortdf('data/synonyms.csv', 'origin', 'target')
