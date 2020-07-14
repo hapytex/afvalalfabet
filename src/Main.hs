@@ -6,6 +6,7 @@ import Data.Bool(bool)
 import qualified Data.ByteString.Lazy as BL
 import Data.Char as C
 import Data.Csv
+import Data.Default(Default(def))
 import Data.Function(on)
 import Data.List(sort)
 import Data.Map(Map, update)
@@ -131,19 +132,24 @@ readCsvFile path = do
         Left err -> fail ("Failed to parse csv file " <> path <> ": " <> err)
         Right v -> pure v
 
-parseCsvFile :: (FromRecord a, Show a) => (a -> b) -> FilePath -> IO (V.Vector b)
-parseCsvFile f = fmap (V.map f) . readCsvFile
+parseCsvFile :: (FromRecord a, Show a) => (a -> b) -> FilePath -> Bool -> IO (V.Vector b)
+parseCsvFile _ _ False = pure V.empty
+parseCsvFile f fn True = V.map f <$> readCsvFile fn
 
 readLocations :: IO (V.Vector WasteLocation)
-readLocations = parseCsvFile toWasteLocation "data/where.csv"
+readLocations = parseCsvFile toWasteLocation "data/where.csv" True
 
-readSynonyms :: IO (V.Vector (Text, Text))
-readSynonyms = parseCsvFile (\(x,y,_ :: Text) -> (x,y)) "data/synonyms.csv"
+filterSynonyms :: Bool -> V.Vector (Text, Text, Int) -> V.Vector (Text, Text, Int)
+filterSynonyms True = id
+filterSynonyms False = V.filter (\(_, _, n) -> n == 0)
+
+readSynonyms :: Bool -> IO (V.Vector (Text, Text))
+readSynonyms b = V.map (\(x, y, _) -> (x, y)) . filterSynonyms b <$> parseCsvFile id "data/synonyms.csv" True
 
 readWasteRecords :: IO (V.Vector WasteRecord)
-readWasteRecords = parseCsvFile toWasteRecord "data/data.csv"
+readWasteRecords = parseCsvFile toWasteRecord "data/data.csv" True
 
-readTips :: IO (V.Vector (Text, Text, Tip))
+readTips :: Bool -> IO (V.Vector (Text, Text, Tip))
 readTips = parseCsvFile toTip "data/tips.csv"
 
 synonym :: Text -> Text -> WasteIndex' -> WasteIndex'
@@ -151,7 +157,10 @@ synonym na nb m
     | Just ls <- (M.!?) m na = M.insert nb [ l { name = nb } | l <- ls] m
     | otherwise = m
 
-newtype RenderOptions = RenderOptions { dark :: Bool }
+data RenderOptions = RenderOptions { dark :: Bool, showTips :: Bool, showDialect :: Bool }
+
+instance Default RenderOptions where
+    def = RenderOptions False True True
 
 headerCommands :: Monad m => RenderOptions -> LaTeXT_ m
 headerCommands r
@@ -161,18 +170,20 @@ headerCommands r
 options :: [OptDescr (RenderOptions -> RenderOptions)]
 options = [
     Option ['d'] ["dark"] (NoArg (\o -> o{dark=True})) "Use a dark theme"
+  , Option ['T'] ["no-tips"] (NoArg (\o -> o{showTips=False})) "Do not add tips"
+  , Option ['D'] ["no-dialect"] (NoArg (\o -> o{showDialect=False})) "Do not add elements in dialect"
   ]
 
 main :: IO ()
 main = do
     argv <- getArgs
     ro <- case getOpt Permute options argv of
-        (o, n, []) -> pure (Prelude.foldr ($) (RenderOptions False) o)
+        (o, n, []) -> pure (Prelude.foldr ($) def o)
         _ -> fail "Invalid program parameters"
     wl <- readLocations
     wr <- readWasteRecords
-    sy <- readSynonyms
-    tp <- readTips
+    sy <- readSynonyms (showDialect ro)
+    tp <- readTips (showTips ro)
     let fsm = Prelude.foldr (\WasteRecord {location=l} fsm0 -> Prelude.foldr incFsm fsm0 (Prelude.zip l (Prelude.tail l))) M.empty wr
     let wrt0 = addTips (M.fromList (Prelude.map (\w -> ((name w, specs w), w)) (V.toList wr))) tp
     let tpks0 = V.filter (\(x, y, _) -> M.notMember (x,y) wrt0) tp
