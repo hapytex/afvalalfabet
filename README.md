@@ -19,6 +19,39 @@ can open a *pull request*.
 
 The [*travis build*](travis-ci.com/github/hapytex/afvalwoordenboek) makes a [*rendered version of the dictionary*](https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_light.pdf) [*(dark)*](https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_dark.pdf).
 
+full overview of the different versions:
+<table>
+<thead>
+  <tr>
+    <th rowspan="2"></th>
+    <th colspan="2">with hints</th>
+    <th colspan="2">without hints</th>
+  </tr>
+  <tr>
+    <th>with dialect</th>
+    <th colspan="2">without dialect</th>
+    <th>with dialect</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <th>light</th>
+    <td><a href="https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_light.pdf">file</a></td>
+    <td><a href="https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_light-no_dialect.pdf">file</a></td>
+    <td><a href="https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_light_no-tips_no-dialect.pdf">file</a></td>
+    <td><a href="https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_light_no-tips.pdf">file</a></td>
+  </tr>
+  <tr>
+    <th>dark</th>
+    <td><a href="https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_dark.pdf">file</a></td>
+    <td><a href="https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_dark-no_dialect.pdf">file</a></td>
+    <td><a href="https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_dark_no-tips_no-dialect.pdf">file</a></td>
+    <td><a href="https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_dark_no-tips.pdf">file</a></td>
+  </tr>
+</tbody>
+</table>
+
+
 ---
 
 Een woordenboek dat beschrijft hoe men afval in België hoort te sorteren. Het is
@@ -56,18 +89,18 @@ Volledig overzicht versies:
 </thead>
 <tbody>
   <tr>
-    <th>donker</th>
-    <td><a href="https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_dark.pdf">bestand</a></td>
-    <td><a href="https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_dark-no_dialect.pdf">bestand</a></td>
-    <td><a href="https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_dark_no-tips_no-dialect.pdf">bestand</a></td>
-    <td><a href="https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_dark_no-tips.pdf">bestand</a></td>
-  </tr>
-  <tr>
     <th>licht</th>
     <td><a href="https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_light.pdf">bestand</a></td>
     <td><a href="https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_light-no_dialect.pdf">bestand</a></td>
     <td><a href="https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_light_no-tips_no-dialect.pdf">bestand</a></td>
     <td><a href="https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_light_no-tips.pdf">bestand</a></td>
+  </tr>
+  <tr>
+    <th>donker</th>
+    <td><a href="https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_dark.pdf">bestand</a></td>
+    <td><a href="https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_dark-no_dialect.pdf">bestand</a></td>
+    <td><a href="https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_dark_no-tips_no-dialect.pdf">bestand</a></td>
+    <td><a href="https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_dark_no-tips.pdf">bestand</a></td>
   </tr>
 </tbody>
 </table>
