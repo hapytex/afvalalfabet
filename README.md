@@ -37,14 +37,14 @@ full overview of the different versions:
   <tr>
     <th>light</th>
     <td><a href="https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_light.pdf">file</a></td>
-    <td><a href="https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_light-no_dialect.pdf">file</a></td>
+    <td><a href="https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_light_no-dialect.pdf">file</a></td>
     <td><a href="https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_light_no-tips_no-dialect.pdf">file</a></td>
     <td><a href="https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_light_no-tips.pdf">file</a></td>
   </tr>
   <tr>
     <th>dark</th>
     <td><a href="https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_dark.pdf">file</a></td>
-    <td><a href="https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_dark-no_dialect.pdf">file</a></td>
+    <td><a href="https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_dark_no-dialect.pdf">file</a></td>
     <td><a href="https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_dark_no-tips_no-dialect.pdf">file</a></td>
     <td><a href="https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_dark_no-tips.pdf">file</a></td>
   </tr>
@@ -91,14 +91,14 @@ Volledig overzicht versies:
   <tr>
     <th>licht</th>
     <td><a href="https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_light.pdf">bestand</a></td>
-    <td><a href="https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_light-no_dialect.pdf">bestand</a></td>
+    <td><a href="https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_light_no-dialect.pdf">bestand</a></td>
     <td><a href="https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_light_no-tips_no-dialect.pdf">bestand</a></td>
     <td><a href="https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_light_no-tips.pdf">bestand</a></td>
   </tr>
   <tr>
     <th>donker</th>
     <td><a href="https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_dark.pdf">bestand</a></td>
-    <td><a href="https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_dark-no_dialect.pdf">bestand</a></td>
+    <td><a href="https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_dark_no-dialect.pdf">bestand</a></td>
     <td><a href="https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_dark_no-tips_no-dialect.pdf">bestand</a></td>
     <td><a href="https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_dark_no-tips.pdf">bestand</a></td>
   </tr>
