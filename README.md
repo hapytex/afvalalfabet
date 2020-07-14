@@ -23,7 +23,7 @@ full overview of the different versions:
 <table>
 <thead>
   <tr>
-    <th rowspan="2"></th>
+    <th rowspan="2">&times;</th>
     <th colspan="2">with hints</th>
     <th colspan="2">without hints</th>
   </tr>
@@ -77,7 +77,7 @@ Volledig overzicht versies:
 <table>
 <thead>
   <tr>
-    <th rowspan="2"></th>
+    <th rowspan="2">&times;</th>
     <th colspan="2">met tips</th>
     <th colspan="2">zonder tips</th>
   </tr>
