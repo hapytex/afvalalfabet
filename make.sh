@@ -7,7 +7,7 @@ midx='makeindex'
 makename () {
   local i="$1"
   if [ ! -z "$i" ]; then
-    name="-$i"
+    name="_$i"
     flag="--$i"
   else
     name=''
