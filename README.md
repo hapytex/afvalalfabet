@@ -38,3 +38,36 @@ onder een andere naam.
 Men kan een *pull request* maken om items toe te voegen of te corrigeren.
 
 De [*travis build*](travis-ci.com/github/hapytex/afvalwoordenboek) maakt een [pdf-versie van de data](https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_light.pdf) [*(donker)*](https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_dark.pdf).
+
+Volledig overzicht versies:
+
+<table>
+<thead>
+  <tr>
+    <th rowspan="2"></th>
+    <th colspan="2">met tips</th>
+    <th colspan="2">zonder tips</th>
+  </tr>
+  <tr>
+    <th>dialect</th>
+    <th colspan="2">zonder dialect</th>
+    <th>dialect</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <th>donker</th>
+    <td><a href="https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_dark.pdf">bestand</a></td>
+    <td><a href="https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_dark-no_dialect.pdf">bestand</a></td>
+    <td><a href="https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_dark_no-tips_no-dialect.pdf">bestand</a></td>
+    <td><a href="https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_dark_no-tips.pdf">bestand</a></td>
+  </tr>
+  <tr>
+    <th>licht</th>
+    <td><a href="https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_light.pdf">bestand</a></td>
+    <td><a href="https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_light-no_dialect.pdf">bestand</a></td>
+    <td><a href="https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_light_no-tips_no-dialect.pdf">bestand</a></td>
+    <td><a href="https://hapytex.github.io/afvalwoordenboek/afvalwoordenboek_light_no-tips.pdf">bestand</a></td>
+  </tr>
+</tbody>
+</table>
