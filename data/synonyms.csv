@@ -1,62 +1,62 @@
 origin,target,dialect
-Aansteker,Briquet,1
 Aansteker,Allumeur,1
+Aansteker,Briquet,1
 Aardappelschillen,Petetteschel,1
 Aarde,Grond,0
 Aardewerk,Gleierwerk,1
 Aardewerk,Pottekarree,1
-Antivries,Antigel,1
 Accu,Autobatterij,0
-Aftershave,Scheerlotion,0
 Aftershave,Kinfris,0
+Aftershave,Scheerlotion,0
 Alcohol,Sterke drank,0
 Alcoholstift,Alkoolstift,1
 Aluminiumfolie,Zilverpapier,0
+Antivries,Antigel,1
+Arduin,Ardoan,1
 Arduin,Arduinsteen,0
+Arduin,Blauwe steen,1
 Arduin,Blauwsteen,0
 Arduin,Hardsteen,0
 Arduin,Kolenkalksteen,0
 Arduin,Petit granit,1
-Arduin,Blauwe steen,1
-Arduin,Ardoan,1
 Asbesthoudend materiaal,Aminanthoudend materiaal,0
 Asbesthoudend materiaal,Steenvlashoudend materiaal,0
 Asfalt,Aardhars,0
 Audiocasette,Audiotape,0
-Baksteen,Klinker,0
-Baksteen,Kareel,1
 Baksteen,Briek,1
+Baksteen,Kareel,1
+Baksteen,Klinker,0
 Baksteen,Kreel,1
 Baksteen,Moef,1
 Balpen,Bic,1
 Balpen,Stylo,1
-Barbecue-stel,Bbq-stel,1
+Band,Autoband,0
 Barbecue-stel,Barbecu-stel,1
+Barbecue-stel,Bbq-stel,1
 Barometer,Luchtdrukmeter,0
-Batterij,Pile,1
 Batterij,Piele,1
+Batterij,Pile,1
 Beenderen,Gebeente,0
 Beenderen,Karkas,0
 Behanglijmoplosser,Behangafweekmiddel,0
-Behangpapier,Meubelpapier,1
 Behangpapier,Frut,1
+Behangpapier,Meubelpapier,1
 Beits,Sapsel,1
 Benzine,Naft,1
 Benzine,Nafte,1
-Bestek,Eetgerei,0
 Bestek,Couvert,0
+Bestek,Eetgerei,0
 Bestek,Eetgerief,1
 BH,Beha,0
 BH,Bustehouder,0
 BH,Bustier,0
+BH,Loesbril,1
 BH,Soutien,1
 BH,Tettegarage,1
-BH,Loesbril,1
-Band,Autoband,0
+Gif,Vergif,0
+Nummerplaat,Kentekenplaat,0
 Sinaasappel,Appelsien,1
 Sinaasappel,Ginappel,1
 Sinaasappel,Seenappel,1
 Wieldop,Autowieldop,0
 Zonnepanelen,Fotovoltaïshe cellen,0
-Nummerplaat,Kentekenplaat,0
-Gif,Vergif,0

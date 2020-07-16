@@ -3,8 +3,6 @@
 import numpy as np
 import pandas as pd
 
-exit(0)
-
 def sortdf(filename, *columns):
     df = pd.read_csv(filename)
     df = df.replace(np.NaN, '')
