@@ -38,6 +38,7 @@ for fn in *.tex; do
     done
     makeindex "$bn" || true
   done
+  rm *.adx
 done
 
 rm *.aux *.glo *.idx *.ilg *.ind *.ist *.log *.out *.tex *.sty *.cls *.adx *.and
