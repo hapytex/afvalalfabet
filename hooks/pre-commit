@@ -5,15 +5,17 @@ import pandas as pd
 
 def sortdf(filename, *columns):
     df = pd.read_csv(filename)
-    df = df.replace(np.NaN, '')
+    df0 = df = df.replace(np.NaN, '')
     for col in reversed(columns):
         df = df.iloc[df[col].str.casefold().argsort(kind='mergesort')]
     df.to_csv(filename, index=False)
-    return df
+    return not df0.equals(df)
+
+has_change = False
 
 fns = ['data/data.csv', 'data/tips.csv']
-
 for fn in fns:
-    sortdf(fn, 'Wat?', 'specificaties')
+    has_change |= sortdf(fn, 'Wat?', 'specificaties')
 
-sortdf('data/synonyms.csv', 'origin', 'target')
+has_change |= sortdf('data/synonyms.csv', 'origin', 'target')
+exit(int(has_change))
