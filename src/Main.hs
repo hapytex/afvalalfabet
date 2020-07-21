@@ -37,13 +37,13 @@ titleFirst t = T.toUpper t1 <> t2
 
 newtype Tip = Tip {untip :: Text} deriving (Eq, Ord, Show)
 
-data WasteRecord = WasteRecord { name :: Text, specs :: Text, location :: [Text], tips :: [Tip] } deriving (Eq, Show)
+data WasteRecord = WasteRecord { name :: Text, specs :: Text, location :: [Text], tips :: [Tip], dialect :: Bool } deriving (Eq, Show)
 
 instance Semigroup WasteRecord where
-    WasteRecord n s ls1 ts1 <> WasteRecord { location=ls2, tips=ts2 } = WasteRecord n s (ls1 <> ls2) (ts1 <> ts2)
+    WasteRecord n s ls1 ts1 dia <> WasteRecord { location=ls2, tips=ts2 } = WasteRecord n s (ls1 <> ls2) (ts1 <> ts2) dia
 
 fromTip :: (Text, Text, Tip) -> ((Text, Text), WasteRecord)
-fromTip (n,s,t) = ((n, s), WasteRecord n "" [] [t])
+fromTip (n,s,t) = ((n, s), WasteRecord n "" [] [t] False)
 
 instance Ord WasteRecord where
     compare wa wb = on compare (T.toCaseFold . name) wa wb <> on go (T.toCaseFold . specs) wa wb
@@ -68,7 +68,7 @@ rawProtectSlug :: LaTeXC l => Text -> l
 rawProtectSlug = rawProtect . slug
 
 slug' :: WasteRecord -> Text
-slug' (WasteRecord n s _ _) = slug (n <> s)
+slug' (WasteRecord n s _ _ _) = slug (n <> s)
 
 slug'' :: WasteLocation -> Text
 slug'' = slug . Main.label
@@ -80,7 +80,7 @@ toTip :: (Text, Text, Text) -> (Text, Text, Tip)
 toTip (k, s, t) = (k, s, Tip t)
 
 toWasteRecord :: (Text, Text, Text, Text) -> WasteRecord
-toWasteRecord (na, sp, lcs, _) = WasteRecord (titleFirst (strip na)) (strip sp) (Prelude.map strip (T.splitOn "/" lcs)) []
+toWasteRecord (na, sp, lcs, _) = WasteRecord (titleFirst (strip na)) (strip sp) (Prelude.map strip (T.splitOn "/" lcs)) [] False
 
 addTip' :: Tip -> WasteRecord -> WasteRecord
 addTip' t w@WasteRecord{tips=ts} = w {tips=t:ts}
@@ -116,12 +116,12 @@ locationToLaTeX2 _ (WasteLocation l _ _ _ _) = comm1 "label" ((raw . ("glo:" <> 
 -- locationToLaTeX2 ro (WasteLocation l _ _ _ _) = comm1 "section*" (raw l) <> (optFixComm "index" 1 . (raw "locations" :) . pure . raw . (<> "|textbf") . protectText) l <> optFixComm "pdfbookmark" 1 ["1", raw (protectText l), (raw . ("glo:" <>) . slug) l] <> raw "lorem ipsum" -- comm1 "label" (raw ("loc:" <> (slug'' wl))) <> section (raw (locName wl))
 
 wasteToLaTeX :: LaTeXC l => WasteRecord -> l
-wasteToLaTeX w@(WasteRecord n s l ts) = optFixComm "entry" 1 [raw (slug' w), raw n, subs <> raw " " <> Prelude.foldMap (comm1 "gls" . rawSlug) l <> Prelude.foldMap (optFixComm "index" 1 . (raw "locations" :) . pure . rawProtect) l <> raw "\\\\" <> Prelude.foldMap (comm1 "hint" . rawProtect . untip) ts]
+wasteToLaTeX w@(WasteRecord n s l ts dia) = optFixComm "entry" 1 [raw (slug' w), raw n, bool id textit dia (raw n), subs <> raw " " <> Prelude.foldMap (comm1 "gls" . rawSlug) l <> Prelude.foldMap (optFixComm "index" 1 . (raw "locations" :) . pure . rawProtect) l <> raw "\\\\" <> Prelude.foldMap (comm1 "hint" . rawProtect . untip) ts]
   where subs | T.null s = ""
              | otherwise = {- comm1 "hspace*" "0.25cm" <> -} textit (rawProtect (T.cons '(' (s <> ") ")))
 
 wasteToLaTeX' :: LaTeXC l => (WasteRecord, WasteRecord) -> l
-wasteToLaTeX' (WasteRecord a _ _ _, w@(WasteRecord b _ _ _)) = f (wasteToLaTeX w)
+wasteToLaTeX' (WasteRecord a _ _ _ _, w@(WasteRecord b _ _ _ _)) = f (wasteToLaTeX w)
     where f | T.take 1 (T.toUpper a) /= T.take 1 (T.toUpper b), (c:_) <- T.unpack b = (newLetter c <>)
             | otherwise = id
 
@@ -143,8 +143,8 @@ filterSynonyms :: Bool -> V.Vector (Text, Text, Int) -> V.Vector (Text, Text, In
 filterSynonyms True = id
 filterSynonyms False = V.filter (\(_, _, n) -> n == 0)
 
-readSynonyms :: Bool -> IO (V.Vector (Text, Text))
-readSynonyms b = V.map (\(x, y, _) -> (x, y)) . filterSynonyms b <$> parseCsvFile id "data/synonyms.csv" True
+readSynonyms :: Bool -> IO (V.Vector (Text, Text, Int))
+readSynonyms b = filterSynonyms b <$> parseCsvFile id "data/synonyms.csv" True
 
 readWasteRecords :: IO (V.Vector WasteRecord)
 readWasteRecords = parseCsvFile toWasteRecord "data/data.csv" True
@@ -152,9 +152,9 @@ readWasteRecords = parseCsvFile toWasteRecord "data/data.csv" True
 readTips :: Bool -> IO (V.Vector (Text, Text, Tip))
 readTips = parseCsvFile toTip "data/tips.csv"
 
-synonym :: Text -> Text -> WasteIndex' -> WasteIndex'
-synonym na nb m
-    | Just ls <- (M.!?) m na = M.insert nb [ l { name = nb } | l <- ls] m
+synonym :: (Text, Text, Int) -> WasteIndex' -> WasteIndex'
+synonym (na, nb, dia) m
+    | Just ls <- (M.!?) m na = M.insert nb [ l { name = nb, dialect=dia > 0 } | l <- ls] m
     | otherwise = m
 
 data RenderOptions = RenderOptions { dark :: Bool, showTips :: Bool, showDialect :: Bool }
@@ -190,9 +190,9 @@ main = do
     let tpempty = (M.fromListWith (<>) . Prelude.map fromTip . Prelude.filter (\(_, x, _) -> T.null x) . V.toList) tpks0
     let wrt1 = M.union wrt0 tpempty
     let wrt2 = (M.fromListWith (<>) . Prelude.map (\x -> (name x, [x])) . M.elems) wrt1
-    let wrt = Prelude.foldr (uncurry synonym) wrt2 sy
+    let wrt = Prelude.foldr synonym wrt2 sy
     let _wr = (V.fromList . sort . Prelude.concat . M.elems) wrt
-        wr' = V.zip (V.cons (WasteRecord "" "" [] []) _wr) _wr
+        wr' = V.zip (V.cons (WasteRecord "" "" [] [] False) _wr) _wr
     hPutStrLn stderr ("Hint keys not found:" ++ show (V.filter (\(_, x, _) -> not (T.null x)) tpks0))
     hPutStrLn stderr ("Conflicting directions: " ++ show (conflictfsm fsm))
     execLaTeXT (_document ro wl wr' fsm) >>= TI.putStrLn . render

@@ -31,7 +31,7 @@ cd out
 for fn in *.tex; do
   bn=$(basename "$fn" '.tex')
   for i in `seq 5`; do
-    $latexc --interaction=nonstopmode "$fn" >/dev/null 2>/dev/null
+    $latexc --interaction=nonstopmode "$fn"
     for f in *.adx; do
       fb=$(basename "$f" '.adx')
       $midx "$f" -o "$fb.and" || true
