@@ -204,8 +204,13 @@ Diesel,Dieselolie,0
 Diesel,Gasolie,0
 Diskette,Floppy,0
 Diskette,Floppydisk,0
+Dop,Stop,0
+Dop,Stopke,1
+Dop,Tsjoep,1
 Gif,Vergif,0
 Inktpatroon,Cartridge,0
+Nagellakverwijderaar,Dissolvent,1
+Nagellakverwijderaar,Nagellakremover,0
 Nummerplaat,Kentekenplaat,0
 Pesticide,Insecticide,0
 Pesticide,Onkruidverdelger,0
