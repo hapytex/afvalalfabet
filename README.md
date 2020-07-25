@@ -104,3 +104,8 @@ Volledig overzicht versies:
   </tr>
 </tbody>
 </table>
+
+## Contributors
+
+**Lindsey Louwyck** has made some [valuable remarks](https://github.com/hapytex/afvalwoordenboek/issues/1)
+that resulted in extra entries and updated entries in the dictionary.
