@@ -285,6 +285,17 @@ Fosforzuur,Orthofosforzuur,0
 Foto,Kiekje,0
 Foto-negatief,Negatief,0
 Fotocamera,Fototoestel,0
+Frituurvet,Frietvet,0
+Frituurvet,Fritvet,1
+Gasfles,Gascilinder,0
+Gasfles,Gasreservoir,0
+Gebak,Banket,0
+Gebak,Biscuit,0
+Gebak,Cake,0
+Gebak,Eclair,0
+Gebak,Koffiekoek,0
+Gebak,Pateeke,1
+Gebak,Taart,0
 Gif,Vergif,0
 Inktpatroon,Cartridge,0
 Nagellakverwijderaar,Dissolvent,1
@@ -305,4 +316,5 @@ Verfverwijderaar,Decapant,1
 Verfverwijderaar,Verfafbijter,0
 Wieldop,Autowieldop,0
 Zelfbruiner,Bruin-zonder-zon,0
-Zonnepanelen,Fotovoltaïshe cellen,0
+Zonnepaneel,Fotovoltaïshe cel,0
+Zonnepaneel,PV-cel,0
