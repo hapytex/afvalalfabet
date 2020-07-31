@@ -300,15 +300,29 @@ Gel,Brillantine,0
 Gelaagd glas,Veiligheidsglas,0
 Geneesmiddel,Heelmiddel,0
 Geneesmiddel,Medicament,0
+Geneesmiddel,Medicatie,0
 Geneesmiddel,Medicijn,0
 Geneesmiddel,Preparaat,0
+Geursteen,Toiletblok,0
+Geursteen,Wc-blok,0
+Gewicht,Halter,0
 Gif,Vergif,0
+Gif,Vergift,0
+Gips,Plaaster,1
+Gips,Pleister,0
+Glasvezel,Fiber,0
+Glasvezel,Fibre,0
+Glasvezelbehang,Fleezdoek,0
+Glasvezelbehang,Glasvliesbehang,0
+Glasvezelbehang,Kaarsdoek,0
+Glasvezelbehang,Tasso,0
 Inktpatroon,Cartridge,0
 Kunstgebid,Vals gebid,0
 Kunstgebid,Valse tanden,0
 Nagellakverwijderaar,Dissolvent,1
 Nagellakverwijderaar,Nagellakremover,0
 Nummerplaat,Kentekenplaat,0
+Nummerplaat,Plak,1
 Pesticide,Insecticide,0
 Pesticide,Onkruidverdelger,0
 PVC-buis,Elektrabuis,0
@@ -322,6 +336,10 @@ TL-lamp,Fluorescentielamp,0
 TL-lamp,TL-buis,0
 Verfverwijderaar,Decapant,1
 Verfverwijderaar,Verfafbijter,0
+Vuurwapen,Buks,0
+Vuurwapen,Dubbelloopsgeweer,0
+Vuurwapen,Geweer,0
+Vuurwapen,Tweeloop,0
 Wieldop,Autowieldop,0
 Zelfbruiner,Bruin-zonder-zon,0
 Zonnepaneel,Fotovoltaïshe cel,0
