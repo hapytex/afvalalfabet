@@ -310,6 +310,8 @@ Gif,Vergif,0
 Gif,Vergift,0
 Gips,Plaaster,1
 Gips,Pleister,0
+Gipsplaat,Gyproc,0
+Gipsplaat,Gyprocplaten,0
 Glasvezel,Fiber,0
 Glasvezel,Fibre,0
 Glasvezelbehang,Fleezdoek,0
@@ -326,6 +328,10 @@ Grammofoonplaat,Fonoplaat,0
 Grammofoonplaat,Langspeelplaat,0
 Grammofoonplaat,Plaat,0
 Gras,Gès,1
+Graszode,Plag,0
+Graszode,Plagge,0
+Gsm,Mobiele telefoon,0
+Gsm,Mobieltje,0
 Inktpatroon,Cartridge,0
 Kunstgebid,Vals gebid,0
 Kunstgebid,Valse tanden,0
