@@ -17,5 +17,5 @@ fns = ['data/data.csv', 'data/tips.csv']
 for fn in fns:
     has_change |= sortdf(fn, 'Wat?', 'specificaties')
 
-has_change |= sortdf('data/synonyms.csv', 'origin', 'target')
+has_change |= sortdf('data/synonyms.csv', 'Orgineel', 'Synoniem')
 exit(int(has_change))
