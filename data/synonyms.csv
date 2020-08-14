@@ -28,7 +28,9 @@ Baksteen,Kareel,1
 Baksteen,Klinker,0
 Baksteen,Kreel,1
 Baksteen,Moef,1
+Balpen,Ballpoint,1
 Balpen,Bic,1
+Balpen,Kogelpen,0
 Balpen,Stylo,1
 Band,Autoband,0
 Barbecue-stel,Barbecu-stel,1
@@ -436,6 +438,21 @@ Knoopcel,Coin cell,1
 Knoopcel,Knoopbatterij,0
 Knoopcel,Knoopcelbatterij,0
 Knoopcel,Knoopje,1
+Koelvloeistof,Koelmiddel,0
+Koffiedik,Drab,0
+Koffiedik,Dras,1
+Koffiedik,Grons,1
+Koffiedik,Grus,1
+Koffiedik,Koffiebezinksel,0
+Koffiedik,Koffiedrab,0
+Koffiedik,Koffiedras,1
+Koffiedik,Koffiegruis,0
+Koffiedik,Koffieprut,0
+Koffiefilter,Kaffeebeus,1
+Koffiefilter,Rampenauke,1
+Kokosnoot,Klapper,0
+Kokosnoot,Klappernoot,0
+Kokosnoot,Kokosvrucht,0
 Kunstgebid,Vals gebid,0
 Kunstgebid,Valse tanden,0
 Nagellakverwijderaar,Dissolvent,1
