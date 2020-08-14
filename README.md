@@ -4,7 +4,7 @@
 
 A dictionary how to handle (and recycle) waste in Belgium, in Dutch.
 
-Data is mainly taken from the [*afvalalfabet*](https://www.merelbeke.be/sites/default/files/bijlage/Afvalalfabet.pdf) from the municipality of *Merelbeke*.
+Data is mainly taken from the [*afvalalfabet*](https://www.merelbeke.be/sites/default/files/bijlage/Afvalalfabet.pdf) from the municipality of *Merelbeke* and the [*sorteerwijzer*](https://www.mirom.be/sorteerwijzer) of *MIROM*.
 
 You can look at the [**`data.csv`** file](data/data.csv) for a list of
 items, and how to get rid of these.
@@ -57,7 +57,7 @@ full overview of the different versions:
 Een woordenboek dat beschrijft hoe men afval in België hoort te sorteren. Het is
 opgesteld in het Nederlands.
 
-De data komt hoofdzakelijk van het [*afvalalfabet*](https://www.merelbeke.be/sites/default/files/bijlage/Afvalalfabet.pdf) van de gemeente *Merelbeke*.
+De data komt hoofdzakelijk van het [*afvalalfabet*](https://www.merelbeke.be/sites/default/files/bijlage/Afvalalfabet.pdf) van de gemeente *Merelbeke* en van de [*sorteerwijzer*](https://www.mirom.be/sorteerwijzer) van *MIROM*.
 
 Het [**`data.csv`** bestand](data/data.csv) bevat een lijst van items en hoe
 deze te sorteren.
