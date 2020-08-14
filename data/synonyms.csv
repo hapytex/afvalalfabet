@@ -431,6 +431,11 @@ Kleefpapier,Klever,0
 Kleefpapier,Plakker,1
 Kleefpapier,Sticker,0
 Kleefpapier,Zelfklever,0
+Knoopcel,Button cell,1
+Knoopcel,Coin cell,1
+Knoopcel,Knoopbatterij,0
+Knoopcel,Knoopcelbatterij,0
+Knoopcel,Knoopje,1
 Kunstgebid,Vals gebid,0
 Kunstgebid,Valse tanden,0
 Nagellakverwijderaar,Dissolvent,1
