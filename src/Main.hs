@@ -141,7 +141,7 @@ readLocations = parseCsvFile toWasteLocation "data/where.csv" True
 
 filterSynonyms :: Bool -> V.Vector (Text, Text, Int) -> V.Vector (Text, Text, Int)
 filterSynonyms True = id
-filterSynonyms False = V.filter (\(_, _, n) -> n == 0)
+filterSynonyms False = V.filter (\(_, _, n) -> n <= 0)
 
 readSynonyms :: Bool -> IO (V.Vector (Text, Text, Int))
 readSynonyms b = filterSynonyms b <$> parseCsvFile id "data/synonyms.csv" True
