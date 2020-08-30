@@ -640,6 +640,7 @@ Pesticide,Insecticide,0
 Pesticide,Onkruidverdelger,0
 Pesticide,Onkruidverdelgingsmiddel,0
 PET-fles,petfles,0
+PET-fles,Plastic fles,0
 PET-fles,Polyethyleentereftalaat-fles,0
 Pickles,Piccalilly,0
 Pit,Zaad,0
@@ -659,6 +660,19 @@ Plakband,Verpakkingsplakband,-2
 Plank,Balk,0
 Plank,Blad,0
 Plank,Plaat,0
+Plant,Kamerplant,-2
+Plant,Kasplant,-2
+Plant,Struik,-2
+Plant,Tuinplant,-2
+Pluim,Slagpen,0
+Pluim,Vogelveer,0
+Polymethylmethacrylaat,Acrylaat,0
+Polymethylmethacrylaat,Altuglas,2
+Polymethylmethacrylaat,Oroglas,2
+Polymethylmethacrylaat,Perspex,2
+Polymethylmethacrylaat,Plexiglas,2
+Polymethylmethacrylaat,PMMA,0
+Polymethylmethacrylaat,Propenoaat,0
 PVC-buis,Elektrabuis,0
 PVC-buis,Elektriciteitsbuis,0
 PVC-buis,Installatiebuis,0
