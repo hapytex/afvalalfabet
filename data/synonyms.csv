@@ -753,6 +753,10 @@ Rubber,Schuimrubber,-2
 Rubber,Sponsrubber,-2
 Röntgenfoto,Röntgenopname,0
 Röntgenfoto,X-straalfoto,0
+Saus,Vleesnat,0
+Schaafkrullen,Schaafsel,0
+Schaafkrullen,Schavelinge,1
+Schaar,Scheir,1
 Sinaasappel,Appelsien,1
 Sinaasappel,Ginappel,1
 Sinaasappel,Seenappel,1
@@ -766,5 +770,6 @@ Vuurwapen,Geweer,0
 Vuurwapen,Tweeloop,0
 Wieldop,Autowieldop,0
 Zelfbruiner,Bruin-zonder-zon,0
+Zetel,Salon,1
 Zonnepaneel,Fotovoltaïshe cel,0
 Zonnepaneel,PV-cel,0
