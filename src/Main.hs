@@ -21,8 +21,6 @@ import System.IO(hPutStrLn, stderr)
 
 import Text.LaTeX.Base
 import Text.LaTeX.Base.Class
-import Text.LaTeX.Packages.TikZ(tikzpicture)
-import Text.LaTeX.Packages.TikZ.Syntax(TikZ, emptytikz)
 
 type WasteIndex = Map (Text, Text) WasteRecord
 type WasteIndex' = Map Text [WasteRecord]
@@ -178,7 +176,7 @@ main :: IO ()
 main = do
     argv <- getArgs
     ro <- case getOpt Permute options argv of
-        (o, n, []) -> pure (Prelude.foldr ($) def o)
+        (o, _, []) -> pure (Prelude.foldr ($) def o)
         _ -> fail "Invalid program parameters"
     wl <- readLocations
     wr <- readWasteRecords
