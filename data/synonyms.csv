@@ -610,6 +610,7 @@ Ontsmettingsmiddel,Desinfecterend middel,-1
 Ontsmettingsmiddel,Desinfectievloeistof,-1
 Ontstopper,Gootsteenontstopper,0
 Ontstopper,vloeibare ontstopper,0
+Ontvetter,Terpentijn,0
 Ontvetter,Terpentine,0
 Ontvetter,Thinner,2
 Ontvetter,Vetverwijderaar,0
@@ -864,6 +865,23 @@ Tafellaken,Tafelkleed,0
 Tak,Twijg,0
 Tampon,Kotextampon,-1
 Tampon,Tampax,-1
+Tandbeugel,Appareil,1
+Tandbeugel,Blokbeugel,-2
+Tandbeugel,Blokskes,1
+Tandbeugel,Plaatbeugel,-2
+Tandbeugel,Slotjesbeugel,-2
+Tandpasta,Fluortandpasta,-2
+Tandpasta,Kindertandpasta,-2
+Tapijt,Karpet,0
+Tapijt,Tapis-plain,1
+Tapijt,Tapis-plein,1
+Tapijt,Vloerkleed,0
+Tapijt,Voltapijt,-2
+Tegel,Plavei,1
+Tegel,Stoeptegel,-2
+Tegel,Vloertegel,-2
+Tegel,Wandtegel,-2
+Telefoonboek,Telefoongids,0
 TL-lamp,Fluorescentielamp,0
 TL-lamp,TL-buis,0
 Verfverwijderaar,Decapant,1
