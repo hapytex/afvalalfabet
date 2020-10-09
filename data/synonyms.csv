@@ -561,9 +561,9 @@ Methanol,Spiritus,0
 Meubel,Ameublement,0
 Meubel,Meubelstuk,0
 Meubel,Meubilair,0
-Multiplex,Multiplexplaten,0
+Multiplex,Multiplexplaat,0
 Multiplex,Triplex,0
-Multiplex,Triplexplaten,0
+Multiplex,Triplexplaat,0
 Munitie,Ammunitie,0
 Nagellakverwijderaar,Dissolvent,1
 Nagellakverwijderaar,Nagellakremover,0
@@ -923,6 +923,13 @@ Trapladder,Trapleer,0
 Treinkaartje,Coupon,0
 Treinkaartje,Reisbiljet,0
 Treinkaartje,Treinbiljet,0
+Tuingereedschap,Hofgerief,1
+Tuingereedschap,Tuingerief,1
+Tuinmeubel,Tuinbank,-2
+Tuinmeubel,Tuintafel,-2
+Tuinmeubel,Tuinzetel,-2
+Tuinslang,Lans,1
+Tuinslang,Waterdarm,1
 Verfverwijderaar,Decapant,1
 Verfverwijderaar,Verfafbijter,0
 Vuurwapen,Buks,0
