@@ -964,6 +964,13 @@ Verf,Muurverf,-2
 Verf,Olieverf,-2
 Verf,Tjet,0
 Verf,Waterverf,-2
+Verfborstel,Penseel,0
+Verfborstel,Schildersborstel,0
+Verfborstel,Verfkwast,0
+Verfbrandapparaat,Heteluchtpistool,0
+Verfbrandapparaat,Verfstripper,0
+Verfpot,Verfblik,0
+Verfrol,Verfroller,0
 Verfverwijderaar,Decapant,1
 Verfverwijderaar,Verfafbijter,0
 Vuurwapen,Buks,0
