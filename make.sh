@@ -22,8 +22,8 @@ for i in no-tips ''; do
   makename "$i"; naa="$name"; fla="$flag"
   for j in no-dialect ''; do
     makename "$j"; nab="$name"; flb="$flag"
-    stack run -- "$fla" "$flb" | tee "out/afvalwoordenboek_light$naa$nab".tex
-    stack run -- --dark "$fla" "$flb" | tee "out/afvalwoordenboek_dark$naa$nab.tex"
+    stack run -- "$fla" "$flb" > "out/afvalwoordenboek_light$naa$nab".tex
+    stack run -- --dark "$fla" "$flb" > "out/afvalwoordenboek_dark$naa$nab.tex"
   done
 done
 cd out
