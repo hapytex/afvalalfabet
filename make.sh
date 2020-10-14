@@ -17,13 +17,17 @@ makename () {
 
 mkdir -p out
 ln -f *.sty *.cls out
+ln -f fonts/* out
 
 for i in no-tips ''; do
   makename "$i"; naa="$name"; fla="$flag"
   for j in no-dialect ''; do
     makename "$j"; nab="$name"; flb="$flag"
-    stack run -- "$fla" "$flb" > "out/afvalwoordenboek_light$naa$nab".tex
-    stack run -- --dark "$fla" "$flb" > "out/afvalwoordenboek_dark$naa$nab.tex"
+    for k in dyslexic ''; do
+      makename "$k"; nac="$name"; flb="$flag"
+      stack run -- "$fla" "$flb" > "out/afvalwoordenboek_light$naa$nab$nac".tex
+      stack run -- --dark "$fla" "$flb" > "out/afvalwoordenboek_dark$naa$nab$nac.tex"
+    done
   done
 done
 cd out
@@ -41,6 +45,6 @@ for fn in *.tex; do
   rm *.adx
 done
 
-rm *.aux *.glo *.idx *.ilg *.ind *.ist *.log *.out *.tex *.sty *.cls *.adx *.and
+rm *.aux *.glo *.idx *.ilg *.ind *.ist *.log *.out *.tex *.sty *.cls *.adx *.and *.ttf
 
 exit 0

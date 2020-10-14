@@ -155,14 +155,15 @@ synonym (na, nb, dia) m
     | Just ls <- (M.!?) m na = M.insert nb [ l { name = nb, dialect=dia > 0 } | l <- ls] m
     | otherwise = m
 
-data RenderOptions = RenderOptions { dark :: Bool, showTips :: Bool, showDialect :: Bool }
+data RenderOptions = RenderOptions { dark :: Bool, showTips :: Bool, showDialect :: Bool, dyslexiaFont :: Bool }
 
 instance Default RenderOptions where
-    def = RenderOptions False True True
+    def = RenderOptions False True True False
 
 headerCommands :: Monad m => RenderOptions -> LaTeXT_ m
 headerCommands r
-    | dark r = comm1 "pagecolor" "black" >> comm1 "color" "white" >> comm3 "definecolor" "hint-bg" "RGB" "70,66,54" >> comm3 "definecolor" "hint-fg" "RGB" "103,92,55" >> comm3 "definecolor" "hint-tx" "RGB" "207,210,214"
+    | dark r = comm1 "pagecolor" "black" >> comm1 "color" "white" >> comm3 "definecolor" "hint-bg" "RGB" "70,66,54" >> comm3 "definecolor" "hint-fg" "RGB" "103,92,55" >> comm3 "definecolor" "hint-tx" "RGB" "207,210,214" >> headerCommands (r{ dark=False})
+    | dyslexiaFont r = usepackage [] "fontspec" >> comm1 "setmainfont" "OpenDyslexic3-Regular.ttf" >> headerCommands (r {dyslexiaFont=False})
     | otherwise = pure ()
 
 options :: [OptDescr (RenderOptions -> RenderOptions)]
@@ -170,6 +171,7 @@ options = [
     Option ['d'] ["dark"] (NoArg (\o -> o{dark=True})) "Use a dark theme"
   , Option ['T'] ["no-tips"] (NoArg (\o -> o{showTips=False})) "Do not add tips"
   , Option ['D'] ["no-dialect"] (NoArg (\o -> o{showDialect=False})) "Do not add elements in dialect"
+  , Option ['y'] ["dyslexic"] (NoArg (\o -> o{dyslexiaFont=True})) "Use a font for people with dyslexia"
   ]
 
 main :: IO ()
