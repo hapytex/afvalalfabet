@@ -153,6 +153,8 @@ Casette,Banneke,1
 Casette,Casetteband,0
 Casette,Filmcassette,0
 Casette,Muziekcassette,0
+Casette,VHS,0
+Casette,Videoband,0
 Casette,Videocassette,0
 CD-doosje,Ceedee-doosje,0
 CD-doosje,Compact disk-doosje,0
@@ -331,6 +333,7 @@ Grammofoonplaat,Fonoplaat,0
 Grammofoonplaat,Langspeelplaat,0
 Grammofoonplaat,LP,0
 Grammofoonplaat,Plaat,0
+Grammofoonplaat,Vinylplaat,0
 Gras,Gès,1
 Graszode,Plag,0
 Graszode,Plagge,0
@@ -781,6 +784,9 @@ Schoensmeer,Schoenblink,0
 Schoensmeer,Schoencrème,0
 Schoensmeer,Schoenpoets,0
 Schoensmeer,Schoenschmink,0
+Schroef,Bankvijs,-2
+Schroef,Scheepsschroef,-2
+Schroef,Vijs,0
 Schuurpapier,Slispapier,1
 Servet,Dekservet,-2
 Servet,Serviette,1
@@ -990,6 +996,22 @@ Vet,Smeer,0
 Vet,Smeervet,-2
 Vet,Smout,-2
 Vet,Vetstof,0
+Vezelplaat,Houtvezelplaat,-2
+Vezelplaat,Strovezelplaat,-2
+Videocassettedoos,VHS doos,0
+Vinyl vloerbedekking,Novilon,2
+Vinyl vloerbedekking,Polyvinylchloride vloerbedekking,0
+Visgraat,Graat,0
+Visgraat,Visbeen,0
+Vliegengordijn,Hor,0
+Vliegengordijn,Jaloezie,1
+Vliegengordijn,Moestekeir,1
+Vliegengordijn,Schrin,1
+Vliegengordijn,Stramijm,1
+Vliegengordijn,Stremmaan,1
+Vliegengordijn,Vliegenraam,0
+Vliegengordijn,Vliegenvenster,0
+Vliegengordijn,Zift,1
 Vuurwapen,Buks,0
 Vuurwapen,Dubbelloopsgeweer,0
 Vuurwapen,Geweer,0
