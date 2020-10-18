@@ -201,6 +201,7 @@ Deksel,Ulle,1
 Deodorant,Deo,0
 Detergent,Detergens,0
 Detergent,Reinigingsmiddel,0
+Detergent,Wasmiddel,-2
 Dettol,Chloorxylenol,0
 Dicteerapparaat,Dictafoon,0
 Dicteerapparaat,Memorecorder,0
@@ -218,6 +219,8 @@ Drinkbeker,Drinkkroes,0
 Drinkbeker,Kelk,0
 Drinkbeker,Kroes,0
 Drinkbeker,Mok,0
+Drooglijn,Wasdraad,0
+Drooglijn,Waslijn,0
 Dweil,Dweilke,1
 Dweil,Opneemdoek,0
 Dweil,Opneemvod,0
@@ -618,7 +621,7 @@ Ontvetter,Terpentine,0
 Ontvetter,Thinner,2
 Ontvetter,Verdunner,0
 Ontvetter,Vetverwijderaar,0
-Ontvetter,Wasbenzine,0
+Ontvetter,Wasbenzine,-2
 Ontvetter,White spirit,2
 Ontvlekker,Vlekverwijderaar,0
 Ontwikkelvloeistof,kaliumsulfiet,0
@@ -1058,6 +1061,12 @@ Vuurwapen,Geweer,-2
 Vuurwapen,Tweeloop,-2
 Vuurwerk,Knalvuurwerk,-2
 Vuurwerk,Siervuurwerk,-2
+Warmwaterkruik,Bedkruik,0
+Warmwaterkruik,Boejot,1
+Warmwaterkruik,Boejote,1
+Warmwaterkruik,Heetwaterzak,0
+Warmwaterkruik,Stoopke,1
+Waskrijkt,Wasco,2
 Wieldop,Autowieldop,0
 Zelfbruiner,Bruin-zonder-zon,0
 Zetel,Salon,1
