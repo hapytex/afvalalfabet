@@ -1052,10 +1052,12 @@ Vuilblik,Vuilnisblik,0
 Vuurvaste schotel,Braadschotel,0
 Vuurvaste schotel,Caquelon,-2
 Vuurvaste schotel,Ovenschaal,0
-Vuurwapen,Buks,0
-Vuurwapen,Dubbelloopsgeweer,0
-Vuurwapen,Geweer,0
-Vuurwapen,Tweeloop,0
+Vuurwapen,Buks,-2
+Vuurwapen,Dubbelloopsgeweer,-2
+Vuurwapen,Geweer,-2
+Vuurwapen,Tweeloop,-2
+Vuurwerk,Knalvuurwerk,-2
+Vuurwerk,Siervuurwerk,-2
 Wieldop,Autowieldop,0
 Zelfbruiner,Bruin-zonder-zon,0
 Zetel,Salon,1
