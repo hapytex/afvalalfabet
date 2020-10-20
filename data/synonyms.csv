@@ -202,6 +202,9 @@ Deodorant,Deo,0
 Detergent,Detergens,0
 Detergent,Reinigingsmiddel,0
 Detergent,Wasmiddel,-2
+Detergent,Waspoeder,-2
+Detergent,Zeep,-2
+Detergent,Zeeppoeder,-2
 Dettol,Chloorxylenol,0
 Dicteerapparaat,Dictafoon,0
 Dicteerapparaat,Memorecorder,0
@@ -1066,7 +1069,16 @@ Warmwaterkruik,Boejot,1
 Warmwaterkruik,Boejote,1
 Warmwaterkruik,Heetwaterzak,0
 Warmwaterkruik,Stoopke,1
-Waskrijkt,Wasco,2
+Waskrijt,Wasco,2
+Watten,Synthetische watten,-2
+Watten,Vette watten,-2
+Watten,Witte watten,-2
+Wattenstaafje,Oeërstekske,1
+Wattenstaafje,Oorkuiserke,1
+Wattenstaafje,Oorstaafje,0
+Wattenstaafje,Oorstokje,0
+Wattenstaafje,Wattenstokje,0
+Wegwerpmasker,Wegwerp mondmasker,0
 Wieldop,Autowieldop,0
 Zelfbruiner,Bruin-zonder-zon,0
 Zetel,Salon,1
