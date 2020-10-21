@@ -619,6 +619,7 @@ Ontsmettingsmiddel,Desinfecterend middel,-1
 Ontsmettingsmiddel,Desinfectievloeistof,-1
 Ontstopper,Gootsteenontstopper,0
 Ontstopper,vloeibare ontstopper,0
+Ontstopper,Wc-ontstopper,0
 Ontvetter,Terpentijn,0
 Ontvetter,Terpentine,0
 Ontvetter,Thinner,2
@@ -1078,6 +1079,13 @@ Wattenstaafje,Oorkuiserke,1
 Wattenstaafje,Oorstaafje,0
 Wattenstaafje,Oorstokje,0
 Wattenstaafje,Wattenstokje,0
+Wc-borstel,Pleeborstel,0
+Wc-borstel,Toiletborstel,0
+Wc-rol,Closetrol,0
+Wc-rol,Toiletrol,0
+Wegwerpfototoestel,Fling,2
+Wegwerpfototoestel,Wegwerpcamera,0
+Wegwerpmasker,Wegwerp mondkapje,0
 Wegwerpmasker,Wegwerp mondmasker,0
 Wieldop,Autowieldop,0
 Zelfbruiner,Bruin-zonder-zon,0
