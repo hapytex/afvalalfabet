@@ -1,28 +1,35 @@
 Orgineel,Synoniem,Dialect
 Aansteker,Allumeur,1
 Aansteker,Briquet,1
-Aardappelschillen,Petetteschel,1
+Aardappelschil,Patattenschel,1
+Aardappelschil,Petetteschel,1
 Aarde,Grond,0
 Aardewerk,Gleierwerk,1
 Aardewerk,Pottekarree,1
-Accu,Autobatterij,0
 Aftershave,Kinfris,0
 Aftershave,Scheerlotion,0
 Alcohol,Sterke drank,0
 Alcoholstift,Alkoolstift,1
+Alcoholstift,Benzinestift,0
+Alcoholstift,Dikke stift,0
+Alcoholstift,Merkstift,0
+Alcoholstift,Viltstift,0
 Aluminiumfolie,Zilverpapier,0
 Antivries,Antigel,1
 Arduin,Ardoan,1
 Arduin,Arduinsteen,0
 Arduin,Blauwe steen,1
 Arduin,Blauwsteen,0
+Arduin,Borduur,0
 Arduin,Hardsteen,0
 Arduin,Kolenkalksteen,0
 Arduin,Petit granit,1
 Asbesthoudend materiaal,Aminanthoudend materiaal,0
 Asbesthoudend materiaal,Steenvlashoudend materiaal,0
 Asfalt,Aardhars,0
-Audiocasette,Audiotape,0
+Asfalt,Macadam,0
+Asfalt,Tarmac,0
+Audiocassette,Audiotape,0
 Baksteen,Briek,1
 Baksteen,Kareel,1
 Baksteen,Klinker,0
@@ -703,7 +710,7 @@ Potlood,Paringspotlood,-2
 Potlood,Schrijfpotlood,-2
 Potlood,Tekenpotlood,-2
 Potlood,Timmermanspotlood,-2
-Printercartridge,Printercasette,0
+Printercartridge,Printercassette,0
 Printercartridge,Printerlint,0
 Pruik,Paruke,1
 Pruik,Postiche,1
