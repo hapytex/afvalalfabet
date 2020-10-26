@@ -46,7 +46,9 @@ Barometer,Luchtdrukmeter,0
 Batterij,Piele,1
 Batterij,Pile,1
 Beenderen,Gebeente,0
+Beenderen,Geraamte,0
 Beenderen,Karkas,0
+Beenderen,Skelet,0
 Behanglijmoplosser,Behangafweekmiddel,0
 Behangpapier,Frut,1
 Behangpapier,Meubelpapier,1
@@ -263,6 +265,8 @@ Fiets,Rijwiel,0
 Fiets,Velo,0
 Fietsband,Binnenband,0
 Fietsband,Buitenband,0
+Fietsband,Luchtband,0
+Fietsband,Rubberband,0
 Fietsband,Tuub,1
 Fietshelm,Koershelm,1
 Filmrolletje,Filmstrook,0
