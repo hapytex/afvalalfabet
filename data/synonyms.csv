@@ -157,10 +157,12 @@ Broodrooster,Bruudruuster,1
 Cadeaupapier,Geschenkpapier,0
 Cadeaupapier,Geschenkverpakking,0
 Cadeaupapier,Inpakpapier,0
+Capsule,Cachet,0
 Capsule,Gelule,1
 Capsule,Kapsul,1
 Capsule,Pastille,0
 Capsule,Pil,0
+Capsule,Tablet,0
 Carbolineum,Carbol,0
 Carbolineum,Creosootolie,0
 Carbolineum,Teerolie,0
@@ -179,12 +181,14 @@ CD-schijfje,Ceedee-schijfje,0
 CD-schijfje,Compact disc-schijfje,0
 CD-schijfje,Compactplaat-schijfje,0
 Cellenbeton,Gasbeton,0
+Cellenbeton,Ytongblok,1
 Cellofaanpapier,Cellofaan,0
 Chloroform,Methyltrichloride,0
 Chloroform,Trichloormethaan,0
-Chocolade,Fondant,0
-Chocolade,Praline,0
+Chocolade,Fondant,-2
+Chocolade,Praline,-2
 Chocolade,Sjokla,1
+Chocolade,Sjukla,1
 Computer,Homecomputer,0
 Computer,Microcomputer,0
 Computer,PC,0
@@ -204,8 +208,8 @@ Correctorverdunner,Officiersinktverdunner,1
 Correctorverdunner,Tipp-Exverdunner,0
 Correctorverdunner,Type-exverdunner,0
 Correctorverdunner,Witkwastverdunner,1
-Cosmetica,Haarlak,0
-Cosmetica,Make-up,0
+Cosmetica,Haarlak,-2
+Cosmetica,Make-up,-2
 Cosmetica,Schoonheidsproduct,0
 Dekbed,Deken,0
 Dekbed,Donsdeken,0
