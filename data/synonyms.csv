@@ -282,17 +282,21 @@ Eyeliner,Ogenstift,0
 Eyeliner,Ooglijner,0
 Eyeliner,Oogpenseel,0
 Eyeliner,Oogpotlood,0
-Faïence,Plateelwerk,0
+Faience,Plateelwerk,0
 Fiets,Rijwiel,0
+Fiets,Stalen ros,1
+Fiets,Tweewieler,0
 Fiets,Velo,0
 Fietsband,Binnenband,0
 Fietsband,Buitenband,0
 Fietsband,Luchtband,0
 Fietsband,Rubberband,0
 Fietsband,Tuub,1
+Fietshelm,Helm,0
 Fietshelm,Koershelm,1
 Filmrolletje,Filmstrook,0
 Filmrolletje,Fotorolletje,0
+Filter van dampkap,Afzuigkapfilter,0
 Filter van dampkap,Dampkapfilter,0
 Fineerhout,Fineer,0
 Fineerhout,Opleghout,0
@@ -325,6 +329,9 @@ Fopspeen,Teute,1
 Fopspeen,Tut,1
 Fopspeen,Tutter,0
 Formol,Formaline,0
+Formol,Formaline,0
+Formol,Methanal,0
+Formol,Sterk water,0
 Fosforzuur,Orthofosforzuur,0
 Foto,Kiekje,0
 Fotocamera,Fototoestel,0
@@ -886,9 +893,6 @@ Steen,Kei,0
 Steen,Kiezelsteen,0
 Steen,Rotsblok,0
 Stemvork,Diapason,0
-Sterk water,Formaline,0
-Sterk water,Formol,0
-Sterk water,Methanal,0
 Stofzuigerzak,Stofzak,0
 Stookolie,Mazout,0
 Strecthfolie,Krimpfolie,0
