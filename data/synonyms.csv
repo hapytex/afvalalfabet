@@ -438,7 +438,8 @@ Inktpatroon,Inktcartouche,0
 Inktpatroon,Inktcartridge,0
 Inlegkruisje,Damesverband,0
 Inlegkruisje,Maandverband,0
-Insectensray,Citronel spray,0
+Insectenspray,Citronel spray,0
+Insectenspray,DEET,2
 Isomo,Depron,0
 Isomo,Frigoliet,1
 Isomo,Geëxpandeerd polystyreen,0
@@ -454,42 +455,46 @@ Kaarsvet,Kjeisriet,1
 Kaart met magneetband,Kaart met magneetstrip,0
 Kapstok,Frakstok,1
 Kapstok,Kleerhanger,0
+Kapstok,Klerenstandaard,0
+Kapstok,Porte manteau,1
 Karton,Bordpapier,0
+Karton,Doze,1
+Kassei,Kassietse,1
 Kassei,Kinderhoofdje,0
 Kassei,Kinderkopje,0
+Kassei,Kletskop,1
+Kassei,Kolsie,1
 Kassei,Straatkei,0
-Kerstboom,Kerstbuum,1
+Kerstboom,Kerstenbuum,1
+Kerstboom,Krisboum,1
 Ketchup,Ketsiap,0
 Ketchup,Tomatenketchup,0
 Ketchup,Tomatonaise,0
 Ketting,Aandrijfketting,0
+Ketting,Keten,0
 Ketting,Schakelketting,0
 Ketting,Transmissieketting,0
 Keukenrol,Huishoudrol,0
 Keukenrol,Keukenpapier,0
 Kleding,Garderobe,0
-Kleding,Klederdracht,0
+Kleding,Klederen,0
 Kleding,Kledij,0
 Kleding,Kleed,0
 Kleding,Kleedsel,0
 Kleding,Kleergoed,0
 Kleding,Kleren,0
-Kleding,Kloffie,0
-Kleding,Kostuum,0
 Kleding,Plunje,0
 Kleding,Tenue,0
-Kleding,Tooi,0
 Kleefpapier,Afplakker,1
 Kleefpapier,Etiket,0
-Kleefpapier,Klever,0
+Kleefpapier,Plakfolie,0
 Kleefpapier,Plakker,1
-Kleefpapier,Sticker,0
 Kleefpapier,Zelfklever,0
+Klever,Sticker,0
 Knoopcel,Button cell,1
 Knoopcel,Coin cell,1
 Knoopcel,Knoopbatterij,0
 Knoopcel,Knoopcelbatterij,0
-Knoopcel,Knoopje,1
 Koelvloeistof,Koelmiddel,0
 Koffiedik,Drab,0
 Koffiedik,Dras,1
