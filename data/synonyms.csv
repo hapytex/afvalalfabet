@@ -553,7 +553,9 @@ Kwik,Kwikzilver,0
 Laptop,Notebook,0
 Laptop,Schootcomputer,0
 Lavabo,Handenwasser,1
+Lavabo,Lampetkom,1
 Lavabo,Lavoir,1
+Lavabo,Soemel,1
 Lavabo,Wasbak,0
 Lavabo,Wasbekken,0
 Lavabo,Waskom,0
@@ -573,6 +575,8 @@ Lijm,Kleefpasta,0
 Lijm,Kleefstof,0
 Lijm,Kol,1
 Lijm,Plakmiddel,0
+Lijm,Plaksel,1
+Lippenstift,Lipbalsem,0
 Lippenstift,Lipstick,0
 Lippenstift,Lipstift,0
 Lucifer,Solverstekske,1
@@ -586,6 +590,7 @@ Lucifer,Vuurhoutje,0
 Lucifer,Zweingel,1
 Luier,Pamper,0
 Luier,Pisbroek,1
+Luier,Pisdoek,1
 Magneet,Plakijzer,1
 Magneet,Trekijzer,1
 Magneet,Trekizer,1
