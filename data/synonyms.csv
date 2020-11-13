@@ -507,9 +507,11 @@ Koffiefilter,Kaffeebeus,1
 Koffiefilter,Rampenauke,1
 Kokosnoot,Klapper,0
 Kokosnoot,Klappernoot,0
+Kokosnoot,Kokernoot,1
 Kokosnoot,Kokosvrucht,0
 Kompres,Compressieverband,0
 Kompres,Drukverband,0
+Kompres,Verband,0
 Koper,Koperwerk,0
 Koper,Roodkoper,0
 Koperpoets,Koperglans,0
@@ -528,13 +530,16 @@ Krant,Zondagskrant,0
 Kristal,Kristalglas,0
 Kroonkurk,Bierpotteke,1
 Kroonkurk,Dansluiting,0
+Kroonkurk,Schuutje,1
 Kroonkurk,Stopke,1
 Kroonkurk,Teilke,1
+Kunstgebid,Tandprothese,0
 Kunstgebit,Vals gebit,0
 Kunstgebit,Valse tanden,0
 Kunstmest,Gemic,1
 Kunststof map,Hechtmap,0
 Kunststof map,Kunststof L-map,0
+Kunststof map,Ringband,0
 Kunststoffles,Dopper,2
 Kussen,Hoofdkussen,0
 Kussen,Huppeling,1
