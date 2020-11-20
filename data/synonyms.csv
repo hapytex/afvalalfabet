@@ -658,8 +658,10 @@ Omheining,Heining,0
 Omheining,Hek,0
 Omheining,Omrastering,0
 Omheining,Omtuining,0
+Omheining,Schutsel,1
+Omheining,Schutting,0
+Omheining,Stichel,1
 Omheining,Stikkel,1
-Omwikkelfolie,Handwikkelfolie,0
 Omwikkelfolie,Wikkelfolie,0
 Ondergoed,Combiné,1
 Ondergoed,Lingerie,0
@@ -671,7 +673,9 @@ Ontsmettingsmiddel,Antisepticum,-1
 Ontsmettingsmiddel,Desinfectans,-1
 Ontsmettingsmiddel,Desinfecterend middel,-1
 Ontsmettingsmiddel,Desinfectievloeistof,-1
+Ontsmettingsmiddel,Ontsmettingsalcohol,-1
 Ontstopper,Gootsteenontstopper,0
+Ontstopper,Rioolrat,1
 Ontstopper,vloeibare ontstopper,0
 Ontstopper,Wc-ontstopper,0
 Ontvetter,Terpentijn,0
@@ -683,7 +687,7 @@ Ontvetter,Wasbenzine,-2
 Ontvetter,White spirit,2
 Ontvlekker,Vlekverwijderaar,0
 Ontwikkelvloeistof,kaliumsulfiet,0
-Opalineglas,Opaline,0
+Opaline glas,Opaline,0
 Oven,Bakkersoven,-2
 Oven,Bakoven,0
 Oven,Heteluchtoven,-2
@@ -921,6 +925,7 @@ Stemvork,Diapason,0
 Stofzuigerzak,Stofzak,0
 Stookolie,Mazout,0
 Strecthfolie,Krimpfolie,0
+Stretchfolie,Handwikkelfolie,0
 Stretchfolie,Rekfolie,0
 Strooizout,Wegenzout,0
 Struik,Heester,0
