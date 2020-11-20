@@ -782,10 +782,16 @@ Rattenvergif,Flocumafen,-2
 Rattenvergif,Rodenticide,0
 Rattenvergif,Warfarine,-2
 Reclamedrukwerk,Brochure,0
+Reclamedrukwerk,Circulaire,0
 Reclamedrukwerk,Flyer,-2
 Reclamedrukwerk,Folder,0
+Reclamedrukwerk,Pamflet,0
 Reclamedrukwerk,Reclameblad,-2
 Reclamedrukwerk,Reclamefolder,-2
+Reclamedrukwerk,Rondschrijven,0
+Reclamedrukwerk,Rondzendbrief,0
+Reclamedrukwerk,Strooibiljet,0
+Reclamedrukwerk,Vlugschrift,0
 Regenpijp,Hemelwaterafvoer,0
 Regenpijp,Regenwaterafvoer,0
 Rietje,Stroiken,1
@@ -800,9 +806,12 @@ Ringmap,Ordner,0
 Ringmap,Ringband,0
 Rolluik,Afrolder,1
 Rolluik,Blaffetuur,1
+Rolluik,Blavetuur,1
 Rolluik,Lattestoor,1
 Rolluik,Percheine,1
 Rolluik,Persienne,1
+Rolluik,Rolschets,1
+Rolluik,Volè,1
 Rolschaats,Inline-skate,-2
 Rolschaats,Lijnrolschaats,-2
 Rolschaats,Skeeler,-2
@@ -813,6 +822,7 @@ Roofing,Dakbedekking,0
 Roofing,Dakleer,-2
 Roofing,Teerpapier,-2
 Rubber,Caoutchouc,1
+Rubber,Gummi,0
 Rubber,Hardrubber,-2
 Rubber,Kunstrubber,-2
 Rubber,montagerubber,-2
