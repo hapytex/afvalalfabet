@@ -210,7 +210,6 @@ Correctorverdunner,Type-exverdunner,0
 Correctorverdunner,Witkwastverdunner,1
 Cosmetica,Haarlak,-2
 Cosmetica,Haarspray,0
-Cosmetica,Make-up,-2
 Cosmetica,Schoonheidsproduct,0
 Dekbed,Deken,0
 Dekbed,Donsdeken,0
@@ -835,6 +834,7 @@ Rubber,Schuimrubber,-2
 Rubber,Sponsrubber,-2
 Röntgenfoto,Röntgenopname,0
 Röntgenfoto,X-straalfoto,0
+Saus,Vleesjus,1
 Saus,Vleesnat,0
 Schaafkrullen,Schaafsel,0
 Schaafkrullen,Schavelinge,1
@@ -845,6 +845,7 @@ Scheermes,Gillette,2
 Scheermes,Schaas,1
 Scheermes,Schêês,1
 Schmink,Blanketsel,0
+Schmink,Make-up,0
 Schmink,Maquillage,0
 Schoen,Laars,-2
 Schoen,Muil,-2
@@ -888,8 +889,8 @@ Shampoo,Haarzeep,0
 Sigaret,Cigarette,1
 Sigaret,Cout,1
 Sigaret,Saf,1
-Sigaret,Sloef,1
 Sigarettenpeuk,Peuk,0
+Sigarettenpeuk,Sigarettenstoemp,0
 Silicoon,Silicon,0
 Silicoon,Silicone,0
 Sinaasappel,Appelsien,1
@@ -904,6 +905,8 @@ Slaapzak,Slapzak,1
 Smartphone,Pienterfoon,0
 Snoeiafval,Snoeisel,0
 Snoep,Snoepgoed,0
+Snoep,Spekke,1
+Snoep,Spekken,1
 Soda,Baksoda,-2
 Soda,Loogzout,0
 Soda,Natriumcarbonaat,0
