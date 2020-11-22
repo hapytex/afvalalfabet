@@ -340,26 +340,31 @@ Frituurvet,Fritvet,1
 Gasfles,Gascilinder,0
 Gasfles,Gasreservoir,0
 Gebak,Banket,0
-Gebak,Biscuit,0
-Gebak,Cake,0
-Gebak,Eclair,0
-Gebak,Koffiekoek,0
+Gebak,Biscuit,-1
+Gebak,Cake,-1
+Gebak,Eclair,-1
+Gebak,Koek,0
+Gebak,Koffiekoek,-1
 Gebak,Pateeke,1
+Gebak,Patisserie,0
 Gebak,Taart,0
 Gel,Brillantine,0
+Gelaagd glas,Kogelbestendig glas,0
+Gelaagd glas,Kogelvrij glas,0
+Gelaagd glas,Kogelwerend glas,0
 Gelaagd glas,Veiligheidsglas,0
 Geneesmiddel,Heelmiddel,0
 Geneesmiddel,Medicament,0
 Geneesmiddel,Medicatie,0
 Geneesmiddel,Medicijn,0
 Geneesmiddel,Preparaat,0
-Geursteen,Toiletblok,0
-Geursteen,Wc-blok,0
-Gewicht,Halter,0
+Gewichten,Halters,0
 Gif,Vergif,0
 Gif,Vergift,0
 Gips,Plaaster,1
 Gips,Pleister,0
+Gipsplaat,Gipskartonplaat,0
+Gipsplaat,Gipsvezelplaat,0
 Gipsplaat,Gyproc,0
 Gipsplaat,Gyprocplaten,0
 Glasvezel,Fiber,0
@@ -997,6 +1002,7 @@ Tijdschrift,Weekblad,-2
 Tijdschrijft,Maandblad,-2
 TL-lamp,Fluorescentielamp,0
 TL-lamp,TL-buis,0
+Toiletblok,Wc-blok,0
 Toiletpot,Closetpot,0
 Toiletpot,WC-pot,0
 Toiletreiniger,WC-eend,-1
