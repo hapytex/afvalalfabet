@@ -997,9 +997,10 @@ Thermos,Pompthermos,-2
 Thermos,Thermofles,0
 Thermos,Thermokan,0
 Tijdschrift,Boekske,1
+Tijdschrift,Maandblad,-2
 Tijdschrift,Magazine,0
+Tijdschrift,Periodiek,0
 Tijdschrift,Weekblad,-2
-Tijdschrijft,Maandblad,-2
 TL-lamp,Fluorescentielamp,0
 TL-lamp,TL-buis,0
 Toiletblok,Wc-blok,0
@@ -1021,13 +1022,17 @@ Trapladder,Trapleer,0
 Treinkaartje,Coupon,0
 Treinkaartje,Reisbiljet,0
 Treinkaartje,Treinbiljet,0
+Treinkaartje,Treinticket,0
 Tuingereedschap,Hofgerief,1
 Tuingereedschap,Tuingerief,1
 Tuinmeubel,Tuinbank,-2
 Tuinmeubel,Tuintafel,-2
 Tuinmeubel,Tuinzetel,-2
 Tuinslang,Lans,1
+Tuinslang,Sjloek,1
 Tuinslang,Waterdarm,1
+Tuinslang,Waterslang,0
+Tuinslang,Waterspuit,0
 UV-lamp,Black light lamp,0
 UV-lamp,Ultraviolet lamp,0
 Vaas,Bloemenvaas,-2
