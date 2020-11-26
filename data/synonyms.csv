@@ -939,6 +939,7 @@ Steen,Kei,0
 Steen,Kiezelsteen,0
 Steen,Rotsblok,0
 Stemvork,Diapason,0
+Stoffer en Blik,Blik en veger,0
 Stofzuigerzak,Stofzak,0
 Stookolie,Mazout,0
 Strecthfolie,Krimpfolie,0
@@ -1039,9 +1040,12 @@ Vaas,Bloemenvaas,-2
 Vaas,Siervaas,-2
 Veegborstel,Bezem,0
 Veegborstel,Borstel,0
+Veegborstel,Handveegborstel,0
+Veegborstel,Handveger,0
+Veegborstel,Keerborstel,0
+Veegborstel,Vaagbustel,1
 Veegborstel,Veger,0
 Veegborstel,Vloervarken,1
-Veegbortel,Keerborstel,0
 Veevoederzak,Diervoederzak,0
 Veevoederzak,Veevoer verpakking,0
 Velg,Achtervelg,-2
@@ -1094,14 +1098,16 @@ Vet,Smeervet,-2
 Vet,Smout,-2
 Vet,Vetstof,0
 Vezelplaat,Houtvezelplaat,-2
+Vezelplaat,Spaanplaat,0
 Vezelplaat,Strovezelplaat,-2
+Vezelplaat,Trespa,2
 Videocassettedoos,VHS doos,0
 Vinyl vloerbedekking,Novilon,2
 Vinyl vloerbedekking,Polyvinylchloride vloerbedekking,0
 Visgraat,Graat,0
 Visgraat,Visbeen,0
 Vliegengordijn,Hor,0
-Vliegengordijn,Jaloezie,1
+Vliegengordijn,Jalouzie,1
 Vliegengordijn,Moestekeir,1
 Vliegengordijn,Schrin,1
 Vliegengordijn,Stramijm,1
@@ -1109,10 +1115,15 @@ Vliegengordijn,Stremmaan,1
 Vliegengordijn,Vliegenraam,0
 Vliegengordijn,Vliegenvenster,0
 Vliegengordijn,Zift,1
+Vod,Doek,0
+Vod,Lap,0
 Vod,Lodder,1
+Vod,Poetsdoek,0
 Vod,Scheuteldoek,1
-Vod,Schoteldvod,-2
+Vod,Schotelvod,-2
+Vod,Schutteldoek,1
 Vod,Slunse,1
+Vod,Vaatdoek,0
 Vod,Vodde,0
 Voetmat,Deurmat,0
 Vogelkooizand,Vogelzand,0
@@ -1136,12 +1147,11 @@ Vogelzaad,Paddy rijst,-2
 Vogelzaad,Raapzaad,-2
 Vogelzaad,Rode millet,-2
 Vogelzaad,Rode Panis,-2
+Vogelzaad,Vogelvoer,0
 Vogelzaad,Witte millet,-2
 Vogelzaad,Witte zonnebloempitten,-2
 Vuilblik,Blek,1
-Vuilblik,Blik en veger,0
 Vuilblik,Stofblik,0
-Vuilblik,Stoffer en blik,0
 Vuilblik,Troeffel,1
 Vuilblik,Vuilblek,1
 Vuilblik,Vuilnisblik,0
@@ -1151,9 +1161,20 @@ Vuurvaste schotel,Ovenschaal,0
 Vuurwapen,Buks,-2
 Vuurwapen,Dubbelloopsgeweer,-2
 Vuurwapen,Geweer,-2
+Vuurwapen,Handvuurwapen,-2
+Vuurwapen,Karabijn,-2
+Vuurwapen,Machinepistool,-2
+Vuurwapen,Mitrailleur,-2
+Vuurwapen,Pistool,-2
+Vuurwapen,Schietgeweer,-2
+Vuurwapen,Schietijzer,0
 Vuurwapen,Tweeloop,-2
+Vuurwerk,Klakker,1
 Vuurwerk,Knalvuurwerk,-2
 Vuurwerk,Siervuurwerk,-2
+Vuurwerk,Sterrenschijter,1
+Vuurwerk,Vierwerk,1
+Vuurwerk,Voetzoeker,1
 Warmwaterkruik,Bedkruik,0
 Warmwaterkruik,Boejot,1
 Warmwaterkruik,Boejote,1
