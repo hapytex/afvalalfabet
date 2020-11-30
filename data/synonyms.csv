@@ -1178,8 +1178,12 @@ Vuurwerk,Voetzoeker,1
 Warmwaterkruik,Bedkruik,0
 Warmwaterkruik,Boejot,1
 Warmwaterkruik,Boejote,1
+Warmwaterkruik,Heetwaterblaas,1
 Warmwaterkruik,Heetwaterzak,0
+Warmwaterkruik,Kwats,1
 Warmwaterkruik,Stoopke,1
+Warmwaterkruik,Warmvoetensteen,1
+Warmwaterkruik,Warmwaterblaas,1
 Waskrijt,Wasco,2
 Watten,Synthetische watten,-2
 Watten,Vette watten,-2
@@ -1192,6 +1196,7 @@ Wattenstaafje,Wattenstokje,0
 Wc-borstel,Pleeborstel,0
 Wc-borstel,Toiletborstel,0
 Wc-rol,Closetrol,0
+Wc-rol,Toiletpapier,0
 Wc-rol,Toiletrol,0
 Wegwerpfototoestel,Fling,2
 Wegwerpfototoestel,Wegwerpcamera,0
