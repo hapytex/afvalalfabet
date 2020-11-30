@@ -1206,6 +1206,7 @@ Zakdoek,Maalplag,1
 Zakdoek,Maalsdoek,1
 Zakdoek,Mouwplag,1
 Zakdoek,Neusdoek,0
+Zakdoek,Snotdoek,1
 Zakdoek,Snotvod,1
 Zakdoek,Tesdoek,1
 Zakdoek,Tesnuisink,1
@@ -1214,11 +1215,14 @@ Zakdoek,Zakneusdoek,0
 Zakmes,Kniep,1
 Zakmes,Pennenmes,0
 Zakmes,Plooimes,0
+Zakmes,Zakknipmes,0
 Zalf,Balsem,0
 Zalf,Zauf,1
 Zeemvel,Zeem,0
 Zeemvel,Zeemlap,0
 Zelfbruiner,Bruin-zonder-zon,0
+Zetel,Armstoel,0
+Zetel,Fauteuille,1
 Zetel,Salon,1
 Zonnebrandolie,Antizonnebrandcrème,0
 Zonnebrandolie,Zonnebrandcrème,0
@@ -1229,6 +1233,7 @@ Zonnepaneel,PV-cel,0
 Zoutzuur,Zoutgeest,0
 Zwavelzuur,Vitriool,0
 Zwavelzuur,Vitrioololie,0
+Zwembad,Bassin,1
 Zwembad,Kinderzwembad,-2
 Zwembad,Plonsbad,1
 Zwembad,Zwemkom,1
