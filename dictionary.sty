@@ -60,14 +60,7 @@
 \captionsetup{labelformat=empty}
 
 \newpagestyle{normal}{\sethead{}{\thepage}{}}
-\newpagestyle{dict}{%
-  \sethead
-    {\firstentry{}} % \topextramarks{entry}\entrytitle}% left
-    {\thepage}% centre
-    {\botextramarks{entry}\entrytitle}% right
-   % \setheadrule{.4pt}% Regular header rule
-   % \setfootrule{0.4pt}
-}
+\newpagestyle{dict}{\sethead{}{\thepage}{}}
 \pagestyle{normal}
 
 % place frequent star
@@ -178,8 +171,8 @@
 \newcommand{\eventhumb}[1]{%
     % see pgfmanual.pdf for more information about this part
     \begin{tikzpicture}[remember picture, overlay]
-      \draw ($(current page.north west)+(\thumbwidth,0.25cm-\thumbtopmargin)$) -- +(\paperwidth-2*\thumbwidth,0);
-      \draw ($(current page.north)-(0,\thumbtopmargin)$)  -- +(0,-\paperheight+\thumbtopmargin+\thumbbottommargin);
+      % \draw ($(current page.north west)+(\thumbwidth,0.25cm-\thumbtopmargin)$) -- +(\paperwidth-2*\thumbwidth,0);
+      % \draw ($(current page.north)-(0,\thumbtopmargin)$)  -- +(0,-\paperheight+\thumbtopmargin+\thumbbottommargin);
       \clip ($(current page.north east)-(\thumbwidth,\thumbtopmargin+\value{letternum}*\thumbheight)$) rectangle +(\thumbwidth,\thumbheight);
       \shade[shading=rainbow] ($(current page.north east)-(0,\thumbtopmargin)$) rectangle +(-\thumbwidth,-\paperheight+\thumbtopmargin+\thumbbottommargin);
       \node[thumb] at ($(current page.north east)+(-0.5*\thumbwidth,0.5*\thumbheight-\thumbtopmargin-\value{letternum}*\thumbheight)$) {#1};
@@ -193,8 +186,8 @@
  \newcommand{\oddthumb}[1]{%
     % see pgfmanual.pdf for more information about this part
     \begin{tikzpicture}[remember picture, overlay]
-      \draw ($(current page.north west)+(\thumbwidth,0.25cm-\thumbtopmargin)$) -- +(\paperwidth-2*\thumbwidth,0);
-      \draw ($(current page.north)-(0,\thumbtopmargin)$)  -- +(0,-\paperheight+\thumbtopmargin+\thumbbottommargin);
+      % \draw ($(current page.north west)+(\thumbwidth,0.25cm-\thumbtopmargin)$) -- +(\paperwidth-2*\thumbwidth,0);
+      % \draw ($(current page.north)-(0,\thumbtopmargin)$)  -- +(0,-\paperheight+\thumbtopmargin+\thumbbottommargin);
       \clip ($(current page.north west)-(0, \thumbtopmargin+\value{letternum}*\thumbheight)$) rectangle +(\thumbwidth,\thumbheight);
       \shade[shading=rainbow] ($(current page.north west)-(0,\thumbtopmargin)$) rectangle +(\thumbwidth,-\paperheight+\thumbtopmargin+\thumbbottommargin);
       \node[thumb] at ($(current page.north west)+(0.5*\thumbwidth,0.5*\thumbheight-\thumbtopmargin-\value{letternum}*\thumbheight)$) {#1};
