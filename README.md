@@ -1,6 +1,6 @@
 # Afvalwoordenboek
 
-[![Build Status](https://travis-ci.com/hapytex/afvalwoordenboek.svg?branch=master)](https://travis-ci.com/hapytex/afvalwoordenboek)
+[![Build Status of the package by GitHub actions](https://github.com/hapytex/afvalwoordenboek/actions/workflows/build-ci.yml/badge.svg)](https://github.com/hapytex/afvalwoordenboek/actions/workflows/build-ci.yml)
 
 A dictionary how to handle (and recycle) waste in Belgium, in Dutch.
 
