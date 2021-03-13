@@ -46,5 +46,6 @@ for fn in *.tex; do
 done
 
 rm *.aux *.glo *.idx *.ilg *.ind *.ist *.log *.out *.tex *.sty *.cls *.adx *.and *.ttf
+echo "afvalwoordenboek.django-antipatterns.com" > out/CNAME
 
 exit 0
