@@ -47,5 +47,6 @@ done
 
 rm *.aux *.glo *.idx *.ilg *.ind *.ist *.log *.out *.tex *.sty *.cls *.adx *.and *.ttf
 echo "afvalwoordenboek.django-antipatterns.com" > out/CNAME
+echo '<!DOCTYPE html><meta charset="utf-8"><title>Redirecting to /afvalwoordenboek_dark.pdf</title><meta http-equiv="refresh" content="0; URL=/afvalwoordenboek_dark.pdf"><link rel="canonical" href="/afvalwoordenboek_dark.pdf">' > out/index.html
 
 exit 0
