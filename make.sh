@@ -30,7 +30,11 @@ for i in no-tips ''; do
     done
   done
 done
+
 cd out
+echo "afvalwoordenboek.django-antipatterns.com" > CNAME
+echo '<!DOCTYPE html><meta charset="utf-8"><title>Redirecting to /afvalwoordenboek_dark.pdf</title><meta http-equiv="refresh" content="0; URL=/afvalwoordenboek_dark.pdf"><link rel="canonical" href="/afvalwoordenboek_dark.pdf">' > index.html
+
 
 for fn in *.tex; do
   bn=$(basename "$fn" '.tex')
@@ -46,7 +50,5 @@ for fn in *.tex; do
 done
 
 rm *.aux *.glo *.idx *.ilg *.ind *.ist *.log *.out *.tex *.sty *.cls *.adx *.and *.ttf
-echo "afvalwoordenboek.django-antipatterns.com" > out/CNAME
-echo '<!DOCTYPE html><meta charset="utf-8"><title>Redirecting to /afvalwoordenboek_dark.pdf</title><meta http-equiv="refresh" content="0; URL=/afvalwoordenboek_dark.pdf"><link rel="canonical" href="/afvalwoordenboek_dark.pdf">' > out/index.html
 
 exit 0
