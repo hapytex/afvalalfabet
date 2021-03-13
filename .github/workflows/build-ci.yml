@@ -1,0 +1,61 @@
+name: Standard checks and deployment
+on: push
+
+jobs:
+  linux1:
+    name: Build the Haskell software
+    runs-on: ubuntu-latest
+    steps:
+    - name: add ppa
+      run: sudo add-apt-repository -y ppa:hvr/ghc
+    - name: update package database
+      run: sudo apt-get update
+    - name: install required packages
+      run: sudo apt-get install cabal-install-3.0 haskell-stack
+    - name: checkout code
+      uses: actions/checkout@v2.3.1
+    - name: build the Haskell software
+      run: stack build --ghc-options='-Wall -Werror'
+
+  linux2:
+    name: Look for todos
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout code
+      uses: actions/checkout@v2.3.1
+    - name: look for todos
+      run: "! grep -i -P 'TODO|[?]{3,}' $(find src -iname '*.hs')"
+
+  linux3:
+    name: Check for hlint suggestions
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout code
+      uses: actions/checkout@v2.3.1
+    - name: look for hlint suggestions
+      run: curl -sSL https://raw.github.com/ndmitchell/hlint/master/misc/run.sh | sh -s .
+
+  linux4:
+    name: Deploy documentation to GitHub pages
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    steps:
+    - name: add ppa
+      run: sudo add-apt-repository -y ppa:hvr/ghc
+    - name: update package database
+      run: sudo apt-get update
+    - name: install required packages
+      run: sudo apt-get install cabal-install-3.0 haskell-stack
+    - name: checkout code
+      uses: actions/checkout@v2.3.1
+    - name:
+      run: stack build --force-dirty
+    - name: create pdfs
+      run: make
+    - name: retrieve path to the documentation
+      run: echo "haddock_path=$(stack path --local-doc-root)" >> $GITHUB_ENV
+    - name: deploy the documentation on the GitHub pages
+      uses: JamesIves/github-pages-deploy-action@4.0.0
+      with:
+        branch: gh-pages
+        folder: out
