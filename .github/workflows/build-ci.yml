@@ -1,4 +1,4 @@
-name: Standard checks and deployment
+name: build pdf files
 on: push
 
 jobs:
