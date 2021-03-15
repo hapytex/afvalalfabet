@@ -15,6 +15,20 @@ makename () {
   fi
 }
 
+buildpdf () {
+  bn=$(basename "$1" '.tex')
+  for i in `seq 5`; do
+    $latexc --interaction=nonstopmode "$1"
+    for f in *.adx; do
+      fb=$(basename "$f" '.adx')
+      $midx "$f" -o "$fb.and" || true
+    done
+    makeindex "$bn" || true
+  done
+  rm *.adx
+}
+
+
 mkdir -p out
 ln -f *.sty *.cls out
 ln -f fonts/* out
@@ -37,17 +51,9 @@ echo '<!DOCTYPE html><meta charset="utf-8"><title>Redirecting to /afvalwoordenbo
 
 
 for fn in *.tex; do
-  bn=$(basename "$fn" '.tex')
-  for i in `seq 5`; do
-    $latexc --interaction=nonstopmode "$fn"
-    for f in *.adx; do
-      fb=$(basename "$f" '.adx')
-      $midx "$f" -o "$fb.and" || true
-    done
-    makeindex "$bn" || true
-  done
-  rm *.adx
+  buildpdf "$fn" &
 done
+wait
 
 rm *.aux *.glo *.idx *.ilg *.ind *.ist *.log *.out *.tex *.sty *.cls *.adx *.and *.ttf
 
