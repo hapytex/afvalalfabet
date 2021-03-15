@@ -2,6 +2,7 @@
 % \RequirePackage{fancyhdr}
 \RequirePackage[utf8]{inputenc}
 %\DeclareUnicodeCharacter{00A0}{~} % finds hidden non-breakable space
+\RequirePackage{fontspec}
 \RequirePackage[T1]{fontenc}
 \RequirePackage{xparse}
 % \RequirePackage{bookmark}
@@ -45,8 +46,6 @@
 \setlength{\parindent}{0cm}
 \titlespacing{\paragraph}{0cm}{0cm}{0cm}
 \renewcommand{\baselinestretch}{0}
-
-\setmainfont{EB Garamond}
 
 \newcommand{\hint}[1]{\begin{quote}\fcolorbox{hint-fg}{hint-bg}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{\textcolor{hint-tx}{\textit{tip}}\\#1}}\end{quote}}
 
@@ -263,5 +262,6 @@
  % \newcommand{\HRule}{\rule{\linewidth}{0.1mm}} % rule line
 
  \newcommand*{\chaptitle}{}
+\setmainfont{EB Garamond}
 % \renewcommand*{\chaptermark}[1]{%
 %  \renewcommand*{\chaptitle}{#1}}
