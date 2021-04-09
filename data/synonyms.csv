@@ -6,6 +6,9 @@ Aardappelschil,Petetteschel,1
 Aarde,Grond,0
 Aardewerk,Gleierwerk,1
 Aardewerk,Pottekarree,1
+Adapter,Laadstekker,0
+Adapter,Omvormer,0
+Adapter,Omzetter,0
 Aftershave,Kinfris,0
 Aftershave,Scheerlotion,0
 Alcohol,Sterke drank,0
@@ -457,6 +460,7 @@ Kaars,Keske,1
 Kaarsvet,Kaarsroet,0
 Kaarsvet,Kjeisriet,1
 Kaart met magneetband,Kaart met magneetstrip,0
+Kabel,Aansluitkabel,-1
 Kapstok,Frakstok,1
 Kapstok,Kleerhanger,0
 Kapstok,Klerenstandaard,0
