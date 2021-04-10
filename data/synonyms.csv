@@ -56,7 +56,9 @@ Batterij,Pile,1
 Beenderen,Gebeente,0
 Beenderen,Geraamte,0
 Beenderen,Karkas,0
+Beenderen,Rib,-2
 Beenderen,Skelet,0
+Beenderen,Soepbot,-2
 Behanglijmoplosser,Behangafweekmiddel,0
 Behangpapier,Behang,0
 Behangpapier,Frut,1
@@ -183,7 +185,9 @@ Casette,Muziekcassette,0
 Casette,VHS,0
 Casette,Videoband,0
 Casette,Videocassette,0
+CD-doosje,CD-case,0
 CD-doosje,Ceedee-doosje,0
+CD-doosje,Compact disk-case,0
 CD-doosje,Compact disk-doosje,0
 CD-doosje,Compactplaat-doosje,0
 CD-schijfje,Ceedee-schijfje,0
@@ -636,6 +640,7 @@ Methanol,Houtgeest,0
 Methanol,Methylalcohol,0
 Methanol,Spiritus,0
 Meubel,Ameublement,0
+Meubel,Bankstel,-2
 Meubel,Meubelstuk,0
 Meubel,Meubilair,0
 Multiplex,Multiplexplaat,0
