@@ -286,6 +286,8 @@ Emmer,Tobbe,1
 Envelop,Briefomslag,0
 Envelop,Enveloppe,0
 Envelop,Omslag,0
+Envelop,Vensterenvelop,-2
+Envelop,Vensterenveloppe,-2
 Epoxyhars,Epoxylijm,0
 Etensresten,Knuis,1
 Etensresten,Kwet,1
@@ -728,6 +730,7 @@ Pan,Kookpot,0
 Pan,Pot,0
 Papier,Kopieerpapier,-2
 Papier,Paperassen,1
+Papier,Post-it,-2
 Paraplu,Regenscherm,0
 Parasol,Zonnescherm,0
 Parfum,Geurstof,0
