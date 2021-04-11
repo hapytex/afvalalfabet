@@ -597,8 +597,10 @@ Lijm,Kleefmiddel,0
 Lijm,Kleefpasta,0
 Lijm,Kleefstof,0
 Lijm,Kol,1
+Lijm,Lijstift,-1
 Lijm,Plakmiddel,0
 Lijm,Plaksel,1
+Lijm,Pritt stift,-1
 Lippenstift,Lipbalsem,0
 Lippenstift,Lipstick,0
 Lippenstift,Lipstift,0
@@ -873,6 +875,7 @@ Rubber,Schuimrubber,-2
 Rubber,Sponsrubber,-2
 Röntgenfoto,Röntgenopname,0
 Röntgenfoto,X-straalfoto,0
+Salpeterzuur,Waterstofnitraat,0
 Saus,Vleesjus,1
 Saus,Vleesnat,0
 Schaafkrullen,Schaafsel,0
