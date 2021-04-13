@@ -955,6 +955,8 @@ Skeeler,Straatschaats,0
 Skeeler,Wielschaats,0
 Slaapzak,Mafzak,1
 Slaapzak,Slapzak,1
+Slagroomspuitbus,Slagroombus,0
+Slagroomspuitbus,Slagroomspuit,0
 Smartphone,iPhone,-2
 Smartphone,Pienterfoon,0
 Snoeiafval,Snoeisel,0
@@ -1000,6 +1002,7 @@ Tabak,Shag,-2
 Tabak,Snuiftabak,-2
 Tabak,Tabakswaren,0
 Tabak,Toebak,1
+Tabletcomputer,iPad,-2
 Tafellaken,Ammelaken,1
 Tafellaken,Tafelkleed,0
 Tak,Twijg,0
