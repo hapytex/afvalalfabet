@@ -3,6 +3,11 @@
 # constants
 latexc='lualatex'
 midx='makeindex'
+exift='exiftool'
+title='Afval-sorteer-woordenboek'
+author='Willem Van Onsem and Lindsey Louwyck'
+subject='Hoe afval sorteren'
+keywords='afval, sorteren, recycleren, pmd, kga, restafval'
 
 makename () {
   local i="$1"
@@ -26,9 +31,9 @@ buildpdf () {
     makeindex "$bn" || true
   done
   rm *.adx
-  pdftk "$bn.pdf" update_info meta.txt output "out-$bn.pdf"
-  mv -f "out-$bn.pdf" "$bn.pdf"
-}
+  $exift "-Title=$title" "-Author=$author" "-Subject=$subject" "-Keywords=$keywords" "$bn.pdf"
+  rm "$bn.pdf_original"
+  }
 
 
 mkdir -p out
@@ -50,16 +55,6 @@ done
 cd out
 echo "afvalwoordenboek.django-antipatterns.com" > CNAME
 echo '<!DOCTYPE html><meta charset="utf-8"><title>Redirecting to /afvalwoordenboek_dark.pdf</title><meta http-equiv="refresh" content="0; URL=/afvalwoordenboek_dark.pdf"><link rel="canonical" href="/afvalwoordenboek_dark.pdf">' > index.html
-cat > meta.txt <<EOF
-InfoKey: Title
-InfoValue: Afval-sorteer-woordenboek
-InfoKey: Subject
-InfoValue: recycleren van afval
-InfoKey: Author
-InfoValue: Willem Van Onsem and Lindsey Louwyck
-InfoKey: Keywords
-InfoValue: afval, recyclage, pmd
-EOF
 
 for fn in *.tex; do
   buildpdf "$fn" &
