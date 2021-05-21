@@ -33,6 +33,8 @@ buildpdf () {
   rm *.adx
   $exift "-Title=$title" "-Author=$author" "-Subject=$subject" "-Keywords=$keywords" "$bn.pdf"
   rm "$bn.pdf_original"
+  qpdf "$bn.pdf" "$bn.2.pdf"
+  mv -f "$bn.2.pdf" "$bn.pdf"
   }
 
 

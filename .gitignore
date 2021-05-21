@@ -51,3 +51,9 @@ samples/**
 *.adx
 *.and
 *.tex
+
+# temporary directory
+tmp
+tmp/
+tmp/*
+tmp/**
