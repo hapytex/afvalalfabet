@@ -54,7 +54,7 @@ done
 
 cd out
 echo "afvalwoordenboek.django-antipatterns.com" > CNAME
-echo '<!DOCTYPE html><meta charset="utf-8"><title>Redirecting to /afvalwoordenboek_dark.pdf</title><meta http-equiv="refresh" content="0; URL=/afvalwoordenboek_dark.pdf"><link rel="canonical" href="/afvalwoordenboek_dark.pdf">' > index.html
+echo '<!DOCTYPE html><meta charset="utf-8"><link rel="icon" href="/favicon.ico"><title>Redirecting to /afvalwoordenboek_dark.pdf</title><meta http-equiv="refresh" content="0; URL=/afvalwoordenboek_dark.pdf"><link rel="canonical" href="/afvalwoordenboek_dark.pdf">' > index.html
 
 for fn in *.tex; do
   buildpdf "$fn" &
