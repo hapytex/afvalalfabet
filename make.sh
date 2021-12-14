@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 # constants
 latexc='lualatex'
 midx='makeindex'
@@ -26,9 +28,9 @@ buildpdf () {
     $latexc --interaction=nonstopmode "$1"
     for f in *.adx; do
       fb=$(basename "$f" '.adx')
-      $midx "$f" -o "$fb.and" || true
+      $midx "$f" -o "$fb.and"
     done
-    makeindex "$bn" || true
+    makeindex "$bn"
   done
   rm *.adx
   $exift "-Title=$title" "-Author=$author" "-Subject=$subject" "-Keywords=$keywords" "$bn.pdf"
@@ -63,6 +65,7 @@ for fn in *.tex; do
 done
 wait
 
+set +e
 rm *.aux *.glo *.idx *.ilg *.ind *.ist *.log *.out *.tex *.sty *.cls *.adx *.and *.ttf meta.txt
 
 exit 0
