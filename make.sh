@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 # constants
 latexc='lualatex'
 midx='makeindex'
@@ -62,6 +64,8 @@ for fn in *.tex; do
   buildpdf "$fn" &
 done
 wait
+
+set +e
 
 rm *.aux *.glo *.idx *.ilg *.ind *.ist *.log *.out *.tex *.sty *.cls *.adx *.and *.ttf meta.txt
 
