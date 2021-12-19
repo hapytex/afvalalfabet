@@ -28,9 +28,9 @@ buildpdf () {
     $latexc --interaction=nonstopmode "$1"
     for f in *.adx; do
       fb=$(basename "$f" '.adx')
-      $midx "$f" -o "$fb.and" || true
+      $midx "$f" -o "$fb.and"
     done
-    makeindex "$bn" || true
+    makeindex "$bn"
   done
   rm *.adx
   $exift "-Title=$title" "-Author=$author" "-Subject=$subject" "-Keywords=$keywords" "$bn.pdf"

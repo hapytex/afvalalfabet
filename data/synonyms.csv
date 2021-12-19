@@ -71,6 +71,7 @@ Beenderen,Rib,-2
 Beenderen,Skelet,0
 Beenderen,Soepbot,-2
 Behanglijmoplosser,Behangafweekmiddel,0
+Behanglijmoplosser,Behanglosweekmiddel,0
 Behangpapier,Behang,0
 Behangpapier,Frut,1
 Behangpapier,Meubelpapier,1
@@ -79,9 +80,12 @@ Benzine,Naft,1
 Benzine,Nafte,1
 Benzine,Petrol,1
 Benzine,Petroleum,0
+Benzoëzuur,Benzeencarbonzuur,0
 Bestek,Couvert,0
 Bestek,Eetgerei,0
 Bestek,Eetgerief,1
+Beton,Gewapend beton,0
+Betonolie,Betonvetter,0
 BH,Beha,0
 BH,Bustehouder,0
 BH,Bustier,0
