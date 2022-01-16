@@ -66,6 +66,7 @@ done
 wait
 
 set +e
+
 rm *.aux *.glo *.idx *.ilg *.ind *.ist *.log *.out *.tex *.sty *.cls *.adx *.and *.ttf meta.txt
 
 exit 0
