@@ -6,7 +6,7 @@ import Data.Bool(bool)
 import qualified Data.ByteString.Lazy as BL
 import Data.Char as C
 import Data.Csv
-import Data.Default(Default(def))
+import Data.Default.Class(Default(def))
 import Data.Function(on)
 import Data.List(sort)
 import Data.Map(Map, update)
