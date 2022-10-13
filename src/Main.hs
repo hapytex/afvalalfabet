@@ -54,7 +54,7 @@ data WasteLocation = WasteLocation { label :: Text, locName :: Text, locBgColor 
 
 slug :: Text -> Text
 slug = T.filter f . T.toLower
-    where f c = ('0' <= c && c <= '9') || ('a' <= c && c <= 'z')
+    where f c = C.isDigit c || C.isAsciiLower c
 
 rawProtect :: LaTeXC l => Text -> l
 rawProtect = raw . protectText
