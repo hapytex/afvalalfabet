@@ -120,7 +120,7 @@ locationToLaTeX ro (WasteLocation l a bg fg _) = "\n" <> cfg (cbg (comm2 "newglo
 
 locationToLaTeX2 :: LaTeXC l => RenderOptions -> WasteLocation -> l
 locationToLaTeX2 _ (WasteLocation l _ _ _ _) = comm1 "label" ((raw . ("glo:" <>) . protectText . slug) l) -- ""
-      -- locationToLaTeX2 ro (WasteLocation l _ _ _ _) = comm1 "section*" (raw l) <> (optFixComm "index" 1 . (raw "locations" :) . pure . raw . (<> "|textbf") . protectText) l <> optFixComm "pdfbookmark" 1 ["1", raw (protectText l), (raw . ("glo:" <>) . slug) l] <> raw "lorem ipsum" -- comm1 "label" (raw ("loc:" <> (slug'' wl))) <> section (raw (locName wl))
+-- locationToLaTeX2 ro (WasteLocation l _ _ _ _) = comm1 "section*" (raw l) <> (optFixComm "index" 1 . (raw "locations" :) . pure . raw . (<> "|textbf") . protectText) l <> optFixComm "pdfbookmark" 1 ["1", raw (protectText l), (raw . ("glo:" <>) . slug) l] <> raw "lorem ipsum" -- comm1 "label" (raw ("loc:" <> (slug'' wl))) <> section (raw (locName wl))
 
 wasteToLaTeX :: LaTeXC l => WasteRecord -> l
 wasteToLaTeX w@(WasteRecord n s l ts dia) = "\n" <> optFixComm "entry" 1 [raw (slug' w), raw n, bool id textit dia (raw n), subs <> raw " " <> Prelude.foldMap (comm1 "gls" . rawSlug) l <> Prelude.foldMap (optFixComm "index" 1 . (raw "locations" :) . pure . rawProtect) l <> raw "\\\\" <> Prelude.foldMap (comm1 "hint" . rawProtect . untip) ts]
